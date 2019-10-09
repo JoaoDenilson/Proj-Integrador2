@@ -54,6 +54,23 @@
                   <?php
                   endif;?>
       </table>
+
+
+
+  <script>
+    $(function(){
+      $(".delete").on('click', function(e) {
+        e.preventDefault();
+        var delid = $(this).attr("delid");
+
+        if (confirm('Deseja deletar esse Curso?')) {
+            window.location.replace("../indexCurso.php?classe=curso&metodo=delete&id="+delid);
+        }
+      });
+    });
+  </script>   
+
+
             </div>
           </div>
                 <?= $v->start("scripts");?>
