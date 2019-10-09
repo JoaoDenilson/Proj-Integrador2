@@ -57,22 +57,16 @@ class DisciplinaController{
 
 		public function update($data){
 			//recebe os novos dados do editarLab.php da View, chama o metodo atualizar do laboratorioDAO passando no parametro o objeto laboratório, para que os dados sejam substituidos no banco
-			$idDisciplina = $_POST['idDisciplina'];
+			$idDisciplina = $_POST['id'];
 			$nomeDisciplina = $_POST['nomeDisciplina'];
 	        $siglaDisciplina = $_POST['siglaDisc'];
 	        $cursoDisciplina = $_POST['cursoDisc'];
-
-	        //echo $idDisciplina;
-            //echo $nomeDisciplina;
-            //echo $siglaDisciplina;
-            //echo $cursoDisciplina;
-
+	        
 	        $this->disciplina->setIdDisc($idDisciplina);
 	        $this->disciplina->setNomeDisc($nomeDisciplina);
 	        $this->disciplina->setSiglaDisc($siglaDisciplina);
 	        $this->disciplina->setCursoDisc($cursoDisciplina);
 	        $this->disciplinaDAO->atualizar($this->disciplina);
-
 	        $this->index();
 		}
 
