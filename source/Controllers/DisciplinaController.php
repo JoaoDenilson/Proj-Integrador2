@@ -4,6 +4,9 @@ use League\Plates\Engine;
 use Source\DAO\DisciplinaDAO;
 use Source\Models\Disciplina;
 
+use Source\Models\CursoDAO;
+use Source\Models\Curso;
+
 class DisciplinaController{
 		private $disciplina;
 		private $disciplinaDAO;
