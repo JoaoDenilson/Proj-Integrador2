@@ -56,6 +56,22 @@ $route->get("/editar/{id}", "DisciplinaController:edit");
 $route->get("/excluir/{id}", "DisciplinaController:delete");
 
 
+
+/**
+ *  group Admin | curso
+ *
+ */
+$route->group("curso");
+$route->get("/", "DisciplinaController:index");
+$route->get("/adicionar", "CursoController:create");
+$route->post("/cadastrar", "CursoController:store");
+$route->post("/atualizar", "CursoController:update");
+$route->get("/editar/{id}", "CursoController:edit");
+$route->get("/excluir/{id}", "CursoController:delete");
+
+
+
+
 /**
  * ERROR
  */
