@@ -127,8 +127,8 @@
             <div class="dropdown-menu" aria-labelledby="pagesDropdown">
 
                 <h6 class="dropdown-header">Gerenciar Curso:</h6>
-                <a class="dropdown-item" href="<?=url("disciplina/adicionar");?>">Cadastrar</a>
-                <a class="dropdown-item" href="<?=url("disciplina");?>">Listar</a>
+                <a class="dropdown-item" href="<?=url("curso/adicionar");?>">Cadastrar</a>
+                <a class="dropdown-item" href="<?=url("curso");?>">Listar</a>
                 <div class="dropdown-divider"></div>
             </div>
 
