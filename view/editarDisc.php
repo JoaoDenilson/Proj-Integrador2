@@ -17,14 +17,14 @@
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="text" id="firstName" class="form-control" placeholder="First name" required="on" autofocus="autofocus" name="nomeDisciplina" value= "<?=$disciplina[0]['nomeDisciplina'];?>">
+                <input type="text" id="firstName" class="form-control" placeholder="First name" required="on" autofocus="autofocus" name="nomeDisciplina" value= "<?=$disciplina[0]['nomeDisciplina'];?>">
                   <label for="firstName">Nome da Disciplina</label>
                 </div>
               </div>
               
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="text" id="lastName" class="form-control" placeholder="Sigla da Disciplina" name="siglaDisc" required="on" value= "<?=$disciplina[0]['siglaDisciplina'];?>" >
+                <input type="text" id="lastName" class="form-control" placeholder="Sigla da Disciplina" name="siglaDisc" required="on"value= "<?=$disciplina[0]['siglaDisciplina'];?>" >
                   <label for="lastName">Sigla da Disciplina</label>
                 </div>
               </div>
@@ -33,10 +33,10 @@
 
           <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
             <option> Curso da Disciplina</option>
-            <option value="bsis" >BSI</option>
-            <option value="lfis" >Física</option>
-            <option value="tmec" >Mecatronica</option>
-            <option value="lmat" >Matemática</option>
+            <option value="1" >BSI</option>
+            <option value="2" >Física</option>
+            <option value="3" >Mecatronica</option>
+            <option value="4" >Matemática</option>
           </select>
 
         <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
