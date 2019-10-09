@@ -44,7 +44,7 @@ $route->get("/editar/{id}", "ProfessorController:edit");
 $route->get("/excluir/{id}", "ProfessorController:delete");
 
 /**
- *  group Admin | Professor
+ *  group Admin | disciplina
  *
  */
 $route->group("disciplina");
