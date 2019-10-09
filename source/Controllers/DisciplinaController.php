@@ -62,10 +62,10 @@ class DisciplinaController{
 	        $siglaDisciplina = $_POST['siglaDisc'];
 	        $cursoDisciplina = $_POST['cursoDisc'];
 
-	        echo $idDisciplina;
-            echo $nomeDisciplina;
-            echo $siglaDisciplina;
-            echo $cursoDisciplina;
+	        //echo $idDisciplina;
+            //echo $nomeDisciplina;
+            //echo $siglaDisciplina;
+            //echo $cursoDisciplina;
 
 	        $this->disciplina->setIdDisc($idDisciplina);
 	        $this->disciplina->setNomeDisc($nomeDisciplina);
