@@ -1,6 +1,6 @@
 <?php
 
-define("ROOT", "https://www.localhost/Integrador2");
+define("ROOT", "https://www.localhost/Proj-Integrador2");
 
 define("SITE", "#SI-(S7)");
 
