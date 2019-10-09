@@ -1,0 +1,27 @@
+{
+    "name": "vendor/joao",
+    "description": "Sistema de Reserva de ambientes para o IFCE Campus Cedro",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "João Denílson Souza dos Santos",
+            "email": "denilsonsantos021@gmail.com"
+        }
+    ],
+    "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Config.php"
+    ]
+  },
+  "require": {
+    "php": "^7.2",
+    "ext-pdo": "*",
+    "coffeecode/datalayer": "1.1.*",
+    "coffeecode/router": "1.0.*",
+    "league/plates": "v4.0.0-alpha"
+  }
+}

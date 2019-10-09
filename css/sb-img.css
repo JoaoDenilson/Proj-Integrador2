@@ -1,0 +1,29 @@
+    
+.circle {
+  background-color: #eee;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+margin-top: 30px;
+
+}
+
+.circle img {
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  margin-right: 50%;
+  margin: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.bg-dark {
+    background-color: #212529;
+}
+
+.static-top{
+    background-color: #212529 !important;
+}
