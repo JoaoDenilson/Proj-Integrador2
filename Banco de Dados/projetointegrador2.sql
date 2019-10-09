@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Out-2019 às 18:09
--- Versão do servidor: 10.1.38-MariaDB
--- versão do PHP: 7.3.4
+-- Tempo de geração: 09-Out-2019 às 20:55
+-- Versão do servidor: 10.4.6-MariaDB
+-- versão do PHP: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `projetointegrador2`
+-- Banco de dados: `projetointegrador2`
 --
 
 -- --------------------------------------------------------
@@ -119,7 +119,7 @@ CREATE TABLE `tb_usuario` (
   `nomeUsuario` varchar(50) NOT NULL,
   `emailUsuario` varchar(30) NOT NULL,
   `senhaUsuario` varchar(16) NOT NULL,
-  `nivelUsuario` tinyint(1) NOT NULL,
+  `nivelUsuario` tinyint(1) NOT NULL DEFAULT 0,
   `telefoneUsuario` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -128,34 +128,37 @@ CREATE TABLE `tb_usuario` (
 --
 
 INSERT INTO `tb_usuario` (`idUsuario`, `nomeUsuario`, `emailUsuario`, `senhaUsuario`, `nivelUsuario`, `telefoneUsuario`) VALUES
-(1, 'aqsad', 'asd@df', 'oHQHE', 1, 'SPOSP2');
+(1, 'aqsad', 'asd@df', 'oHQHE', 1, 'SPOSP2'),
+(2, 'adm', 'teste@teste.com', '123', 1, '998007766'),
+(3, 'User', 'outro@outro.com', '123', 0, '998445566'),
+(4, 'adm2', 'teste@test.com', '123', 2, '99858466');
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `tb_curso`
+-- Índices para tabela `tb_curso`
 --
 ALTER TABLE `tb_curso`
   ADD PRIMARY KEY (`idCurso`);
 
 --
--- Indexes for table `tb_disciplina`
+-- Índices para tabela `tb_disciplina`
 --
 ALTER TABLE `tb_disciplina`
   ADD PRIMARY KEY (`idDisciplina`),
   ADD KEY `FK_curso` (`idCursoFk`);
 
 --
--- Indexes for table `tb_laboratorio`
+-- Índices para tabela `tb_laboratorio`
 --
 ALTER TABLE `tb_laboratorio`
   ADD PRIMARY KEY (`idLab`),
   ADD UNIQUE KEY `codLab` (`codLab`);
 
 --
--- Indexes for table `tb_reserva`
+-- Índices para tabela `tb_reserva`
 --
 ALTER TABLE `tb_reserva`
   ADD PRIMARY KEY (`idReserva`),
@@ -164,48 +167,48 @@ ALTER TABLE `tb_reserva`
   ADD KEY `FK_disciplina` (`idDisciplinaFk`);
 
 --
--- Indexes for table `tb_usuario`
+-- Índices para tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
   ADD PRIMARY KEY (`idUsuario`),
   ADD UNIQUE KEY `emailUsuario` (`emailUsuario`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `tb_curso`
+-- AUTO_INCREMENT de tabela `tb_curso`
 --
 ALTER TABLE `tb_curso`
   MODIFY `idCurso` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `tb_disciplina`
+-- AUTO_INCREMENT de tabela `tb_disciplina`
 --
 ALTER TABLE `tb_disciplina`
   MODIFY `idDisciplina` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `tb_laboratorio`
+-- AUTO_INCREMENT de tabela `tb_laboratorio`
 --
 ALTER TABLE `tb_laboratorio`
   MODIFY `idLab` int(3) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_reserva`
+-- AUTO_INCREMENT de tabela `tb_reserva`
 --
 ALTER TABLE `tb_reserva`
   MODIFY `idReserva` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_usuario`
+-- AUTO_INCREMENT de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `idUsuario` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUsuario` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Constraints for dumped tables
+-- Restrições para despejos de tabelas
 --
 
 --
