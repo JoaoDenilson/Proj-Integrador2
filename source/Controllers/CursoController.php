@@ -8,18 +8,24 @@ use Source\Models\Curso;
 
 		private $curso;
 		private $cursoDAO;
+		private $view;
+        private $router;
 
-		public function __construct(){
+		public function __construct($router){
+			$this->router = $router;
 			$this->cursoDAO= new CursoDAO;
 			$this->curso = new Curso;
+			$this->view =Engine::create(__DIR__."/../../view","php");
+
 		}
 
 		public function index(){
 			$cursos = $this->cursoDAO->listarTudo();
-			session_start();
-			$_SESSION['cursos'] = $cursos;
+            echo $this->view->render("listarCursos",[
+                "title"=>"Listar Cursos | ".SITE,
+                "cursos" => $cursos
+            ]);
 
-			header('Location: View/listarCursos.php');
         }
 
 		public function inicio(){
