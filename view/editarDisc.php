@@ -39,7 +39,7 @@
             <option value="lmat" >Matemática</option>
           </select>
 
-        <input type="hidden" name="idDisciplina" value="<?=url($disciplina[0]['idDisciplina']);?>">
+        <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
         <button type="submit" class="btn btn-primary">Alterar</button>
 
