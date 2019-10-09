@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/css" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/js" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/less" />
+      <path value="$PROJECT_DIR$/vendor/league/plates" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/scss" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/sprites" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/svgs" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/webfonts" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/scss" />
+      <path value="$PROJECT_DIR$/vendor/coffeecode/datalayer" />
+      <path value="$PROJECT_DIR$/vendor/coffeecode/router" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1RX0QJgaU60KheMCp8tC65KkjrN" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/view" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Integrador2\view" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="" />
+      <created>1569798115530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569798115530</updated>
+      <workItem from="1569798116655" duration="4742000" />
+      <workItem from="1570041219223" duration="362000" />
+      <workItem from="1570108723285" duration="13950000" />
+      <workItem from="1570466243553" duration="5031000" />
+      <workItem from="1570488453684" duration="1916000" />
+      <workItem from="1570491969168" duration="3542000" />
+      <workItem from="1570498649022" duration="5853000" />
+      <workItem from="1570538443181" duration="174000" />
+      <workItem from="1570541305781" duration="17967000" />
+      <workItem from="1570624274279" duration="840000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

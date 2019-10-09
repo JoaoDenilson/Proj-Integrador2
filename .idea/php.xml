@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/css" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/js" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/less" />
+      <path value="$PROJECT_DIR$/vendor/league/plates" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/scss" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/sprites" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/svgs" />
+      <path value="$PROJECT_DIR$/vendor/fontawesome-free/webfonts" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/js" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/scss" />
+      <path value="$PROJECT_DIR$/vendor/coffeecode/datalayer" />
+      <path value="$PROJECT_DIR$/vendor/coffeecode/router" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
+</project>
