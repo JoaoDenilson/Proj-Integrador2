@@ -52,19 +52,24 @@ class DisciplinaController{
 	        $this->disciplina->setSiglaDisc($siglaDisciplina);
 	        $this->disciplina->setCursoDisc($cursoDisciplina);
 
-	   
+
 	        $this->disciplinaDAO->insere($this->disciplina);
 	        $this->index();
 		}
 
 		public function edit($id){
-			//atraves do ID seleciona os dados do registro e envia pela SESSION para o editarLab.php da View
-            $n = $id['id'];
-            $disc = $this->disciplinaDAO->listaRegistro($n);
-            echo $this->view->render("editarDisc",[
-                "title"=>"Disciplina | ".SITE,
-                "disciplina" => $disc
-            ]);
+            session_start();
+            if (isset($_SESSION['adm'])){
+                //atraves do ID seleciona os dados do registro e envia pela SESSION para o editarLab.php da View
+                $n = $id['id'];
+                $disc = $this->disciplinaDAO->listaRegistro($n);
+                echo $this->view->render("editarDisc",[
+                    "title"=>"Disciplina | ".SITE,
+                    "disciplina" => $disc
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
 		}
 
 		public function update($data){
