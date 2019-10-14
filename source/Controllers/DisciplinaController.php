@@ -20,18 +20,27 @@ class DisciplinaController{
 		}
 		
 		public function index(){
-			$disc = $this->disciplinaDAO->listarTudo();
-            echo $this->view->render("listarDisc",[
-                "title"=>"Disciplina | ".SITE,
-                "disciplinas" => $disc
-            ]);
-
+            session_start();
+            if (isset($_SESSION['adm'])){
+                $disc = $this->disciplinaDAO->listarTudo();
+                echo $this->view->render("listarDisc",[
+                    "title"=>"Disciplina | ".SITE,
+                    "disciplinas" => $disc
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
         }
 
         public function create(){
-            echo $this->view->render("cadasDisc",[
-                "title"=>"Adicionar Disci | ".SITE
-            ]);
+            session_start();
+            if (isset($_SESSION['adm'])){
+                echo $this->view->render("cadasDisc",[
+                    "title"=>"Adicionar Disci | ".SITE
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
 		}
 
 		public function store($data){
