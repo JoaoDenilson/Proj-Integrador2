@@ -20,15 +20,16 @@ class LaboratorioController{
 		}
 
 		public function index(): void{
-            
-            $laboratorio = $this->labDAO->listarTudo();
-            //echo var_dump($lab);
-            
-            echo $this->view->render("listarLab",[
-                "title"=>"Laboratorio | ".SITE,
-                "laboratorios" => $laboratorio
-            ]);
-            
+            session_start();
+            if (isset($_SESSION['adm'])){
+                $laboratorio = $this->labDAO->listarTudo();
+                echo $this->view->render("listarLab",[
+                    "title"=>"Laboratorio | ".SITE,
+                    "laboratorios" => $laboratorio
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
         }
 
         public function edit($id){            
