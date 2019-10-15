@@ -1,5 +1,8 @@
 <?php
-	require_once "DAO/reservaDAO.php";
+namespace Source\Controllers;
+use League\Plates\Engine;
+use Source\DAO\ReservaDAO;
+use Source\Models\Reserva;
 
 	class ReservaController{
 		
