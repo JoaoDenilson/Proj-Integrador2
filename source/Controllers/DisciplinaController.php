@@ -3,7 +3,6 @@ namespace Source\Controllers;
 use League\Plates\Engine;
 use Source\DAO\DisciplinaDAO;
 use Source\Models\Disciplina;
-
 use Source\Models\CursoDAO;
 use Source\Models\Curso;
 
@@ -52,7 +51,6 @@ class DisciplinaController{
 	        $this->disciplina->setSiglaDisc($siglaDisciplina);
 	        $this->disciplina->setCursoDisc($cursoDisciplina);
 
-
 	        $this->disciplinaDAO->insere($this->disciplina);
 	        $this->index();
 		}
@@ -92,4 +90,4 @@ class DisciplinaController{
 			$this->disciplinaDAO->deleta($n);
 			$this->index();
 		}
-	}
+    }
