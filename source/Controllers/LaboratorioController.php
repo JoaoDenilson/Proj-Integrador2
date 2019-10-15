@@ -32,13 +32,18 @@ class LaboratorioController{
             }
         }
 
-        public function edit($id){            
-            $n = $id['id'];
-			$lab = $this->labDAO->listaRegistro($n);
-            echo $this->view->render("editarLab",[
-                "title"=>"Laboratorio | ".SITE,
-                "laboratorio" => $lab
-            ]);
+        public function edit($id){
+            session_start();
+            if (isset($_SESSION['adm'])){
+                $n = $id['id'];
+                $lab = $this->labDAO->listaRegistro($n);
+                echo $this->view->render("editarLab",[
+                    "title"=>"Laboratorio | ".SITE,
+                    "laboratorio" => $lab
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
         }
         
         public function update($data){
@@ -58,10 +63,13 @@ class LaboratorioController{
         }
         
         public function create(){
-			echo $this->view->render("cadasLab",[
-                "title"=>"Adicionar Lab | ".SITE
-                
-            ]);
+            if (isset($_SESSION['adm'])){
+                echo $this->view->render("cadasLab",[
+                    "title"=>"Adicionar Lab | ".SITE
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
 		}
 
         public function store($data){
