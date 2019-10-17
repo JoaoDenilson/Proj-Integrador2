@@ -1,6 +1,7 @@
 <?php
-	require_once "conf/database.class.php";
-	require_once "Model/cursoModel.php";
+namespace Source\DAO;
+use Source\Database;
+use Source\Models\Curso;
 	
 	class CursoDAO{
 
@@ -45,7 +46,6 @@
 
     		$ok = $stmt->execute();
 
-    		//header("Location: View/listarCursos.php");
 		}
 
 		public function atualizar($curso){
