@@ -1,4 +1,5 @@
 <?php
+
 namespace Source\Models;
 
 class Disciplina{
