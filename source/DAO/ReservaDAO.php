@@ -8,7 +8,7 @@
 
 			$pdo = Database::conexao();
 			$result = $pdo->query("SELECT * FROM reserva");
-			$linhas = $result->fetchAll(PDO::FETCH_ASSOC);
+			$linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
 			
 			for($i = 0; $i<count($linhas); $i++){
 				$reserva[$i] = new Reserva;
@@ -28,7 +28,7 @@
 			$resId = $_GET['id'];
 			$pdo = Database::conexao();
 			$result = $pdo->query("SELECT * FROM reserva WHERE idReserva='$resId'");
-			$linha = $result->fetchAll(PDO::FETCH_ASSOC);
+			$linha = $result->fetchAll(\PDO::FETCH_ASSOC);
 
 			return $linha;
 		}
