@@ -32,7 +32,19 @@ class LaboratorioController{
             }
         }
 
-        public function edit($id){
+    public function create(){
+        session_start();
+        if (isset($_SESSION['adm'])){
+            echo $this->view->render("cadasLab",[
+                "title"=>"Adicionar Lab | ".SITE
+            ]);
+        }else{
+            $this->router->redirect("Web.login");
+        }
+    }
+
+
+    public function edit($id){
             session_start();
             if (isset($_SESSION['adm'])){
                 $n = $id['id'];
@@ -61,16 +73,6 @@ class LaboratorioController{
 
 	        $this->index();
         }
-        
-        public function create(){
-            if (isset($_SESSION['adm'])){
-                echo $this->view->render("cadasLab",[
-                    "title"=>"Adicionar Lab | ".SITE
-                ]);
-            }else{
-                $this->router->redirect("Web.login");
-            }
-		}
 
         public function store($data){
             //recebe os dados do cadasLab.php da View, chama o metodo insere do LaboratorioDAO 
