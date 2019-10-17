@@ -2,7 +2,7 @@
 namespace Source\Controllers;
 use League\Plates\Engine;
 use Source\DAO\ProfessorDAO;
-use Source\Models\Professor;
+//use Source\Models\Professor;
 
 class ProfessorController{
     private $prof;
@@ -16,6 +16,8 @@ class ProfessorController{
         $this->prof = new Professor();
         $this->view =Engine::create(__DIR__."/../../view","php");
     }
+
+
     public function index(){
         $professor = $this->profDAO->listarTudo();
         //echo var_dump($lab);
