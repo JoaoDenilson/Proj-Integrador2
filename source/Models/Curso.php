@@ -1,5 +1,8 @@
 <?php
-	class Curso{
+
+namespace Source\Models;
+
+class Curso{
 		private $idCurso;
 		private $nomeCurso;
 		private $siglaCurso;
