@@ -4,7 +4,7 @@ use League\Plates\Engine;
 use Source\DAO\CursoDAO;
 use Source\Models\Curso;
 
-	class CursoController{
+class CursoController{
 
 		private $curso;
 		private $cursoDAO;
@@ -20,12 +20,16 @@ use Source\Models\Curso;
 		}
 
 		public function index(){
-			$cursos = $this->cursoDAO->listarTudo();
-            echo $this->view->render("listarCursos",[
-                "title"=>"Listar Cursos | ".SITE,
-                "cursos" => $cursos
-            ]);
-
+            session_start();
+            if (isset($_SESSION['adm'])){
+                $cursos = $this->cursoDAO->listarTudo();
+                echo $this->view->render("listarCursos",[
+                    "title"=>"Listar Cursos | ".SITE,
+                    "cursos" => $cursos
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
         }
 
 		public function inicio(){
@@ -33,7 +37,6 @@ use Source\Models\Curso;
 		}
 
         public function create(){
-
             session_start();
             if (isset($_SESSION['adm'])){
                 echo $this->view->render("cadasCurso",[
@@ -61,20 +64,23 @@ use Source\Models\Curso;
 
 		public function edit($id){
 			//atraves do ID seleciona os dados do registro e envia pela SESSION para o editarLab.php da View
-
-			$curso = $this->cursoDAO->listaRegistro($id);
-			session_start();
-			$_SESSION['editaCurso'] = $curso;
-
-			header("Location: View/editarCurso.php");
+            session_start();
+            if (isset($_SESSION['adm'])){
+                $id = $id['id'];
+                $curs = $this->cursoDAO->listaRegistro($id);
+                echo $this->view->render("editarCurso",[
+                    "title"=>"Curso | ".SITE,
+                    "curso" => $curs
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
 		}
 
 		public function update(){
-
 			/*
 			*	Recebe os dados da tela editarCurso.php e atualiza os dados no banco
 			*/
-
 			$idCurso = $_POST['id'];
 			$nomeCurso = $_POST['nomeCurso'];
 	        $siglaCurso = $_POST['siglaCurso'];
@@ -82,6 +88,7 @@ use Source\Models\Curso;
 	        $this->curso->setIdCurso($idCurso);
 	        $this->curso->setNomeCurso($nomeCurso);
 	        $this->curso->setSiglaCurso($siglaCurso);
+
 	        $this->cursoDAO->atualizar($this->curso);
 	      
 	        $this->index();
