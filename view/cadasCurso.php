@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="PT-BR">
-<head>
-	<title>Cadastrar Curso</title>
+<?php $v->layout("_themeAdm");?>
 
-</head>
-<body class="bg-dark">
-  <?php
-    include "menu/menu.php";
-  ?>
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="<?=url("dashboard");?>">Painel de Controle</a>
+    </li>
     <li class="breadcrumb-item active">Cadastrar Laboratório</li>
   </ol>
 
@@ -15,7 +12,7 @@
       <div class="card card-register mx-auto mt-5">
         <div class="card-header">Cadastrar Curso</div>
       <div class="card-body">
-        <form action="../indexCurso.php" method="post">
+        <form action="<?=url("curso/adicionar");?>" method="post">
           <div class="form-group">
             <div class="form-row">
               
@@ -47,6 +44,9 @@
 
 
     </form>
-  </div>
-</body>
-</html>
+    </div>
+    </div>
+    </div>
+
+<?= $v->start("scripts");?>
+<?= $v->end();?>
