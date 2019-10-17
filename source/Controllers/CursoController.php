@@ -13,8 +13,8 @@ use Source\Models\Curso;
 
 		public function __construct($router){
 			$this->router = $router;
-			$this->cursoDAO= new CursoDAO;
-			$this->curso = new Curso;
+			$this->cursoDAO= new CursoDAO();
+			$this->curso = new Curso();
 			$this->view =Engine::create(__DIR__."/../../view","php");
 
 		}
@@ -29,11 +29,19 @@ use Source\Models\Curso;
         }
 
 		public function inicio(){
-			header("Location: View/dashboard.php");
+            $this->router->redirect("Web.dashboard");
 		}
 
         public function create(){
-			header("Location: View/cadasCurso.php");
+
+            session_start();
+            if (isset($_SESSION['adm'])){
+                echo $this->view->render("cadasCurso",[
+                    "title"=>"Adicionar Curso | ".SITE
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
 		}
 
 		public function store(){
