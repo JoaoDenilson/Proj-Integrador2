@@ -42,7 +42,7 @@ use Source\Models\Curso;
     		$stmt->bindParam(1, $nomeCurso);
     		$stmt->bindParam(2, $siglaCurso);
 
-    		$ok = $stmt->execute();
+    		$stmt->execute();
 
 		}
 
