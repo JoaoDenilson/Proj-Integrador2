@@ -12,7 +12,7 @@
       <div class="card card-register mx-auto mt-5">
         <div class="card-header">Cadastrar Curso</div>
       <div class="card-body">
-        <form action="<?=url("curso/adicionar");?>" method="post">
+        <form action="<?=url("curso/cadastrar");?>" method="post">
           <div class="form-group">
             <div class="form-row">
               
