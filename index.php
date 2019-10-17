@@ -62,7 +62,7 @@ $route->get("/excluir/{id}", "DisciplinaController:delete");
  *
  */
 $route->group("curso");
-$route->get("/", "DisciplinaController:index");
+$route->get("/", "CursoController:index");
 $route->get("/adicionar", "CursoController:create");
 $route->post("/cadastrar", "CursoController:store");
 $route->post("/atualizar", "CursoController:update");
