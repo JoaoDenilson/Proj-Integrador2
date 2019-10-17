@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="" />
+    <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Controllers/ProfessorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/ProfessorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/DAO/ProfessorDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/ProfessorDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Professor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/listarProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/listarProf.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +104,7 @@
       <workItem from="1571161964082" duration="1203000" />
       <workItem from="1571266900577" duration="531000" />
       <workItem from="1571332232948" duration="7195000" />
-      <workItem from="1571342129247" duration="497000" />
+      <workItem from="1571342129247" duration="1658000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
