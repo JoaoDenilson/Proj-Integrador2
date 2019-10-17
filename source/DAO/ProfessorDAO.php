@@ -1,7 +1,7 @@
 <?php
 namespace Source\DAO;
 use Source\Database;
-use Source\Models\Professor;
+//use Source\Models\Professor;
 	
 	class ProfessorDAO{
 
