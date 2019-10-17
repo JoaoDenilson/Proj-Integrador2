@@ -66,7 +66,6 @@
             <option value="tmec" >Mecatronica</option>
             <option value="lmat" >Matemática</option>
           </select>-->
->>>>>>> 611e21f3af19359ad5317bea6c38d8ff7288cbe6
 
         <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
