@@ -23,10 +23,8 @@ use Source\Models\Curso;
 		}
 		
 		public function listaRegistro($id){
-
-			$idCurso = $_GET['id'];
 			$pdo = Database::conexao();
-			$result = $pdo->query("SELECT * FROM tb_curso WHERE idCurso='$idCurso'");
+			$result = $pdo->query("SELECT * FROM tb_curso WHERE idCurso='$id'");
 			$linha = $result->fetchAll(\PDO::FETCH_ASSOC);
 
 			return $linha;
@@ -62,7 +60,7 @@ use Source\Models\Curso;
     		$stmt->bindParam(2, $siglaCurso);
     		$stmt->bindParam(3, $idCurso);
     		
-    		$ok = $stmt->execute();
+    		$stmt->execute();
     		
 		}
 
