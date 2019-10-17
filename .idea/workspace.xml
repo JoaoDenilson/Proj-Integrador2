@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Controllers/CursoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/CursoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/DAO/CursoDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/CursoDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Administrador.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Administrador.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Curso.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Curso.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Disciplina.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Disciplina.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Reserva.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Reserva.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/DAO/ReservaDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/ReservaDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/cadasCurso.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/cadasCurso.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/editarDisc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/editarDisc.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +88,7 @@
       <workItem from="1571139941605" duration="2098000" />
       <workItem from="1571161964082" duration="1203000" />
       <workItem from="1571266900577" duration="531000" />
-      <workItem from="1571332232948" duration="1862000" />
+      <workItem from="1571332232948" duration="2368000" />
     </task>
     <servers />
   </component>
