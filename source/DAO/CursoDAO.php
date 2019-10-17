@@ -9,7 +9,7 @@ use Source\Models\Curso;
 			$pdo = Database::conexao(); //Variavel que armazena a conexão do banco
 			
 			$result = $pdo->query("SELECT * FROM tb_curso");
-			$linhas = $result->fetchAll(PDO::FETCH_ASSOC);
+			$linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
 			
 			for($i = 0; $i<count($linhas); $i++){
 				$curso[$i] = new Curso;
@@ -27,7 +27,7 @@ use Source\Models\Curso;
 			$idCurso = $_GET['id'];
 			$pdo = Database::conexao();
 			$result = $pdo->query("SELECT * FROM tb_curso WHERE idCurso='$idCurso'");
-			$linha = $result->fetchAll(PDO::FETCH_ASSOC);
+			$linha = $result->fetchAll(\PDO::FETCH_ASSOC);
 
 			return $linha;
 		}
