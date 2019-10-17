@@ -15,23 +15,23 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Curso</th>
-                    <th>Nome</th>
-                    <th>Celular</th>
-                    <th>Email</th>
-                    <th>Editar</th>
-                    <th>Excluir</th>   
+                   <!-- <th>Curso</th> -->
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Celular</th>
+                      <th>Editar</th>
+                      <th>Excluir</th>
                   </tr>
                 </thead>
 
                 <tfoot>
                   <tr>
-                    <th>Curso</th>
-                    <th>Nome</th>
-                    <th>Celular</th>
-                    <th>Email</th> 
-                    <th>Editar</th>
-                    <th>Excluir</th>
+                   <!-- <th>Curso</th> -->
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Celular</th>
+                      <th>Editar</th>
+                      <th>Excluir</th>
                   </tr>
                 </tfoot>
 
@@ -40,10 +40,9 @@
           foreach($professores as $aux):
             ?><?php
             echo "<tr>";
-            echo "<td>{$aux->getCursoProf()}</td>";
-            echo "<td>{$aux->getLoginProf()}</td>";
-            echo "<td>{$aux->getCelProf()}</td>";
+            echo "<td>{$aux->getNomeProf()}</td>";
             echo "<td>{$aux->getEmailProf()}</td>";
+            echo "<td>{$aux->getCelProf()}</td>";
             ?>
               <td><a href="<?= url("professor/editar/{$aux->getIdProf()}");?>">Editar</a></td>
               <td><a href="<?= url("professor/excluir/{$aux->getIdProf()}");?>">Excluir</a></td>
