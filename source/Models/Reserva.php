@@ -1,7 +1,8 @@
 <?php
-require_once "Model/reservaModel.class.php";
 
-    class Reserva{
+namespace Source\Models;
+
+class Reserva{
         private $idReserva;
         private $dataReserva;
         private $horaReserva;
@@ -69,5 +70,5 @@ require_once "Model/reservaModel.class.php";
         public function setIdCurso(Curso $idCurso)
         {
             return $this->idCurso = $idCurso;
-        }idCurso
+        }
     }
