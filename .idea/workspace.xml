@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Controllers/LaboratorioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/LaboratorioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/DAO/CursoDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/CursoDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Controllers/ProfessorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/ProfessorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/DAO/ProfessorDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/ProfessorDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Professor.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/fontawesome-free/css" />
@@ -39,6 +41,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1RX0QJgaU60KheMCp8tC65KkjrN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -59,6 +64,16 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Professor.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/source/Models/Professor.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.Professor.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -87,7 +102,7 @@
       <workItem from="1571139941605" duration="2098000" />
       <workItem from="1571161964082" duration="1203000" />
       <workItem from="1571266900577" duration="531000" />
-      <workItem from="1571332232948" duration="5998000" />
+      <workItem from="1571332232948" duration="7195000" />
     </task>
     <servers />
   </component>
