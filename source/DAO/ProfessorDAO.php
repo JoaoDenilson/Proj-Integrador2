@@ -1,7 +1,7 @@
 <?php
 namespace Source\DAO;
 use Source\Database;
-//use Source\Models\Professor;
+use Source\Models\Professor;
 	
 	class ProfessorDAO{
 
@@ -12,22 +12,21 @@ use Source\Database;
 			$linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
 			
 			for($i = 0; $i<count($linhas); $i++){
-				$professor[$i] = new Professor();
-				$professor[$i]->setIdProf($linhas[$i]['idProf']);
-				$professor[$i]->setCursoProf($linhas[$i]['cursoProf']);
-				$professor[$i]->setLoginProf($linhas[$i]['loginProf']);
-				$professor[$i]->setSenhaProf($linhas[$i]['senhaProf']);
-				$professor[$i]->setCelProf($linhas[$i]['celProf']);
-				$professor[$i]->setEmailProf($linhas[$i]['emailProf']);							
+				$professor[$i] = new Professor;
+				$professor[$i]->setIdProf($linhas[$i]['idUsuario']);
+				$professor[$i]->setNomeProf($linhas[$i]['nomeUsuario']);
+				//$professor[$i]->setLoginProf($linhas[$i]['loginUsuario']);
+				$professor[$i]->setSenhaProf($linhas[$i]['senhaUsuario']);
+				$professor[$i]->setCelProf($linhas[$i]['telefoneUsuario']);
+				$professor[$i]->setEmailProf($linhas[$i]['emailUsuario']);
 			}	
 	  		return $professor;
 		}
 		
 		public function listaRegistro($id){
 
-			$profId = $_GET['id'];
 			$pdo = Database::conexao();
-			$result = $pdo->query("SELECT * FROM professor WHERE idProf='$profId'");
+			$result = $pdo->query("SELECT * FROM tb_usuario WHERE idUsuario='$id'");
 			$linha = $result->fetchAll(\PDO::FETCH_ASSOC);
 
 			return $linha;
