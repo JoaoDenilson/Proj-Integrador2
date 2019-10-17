@@ -1,5 +1,7 @@
 <?php
 
+namespace Source\Models;
+
 class Administrador{
     private $idAdmin;
     private $loginAdmin;
