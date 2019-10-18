@@ -19,21 +19,31 @@ class ProfessorController{
 
 
     public function index(){
-        $professor = $this->profDAO->listarTudo();
-        //echo var_dump($lab);
-        echo $this->view->render("listarProf",[
-            "title"=>"Professor | ".SITE,
-            "professores" => $professor
-        ]);
+        session_start();
+        if (isset($_SESSION['adm'])){
+            $professor = $this->profDAO->listarTudo();
+            //echo var_dump($lab);
+            echo $this->view->render("listarProf",[
+                "title"=>"Professor | ".SITE,
+                "professores" => $professor
+            ]);
+        }else{
+            $this->router->redirect("Web.login");
+        }
     }
 
     public function edit($id){
-        $n = $id['id'];
-        $prof = $this->profDAO->listaRegistro($n);
-        echo $this->view->render("editarProf",[
-            "title"=>"Professor | ".SITE,
-            "professor" => $prof
-        ]);
+        session_start();
+        if (isset($_SESSION['adm'])){
+            $n = $id['id'];
+            $prof = $this->profDAO->listaRegistro($n);
+            echo $this->view->render("editarProf",[
+                "title"=>"Professor | ".SITE,
+                "professor" => $prof
+            ]);
+        }else{
+            $this->router->redirect("Web.login");
+        }
     }
 
     public function update($data){
@@ -58,11 +68,17 @@ class ProfessorController{
     }
 
     public function create(){
-        echo $this->view->render("cadasProf",[
-            "title"=>"Adicionar Prof | ".SITE
+        session_start();
+        if (isset($_SESSION['adm'])){
+            echo $this->view->render("cadasProf",[
+                "title"=>"Adicionar Prof | ".SITE
 
-        ]);
+            ]);
+        }else{
+            $this->router->redirect("Web.login");
+        }
     }
+
     public function store($data){
         $cursoProf = $_POST['cursoProf'];
         $loginProf = $_POST['loginProf'];

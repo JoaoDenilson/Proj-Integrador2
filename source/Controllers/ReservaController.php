@@ -15,6 +15,7 @@ use Source\Models\Reserva;
 		}
 		
 		public function index(){
+
 			$res = $this->resreservaervaDAO->listarTudo();
 			session_start();
 			$_SESSION['reservas'] = $res;

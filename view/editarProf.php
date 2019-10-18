@@ -18,43 +18,44 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="text" id="firstName" class="form-control" placeholder="Nome do Professor" required="on" autofocus="autofocus" name="loginProf" value= "<?= $professor[0]['loginProf'];?>">
+                                <input type="text" id="firstName" class="form-control" placeholder="Nome do Professor" required="on" autofocus="autofocus" name="loginProf" value= "<?= $professor[0]['nomeUsuario'];?>">
                                 <label for="firstName">Nome do Professor</label>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="tel" id="lastName" class="form-control" placeholder="Celular do Professor" name="celProf" required="on" value="<?= $professor[0]['celProf'];?>" >
+                                <input type="tel" id="lastName" class="form-control" placeholder="Celular do Professor" name="celProf" required="on" value="<?= $professor[0]['telefoneUsuario'];?>" >
                                 <label for="lastName">Celular do Professor</label>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input input type="text" min="1" id="inputEmail" class="form-control" placeholder="Curso do Professor" name="cursoProf" required="on" value="<?=$professor[0]['cursoProf'];?>">
+                        <input input type="text" min="1" id="inputEmail" class="form-control" placeholder="Curso do Professor" name="cursoProf" required="on" value="/*</?=$professor[0]['cursoProf'];?>*/">
                         <label for="inputEmail">Curso do Professor</label>
                     </div>
                 </div>
-
+                -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input input type="email" min="1" id="inputEmail" class="form-control" placeholder="E-mail do Professor" name="emailProf" required="on" value="<?=$professor[0]['emailProf'];?>">
+                        <input input type="email" min="1" id="inputEmail" class="form-control" placeholder="E-mail do Professor" name="emailProf" required="on" value="<?=$professor[0]['emailUsuario'];?>">
                         <label for="inputEmail">E-mail do Professor</label>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input input type="text" min="1" id="inputEmail" class="form-control" placeholder="Senha do Professor" name="senhaProf" required="on" value="<?=$professor[0]['senhaProf'];?>">
+                        <input input type="text" min="1" id="inputEmail" class="form-control" placeholder="Senha do Professor" name="senhaProf" required="on" value="<?=$professor[0]['senhaUsuario'];?>">
                         <label for="inputEmail">Senha do Professor</label>
                     </div>
                 </div>
           
       </div>
 
-        <input type="hidden" value= "<?= $professor[0]['idProf'];?>" name="idProf">
+        <input type="hidden" value= "<?= $professor[0]['idUsuario'];?>" name="idProf">
 
         <input type="submit" value="Salvar" class="btn btn-primary">
 

@@ -10,7 +10,7 @@
 
         <!-- Icon Cards-->
         <!-- Local onde deve add conteúdo de inicio-->
-        <img src="<?=url("imagens/bem.pnj")?>">
+        <h1 style="text-align: center"> SEJAM BEM VINDO !</h1>
 <?= $v->start("scripts");?>
 
 <?= $v->end();?>
