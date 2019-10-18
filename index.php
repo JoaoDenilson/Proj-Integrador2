@@ -70,6 +70,17 @@ $route->get("/editar/{id}", "CursoController:edit");
 $route->get("/excluir/{id}", "CursoController:delete");
 
 
+/**
+ *  group Admin | curso
+ *
+ */
+$route->group("reserva");
+$route->get("/", "ReservaController:index");
+$route->get("/adicionar", "ReservaController:create");
+$route->post("/cadastrar", "ReservaController:store");
+$route->post("/atualizar", "ReservaController:update");
+$route->get("/editar/{id}", "ReservaController:edit");
+$route->get("/excluir/{id}", "ReservaController:delete");
 
 
 /**
