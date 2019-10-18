@@ -18,7 +18,7 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="text" id="firstName" class="form-control" placeholder="Nome do Professor" required="on" autofocus="autofocus" name="loginProf" value= "<?= $professor[0]['nomeUsuario'];?>">
+                                <input type="text" id="firstName" class="form-control" placeholder="Nome do Professor" required="on" autofocus="autofocus" name="nomeProf" value= "<?= $professor[0]['nomeUsuario'];?>">
                                 <label for="firstName">Nome do Professor</label>
                             </div>
                         </div>

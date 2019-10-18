@@ -5,9 +5,9 @@ use Source\Database;
 use League\Plates\Engine;
 
 class Web{
-
     private $view;
     private $router;
+
     public function __construct($router){
         $this->router = $router;
         $this->view =Engine::create(__DIR__."/../../view","php");
@@ -20,6 +20,7 @@ class Web{
     }
 
     public function dashboard(): void {
+        session_start();
         if (isset($_SESSION['adm'])){
             echo $this->view->render("dashboard",[
                 "title"=>"dashboard | ".SITE
@@ -30,6 +31,7 @@ class Web{
     }
 
     public function home(): void {
+        session_start();
         if (isset($_SESSION['prof'])){
             echo $this->view->render("home",[
                 "title"=>"Home | ".SITE
@@ -58,19 +60,20 @@ class Web{
         if(count($linhas)>0){
             $nome  = $linhas[0]['nomeUsuario'];
             $nivel = $linhas[0]['nivelUsuario'];
+
             session_start();
 
             if ($nivel == true){
                 //echo "Usuário Adm: ".$nome;
                 $_SESSION['adm'] = $nome;
-                //$this->router->redirect("Web.dashboard");
-                $this->dashboard();
+                $this->router->redirect("Web.dashboard");
+                //$this->dashboard();
             }
             else {
                 //echo "Usuário Professor: ".$nome;
                 $_SESSION['prof'] = $nome;
-                //$this->router->redirect("Web.home");
-                $this->home();
+                $this->router->redirect("Web.home");
+                //$this->home();
             }
         }
         else{

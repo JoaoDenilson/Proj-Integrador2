@@ -58,16 +58,16 @@ use Source\Models\Professor;
 			$pdo = Database::conexao();	
 
 			$idProfessor = $professor->getIdProf();	
-			$cursoProfessor = $professor->getCursoProf();
+			$nomeProfessor = $professor->getNomeProf();
 			$loginProfessor = $professor->getLoginProf();
 			$senhaProfessor = $professor->getSenhaProf();
 			$celProfessor = $professor->getCelProf();
 			$emailProfessor = $professor->getEmailProf();
 
-			$query = "UPDATE professor SET cursoProf=?, loginProf=?, senhaProf=?,celProf=?, emailProf=? WHERE idProf=?";
+			$query = "UPDATE tb_usuario SET nomeUsuario=?, senhaUsuario=?,telefoneUsuario=?, emailUsuario=? WHERE idUsuario=?";
 
 			$stmt = $pdo->prepare($query);
-    		$stmt->bindParam(1,$cursoProfessor);
+    		$stmt->bindParam(1,$omeProfessor);
     		$stmt->bindParam(2, $loginProfessor);
     		$stmt->bindParam(3, $senhaProfessor);
     		$stmt->bindParam(4, $celProfessor);
