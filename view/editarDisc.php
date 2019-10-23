@@ -19,7 +19,7 @@ use Source\Models\Curso; ?>
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                <input type="text" id="firstName" class="form-control" placeholder="First name" required="on" autofocus="autofocus" name="nomeDisciplina" value= "<?=$disciplina[0]['nomeDisciplina'];?>">
+                <input type="text" id="firstName" class="form-control" placeholder="First name" required="on" autofocus="autofocus" name="nomeDisc" value= "<?=$disciplina[0]['nomeDisciplina'];?>">
                   <label for="firstName">Nome da Disciplina</label>
                 </div>
               </div>
@@ -33,7 +33,7 @@ use Source\Models\Curso; ?>
             </div>
 
               <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
-                  <option selected="selected" name="cursoDisc"> Curso da Disciplina</option>
+                  <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Curso da Disciplina</option>
                   <?php
                   if($cursos):
 //                      var_dump($cursos);
