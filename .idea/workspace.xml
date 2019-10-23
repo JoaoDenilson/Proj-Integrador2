@@ -5,7 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Controllers/DisciplinaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/DisciplinaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/DAO/CursoDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/CursoDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Curso.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Curso.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/cadasDisc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/cadasDisc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/editarCurso.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/editarCurso.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/editarDisc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/editarDisc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/listarCursos.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/listarCursos.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +110,7 @@
       <workItem from="1571332232948" duration="7195000" />
       <workItem from="1571342129247" duration="2336000" />
       <workItem from="1571408460801" duration="8248000" />
-      <workItem from="1571787085286" duration="3994000" />
+      <workItem from="1571787085286" duration="12570000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
