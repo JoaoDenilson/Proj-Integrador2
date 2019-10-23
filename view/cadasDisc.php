@@ -31,14 +31,24 @@
                 </div>
               </div>
             </div>
-            
-			  <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
-			    <option selected="selected"  > Curso da Disciplina</option>
-			    <option value="1" >BSI</option>
-			    <option value="2" >Física</option>
-			    <option value="3" >Mecatronica</option>
-			    <option value="4" >Matemática</option>
-			  </select>
+              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
+                  <option selected="selected" name="cursoDisc"> Curso da Disciplina</option>
+                  <?php
+                  if($cursos):
+//                      var_dump($cursos);
+                      foreach($cursos as $curso):
+                          ?>
+                          <?php
+                          echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
+                          ?>
+                      <?php
+                      endforeach;
+                  else:
+                      ?>
+                      <h4> Não existem Cursos cadastrados </h4>
+                  <?php
+                  endif;?>
+              </select>
 
 
         </div>
