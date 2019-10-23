@@ -30,6 +30,7 @@ class Professor{
     $this->nomeProf = $nomeProf;
     }
 
+    /*
     public function getNivelProf()
     {
     return $this->nivelProf;
@@ -39,7 +40,7 @@ class Professor{
     {
     $this->nivelProf = $nivelProf;
     }
-
+    */
     public function getSenhaProf()
     {
     return $this->senhaProf;
