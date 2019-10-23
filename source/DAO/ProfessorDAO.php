@@ -8,14 +8,14 @@ use Source\Models\Professor;
 		public function listarTudo(){
 
 			$pdo = Database::conexao(); //Variavel que armazena a conexão do banco
-			$result = $pdo->query("SELECT * FROM tb_usuario");
+			$result = $pdo->query("SELECT * FROM tb_usuario WHERE nivelUsuario = 0");
 			$linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
 			
 			for($i = 0; $i<count($linhas); $i++){
 				$professor[$i] = new Professor;
+				
 				$professor[$i]->setIdProf($linhas[$i]['idUsuario']);
 				$professor[$i]->setNomeProf($linhas[$i]['nomeUsuario']);
-				//$professor[$i]->setLoginProf($linhas[$i]['loginUsuario']);
 				$professor[$i]->setSenhaProf($linhas[$i]['senhaUsuario']);
 				$professor[$i]->setCelProf($linhas[$i]['telefoneUsuario']);
 				$professor[$i]->setEmailProf($linhas[$i]['emailUsuario']);
@@ -36,7 +36,7 @@ use Source\Models\Professor;
 			$pdo = Database::conexao();
 
 			$nomeProfessor = $professor->getNomeProf();
-			$nivelProfessor = $professor->getLoginProf();
+			$nivelProfessor = $professor->getNivelProf();
 			$senhaProfessor = $professor->getSenhaProf();
 			$celProfessor = $professor->getCelProf();
 			$emailProfessor = $professor->getEmailProf();	
@@ -50,7 +50,7 @@ use Source\Models\Professor;
     		$stmt->bindParam(4, $senhaProfessor);
     		$stmt->bindParam(5, $celProfessor);
 
-    		$ok = $stmt->execute();
+    		$stmt->execute();
 
 		}
 
