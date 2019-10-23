@@ -27,7 +27,16 @@ use Source\Models\Curso;
 			$result = $pdo->query("SELECT * FROM tb_curso WHERE idCurso='$id'");
 			$linha = $result->fetchAll(\PDO::FETCH_ASSOC);
 
-			return $linha;
+            for($i = 0; $i<count($linha); $i++){
+                $curso[$i] = new Curso();
+
+                $curso[$i]->setIdCurso($linha[$i]['idCurso']);
+                $curso[$i]->setNomeCurso($linha[$i]['nomeCurso']);
+                $curso[$i]->setSiglaCurso($linha[$i]['siglaCurso']);
+
+            }
+            return $curso;
+
 		}
 
 		public function insere($curso){
