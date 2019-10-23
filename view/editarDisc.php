@@ -1,4 +1,6 @@
-<?php $v->layout("_themeAdm");?>
+<?php $v->layout("_themeAdm");
+
+use Source\Models\Curso; ?>
 
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
@@ -30,42 +32,24 @@
               </div>
             </div>
           </div>
-
                   <?php
                   if($cursos):
-                    foreach($cursos as $aux):
+//                      var_dump($cursos);
+                    foreach($cursos as $curso):
                   ?>
+                <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
+                    <option selected="selected" name="cursoDisc"> Curso da Disciplina</option>
                   <?php
-                    echo "<tr>";
-                    echo "<td>{$aux->getNomeCurso()}</td>";
-                    echo "<td>{$aux->getSiglaCurso()}</td>";
+                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
                     ?>
-                  <td><a href="<?= url("curso/editar/{$aux->getIdCurso()}");?>">Editar</a></td>
-                  <td><a href="<?= url("curso/excluir/{$aux->getIdCurso()}");?>">Excluir</a></td>
-                  </tr>
+                </select>
                   <?php
                     endforeach;
                   else:
                       ?>
-                      <h4> Não existem Disciplinas cadastrados </h4>
-                  <?php
+                      <h4> Não existem Cursos cadastrados </h4>
+                    <?php
                   endif;?>
-
-
-          <!-- <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
-            <option> Curso da Disciplina</option>
-<<<<<<< HEAD
-            <option value="1" >BSI</option>
-            <option value="2" >Física</option>
-            <option value="3" >Mecatronica</option>
-            <option value="4" >Matemática</option>
-          </select>
-=======
-            <option value="bsis" >BSI</option>
-            <option value="lfis" >Física</option>
-            <option value="tmec" >Mecatronica</option>
-            <option value="lmat" >Matemática</option>
-          </select>-->
 
         <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
