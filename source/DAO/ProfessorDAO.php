@@ -13,7 +13,7 @@ use Source\Models\Professor;
 			
 			for($i = 0; $i<count($linhas); $i++){
 				$professor[$i] = new Professor;
-				
+
 				$professor[$i]->setIdProf($linhas[$i]['idUsuario']);
 				$professor[$i]->setNomeProf($linhas[$i]['nomeUsuario']);
 				$professor[$i]->setSenhaProf($linhas[$i]['senhaUsuario']);
@@ -36,18 +36,18 @@ use Source\Models\Professor;
 			$pdo = Database::conexao();
 
 			$nomeProfessor = $professor->getNomeProf();
-			$nivelProfessor = $professor->getNivelProf();
+			$nivelProfessor = false;
 			$senhaProfessor = $professor->getSenhaProf();
 			$celProfessor = $professor->getCelProf();
 			$emailProfessor = $professor->getEmailProf();	
 
-			$query = "INSERT INTO tb_usuario (nomeUsuario, emailUsuario, nivelUsuario, senhaUsuario, telefoneUsuario,  ) VALUES (?,?,?, ?, ?)";
+			$query = "INSERT INTO tb_usuario (nomeUsuario, emailUsuario, senhaUsuario, nivelUsuario,  telefoneUsuario) VALUES (?,?,?,?,?)";
 
     		$stmt = $pdo->prepare($query);
     		$stmt->bindParam(1,$nomeProfessor);
     		$stmt->bindParam(2, $emailProfessor);
-    		$stmt->bindParam(3, $nivelProfessor);
-    		$stmt->bindParam(4, $senhaProfessor);
+            $stmt->bindParam(3, $senhaProfessor);
+    		$stmt->bindParam(4, $nivelProfessor);
     		$stmt->bindParam(5, $celProfessor);
 
     		$stmt->execute();
