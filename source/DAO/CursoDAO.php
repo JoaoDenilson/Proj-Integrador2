@@ -27,15 +27,7 @@ use Source\Models\Curso;
 			$result = $pdo->query("SELECT * FROM tb_curso WHERE idCurso='$id'");
 			$linha = $result->fetchAll(\PDO::FETCH_ASSOC);
 
-            for($i = 0; $i<count($linha); $i++){
-                $curso[$i] = new Curso();
-
-                $curso[$i]->setIdCurso($linha[$i]['idCurso']);
-                $curso[$i]->setNomeCurso($linha[$i]['nomeCurso']);
-                $curso[$i]->setSiglaCurso($linha[$i]['siglaCurso']);
-
-            }
-            return $curso;
+            return $linha;
 
 		}
 
@@ -73,14 +65,13 @@ use Source\Models\Curso;
     		
 		}
 
-			public function deleta($id){
-				$pdo = Database::conexao();
+		public function deleta($id){
+		    $pdo = Database::conexao();
 				
-				$query = ("DELETE FROM tb_curso WHERE idCurso=?");
-				$stmt = $pdo->prepare($query);
-    			$stmt->bindParam(1, $id);
-    			$ok = $stmt->execute();
-
+		    $query = ("DELETE FROM tb_curso WHERE idCurso=?");
+		    $stmt = $pdo->prepare($query);
+		    $stmt->bindParam(1, $id);
+		    $stmt->execute();
 		}
 	}
 	
