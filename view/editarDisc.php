@@ -31,18 +31,17 @@ use Source\Models\Curso; ?>
                 </div>
               </div>
             </div>
-          </div>
+
+              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
+                  <option selected="selected" name="cursoDisc"> Curso da Disciplina</option>
                   <?php
                   if($cursos):
 //                      var_dump($cursos);
                     foreach($cursos as $curso):
                   ?>
-                <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
-                    <option selected="selected" name="cursoDisc"> Curso da Disciplina</option>
                   <?php
                     echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
                     ?>
-                </select>
                   <?php
                     endforeach;
                   else:
@@ -50,7 +49,7 @@ use Source\Models\Curso; ?>
                       <h4> Não existem Cursos cadastrados </h4>
                     <?php
                   endif;?>
-
+              </select>
         <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
         <button type="submit" class="btn btn-primary">Alterar</button>
