@@ -5,7 +5,7 @@ namespace Source\Models;
 class Professor{
     private $idProf;
     private $nomeProf;
-    //private $loginProf;
+    private $nivelProf;
     private $senhaProf;
     private $celProf;
     private $emailProf;
@@ -30,16 +30,16 @@ class Professor{
     $this->nomeProf = $nomeProf;
     }
 
-    /*public function getLoginProf()
+    public function getNivelProf()
     {
-    return $this->loginProf;
+    return $this->nivelProf;
     }
 
-    public function setLoginProf($loginProf)
+    public function setNivelProf($nivelProf)
     {
-    $this->loginProf = $loginProf;
+    $this->nivelProf = $nivelProf;
     }
-    */
+
     public function getSenhaProf()
     {
     return $this->senhaProf;
