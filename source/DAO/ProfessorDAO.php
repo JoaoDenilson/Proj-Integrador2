@@ -35,56 +35,54 @@ use Source\Models\Professor;
 		public function insere($professor){
 			$pdo = Database::conexao();
 
-			$cursoProfessor = $professor->getCursoProf();
-			$loginProfessor = $professor->getLoginProf();
+			$nomeProfessor = $professor->getNomeProf();
+			$nivelProfessor = $professor->getLoginProf();
 			$senhaProfessor = $professor->getSenhaProf();
 			$celProfessor = $professor->getCelProf();
 			$emailProfessor = $professor->getEmailProf();	
 
-			$query = "INSERT INTO professor (cursoProf, loginProf, senhaProf,celProf, emailProf ) VALUES (?,?,?, ?, ?)";
+			$query = "INSERT INTO tb_usuario (nomeUsuario, emailUsuario, nivelUsuario, senhaUsuario, telefoneUsuario,  ) VALUES (?,?,?, ?, ?)";
 
     		$stmt = $pdo->prepare($query);
-    		$stmt->bindParam(1,$cursoProfessor);
-    		$stmt->bindParam(2, $loginProfessor);
-    		$stmt->bindParam(3, $senhaProfessor);
-    		$stmt->bindParam(4, $celProfessor);
-    		$stmt->bindParam(5, $emailProfessor);
+    		$stmt->bindParam(1,$nomeProfessor);
+    		$stmt->bindParam(2, $emailProfessor);
+    		$stmt->bindParam(3, $nivelProfessor);
+    		$stmt->bindParam(4, $senhaProfessor);
+    		$stmt->bindParam(5, $celProfessor);
 
     		$ok = $stmt->execute();
 
 		}
 
 		public function atualizar($professor){
-			$pdo = Database::conexao();	
+			$pdo = Database::conexao();
 
-			$idProfessor = $professor->getIdProf();	
-			$nomeProfessor = $professor->getNomeProf();
-			$loginProfessor = $professor->getLoginProf();
-			$senhaProfessor = $professor->getSenhaProf();
-			$celProfessor = $professor->getCelProf();
-			$emailProfessor = $professor->getEmailProf();
+			$idProfessor = $professor->getIdProf();
+            $nomeProfessor = $professor->getNomeProf();
+            $senhaProfessor = $professor->getSenhaProf();
+            $celProfessor = $professor->getCelProf();
+            $emailProfessor = $professor->getEmailProf();
 
-			$query = "UPDATE tb_usuario SET nomeUsuario=?, senhaUsuario=?,telefoneUsuario=?, emailUsuario=? WHERE idUsuario=?";
+            $query = "UPDATE tb_usuario SET nomeUsuario=?, senhaUsuario=?,telefoneUsuario=?, emailUsuario=? WHERE idUsuario=?";
 
 			$stmt = $pdo->prepare($query);
-    		$stmt->bindParam(1,$omeProfessor);
-    		$stmt->bindParam(2, $loginProfessor);
-    		$stmt->bindParam(3, $senhaProfessor);
-    		$stmt->bindParam(4, $celProfessor);
-    		$stmt->bindParam(5, $emailProfessor);
-    		$stmt->bindParam(6, $idProfessor);
+    		$stmt->bindParam(1,$nomeProfessor);
+    		$stmt->bindParam(2, $senhaProfessor);
+    		$stmt->bindParam(3, $celProfessor);
+    		$stmt->bindParam(4, $emailProfessor);
+    		$stmt->bindParam(5, $idProfessor);
 
     		
     		$ok = $stmt->execute();
 		}
 
-			public function deleta($id){
+		public function deleta($id){
 
 			$pdo = Database::conexao();
-			$query = ("DELETE FROM professor WHERE idProf=?");
+			$query = ("DELETE FROM tb_usuario WHERE idUsuario=?");
 			$stmt = $pdo->prepare($query);
     		$stmt->bindParam(1, $id);
-    		$ok = $stmt->execute();
+    		$stmt->execute();
 
 		}
 	}
