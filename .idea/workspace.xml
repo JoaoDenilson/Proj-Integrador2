@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="Imagem de boas vindas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Controllers/CursoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/CursoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Controllers/DisciplinaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/DisciplinaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/editarDisc.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/editarDisc.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,6 +102,7 @@
       <workItem from="1571342129247" duration="2336000" />
       <workItem from="1571408460801" duration="8248000" />
       <workItem from="1571787085286" duration="13263000" />
+      <workItem from="1571836024347" duration="1238000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
