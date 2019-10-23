@@ -80,20 +80,21 @@ class ProfessorController{
     }
 
     public function store($data){
-        $cursoProf = $_POST['cursoProf'];
-        $loginProf = $_POST['loginProf'];
+        $nivelProf = 1;
+        $nomeProf = $_POST['nomeProf'];
         //md5 é para criptografar a senha
         $senhaProf = md5($_POST['senhaProf']);
         $celProf = $_POST['celProf'];
         $emailProf = $_POST['emailProf'];
 
-        $this->prof->setCursoProf($cursoProf);
-        $this->prof->setLoginProf($loginProf);
+        $this->prof->setNivelProf($nivelProf);
+        $this->prof->setNomeProf($nomeProf);
         $this->prof->setSenhaProf($senhaProf);
         $this->prof->setCelProf($celProf);
         $this->prof->setEmailProf($emailProf);
 
         $this->profDAO->insere($this->prof);
+
         $this->index();
     }
 
