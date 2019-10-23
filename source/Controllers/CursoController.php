@@ -95,7 +95,8 @@ class CursoController{
 		}
 
 		public function delete($id){
-			$this->cursoDAO->deleta($id);
+            $n = $id['id'];
+			$this->cursoDAO->deleta($n);
 			$this->index();
 		}
 	}
