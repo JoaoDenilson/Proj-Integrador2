@@ -3,18 +3,22 @@ namespace Source\Controllers;
 use League\Plates\Engine;
 use Source\DAO\DisciplinaDAO;
 use Source\Models\Disciplina;
-use Source\Models\CursoDAO;
+use Source\DAO\CursoDAO;
 use Source\Models\Curso;
 
 class DisciplinaController{
 		private $disciplina;
 		private $disciplinaDAO;
+		private $curso;
+		private $cursoDAO;
         private $view;
         private $router;
 		public function __construct($router){
             $this->router = $router;
 			$this->disciplinaDAO= new DisciplinaDAO();
 			$this->disciplina = new Disciplina();
+            $this->cursoDAO= new CursoDAO();
+            $this->curso = new Curso();
             $this->view =Engine::create(__DIR__."/../../view","php");
 		}
 		
@@ -61,9 +65,11 @@ class DisciplinaController{
                 //atraves do ID seleciona os dados do registro e envia pela SESSION para o editarLab.php da View
                 $n = $id['id'];
                 $disc = $this->disciplinaDAO->listaRegistro($n);
+                $curs = $this->cursoDAO->listaRegistro($n);
                 echo $this->view->render("editarDisc",[
                     "title"=>"Disciplina | ".SITE,
-                    "disciplina" => $disc
+                    "disciplina" => $disc,
+                    "cursos" => $curs
                 ]);
             }else{
                 $this->router->redirect("Web.login");
