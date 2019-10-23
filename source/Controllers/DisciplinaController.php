@@ -64,7 +64,6 @@ class DisciplinaController{
 		public function edit($id){
             session_start();
             if (isset($_SESSION['adm'])){
-                //atraves do ID seleciona os dados do registro e envia pela SESSION para o editarLab.php da View
                 $n = $id['id'];
                 $disc = $this->disciplinaDAO->listaRegistro($n);
                 $curs = $this->cursoDAO->listarTudo();
