@@ -5,7 +5,7 @@
     <li class="breadcrumb-item">
         <a href="<?=url("dashboard");?>">Painel de Controle</a>
     </li>
-    <li class="breadcrumb-item active">Lista </li>
+    <li class="breadcrumb-item active">Lista de Cursos </li>
 </ol>
 
     <div class="card mb-3">
