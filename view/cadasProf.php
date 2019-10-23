@@ -4,7 +4,7 @@
     <li class="breadcrumb-item">
         <a href="<?=url("dashboard");?>">Painel de Controle</a>
     </li>
-    <li class="breadcrumb-item active">Cadastrar Laboratório</li>
+    <li class="breadcrumb-item active">Cadastrar Professor </li>
 </ol>
 
     <div class="container">
@@ -12,24 +12,16 @@
       <div class="card card-register mx-auto mt-5">
         <div class="card-header">Cadastrar Laboratório </div>
         <div class="card-body">
-          <form action="../indexProf.php" method="post">
+          <form action="<?=url("professor/cadastrar");?>" method="post">
             <div class="form-group">
               <div class="form-row">
-              
-               <div class="col-md-6">
-                <div class="form-label-group">
-                  <input  type="text" id="cursoProf" class="form-control" placeholder="Curso do Professor" required="on" autofocus="autofocus" name="cursoProf">
-                  <label for="cursoProf">Curso do Professor</label>
-                </div>
-              </div>
 
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input  type="text" id="loginProf" class="form-control" placeholder="Nome do Professor" required="on" autofocus="autofocus" name="loginProf">
+                  <input  type="text" id="nomeProf" class="form-control" placeholder="Nome do Professor" required="on" autofocus="autofocus" name="nomeProf">
                   <label for="loginProf">Nome do Professor</label>
                 </div>
               </div>
-
 
               <div class="col-md-6">
                 <div class="form-label-group">
@@ -44,12 +36,10 @@
                   <label for="celProf">N° para contato do Professor</label>
                 </div>
               </div>
-              
-
 
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="email" class="form-control" id="emailProf" placeholder="Seu email" name="emailProf">
+                  <input type="email" class="form-control" id="emailProf" placeholder="Seu email" required="on" autofocus="autofocus" name="emailProf">
                   <label for="emailProf">Email do Professor</label>
                 </div>
               </div>
@@ -58,9 +48,6 @@
               </div>
               </div>
 
-
-                <input type="hidden" name="metodo" value="store">
-                <input type="hidden"  name="classe" value="professor">
                 <input type="submit" value="Salvar" class="btn btn-primary">
               </form>
 
