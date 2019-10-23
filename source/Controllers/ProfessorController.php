@@ -50,14 +50,12 @@ class ProfessorController{
         //recebe os novos dados do editarProf.php da View, chama o metodo atualizar do laboratorioDAO passando no parametro o objeto laboratório, para que os dados sejam substituidos no banco
         $idProf = $_POST['idProf'];
         $nomeProf = $_POST['nomeProf'];
-        $loginProf = $_POST['loginProf'];
         $senhaProf = $_POST['senhaProf'];
         $celProf = $_POST['celProf'];
         $emailProf = $_POST['emailProf'];
 
         $this->prof->setIdProf($idProf);
-        $this->prof->setCursoProf($nomeProf);
-        $this->prof->setLoginProf($loginProf);
+        $this->prof->setNomeProf($nomeProf);
         $this->prof->setSenhaProf($senhaProf);
         $this->prof->setCelProf($celProf);
         $this->prof->setEmailProf($emailProf);
@@ -80,14 +78,12 @@ class ProfessorController{
     }
 
     public function store($data){
-        $nivelProf = 1;
         $nomeProf = $_POST['nomeProf'];
         //md5 é para criptografar a senha
         $senhaProf = md5($_POST['senhaProf']);
         $celProf = $_POST['celProf'];
         $emailProf = $_POST['emailProf'];
 
-        $this->prof->setNivelProf($nivelProf);
         $this->prof->setNomeProf($nomeProf);
         $this->prof->setSenhaProf($senhaProf);
         $this->prof->setCelProf($celProf);
