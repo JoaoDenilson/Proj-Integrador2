@@ -18,22 +18,20 @@
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="text" id="firstName" class="form-control" placeholder="Nome do Curso" required="on" autofocus="autofocus" name="nomeCurso" value= "<?= $curso[0]['nomeCurso'];?>">
+                  <input type="text" id="firstName" class="form-control" placeholder="Nome do Curso" required="on" autofocus="autofocus" name="nomeCurso" value= "<?=$curso[0]['nomeCurso'];?>">
                   <label for="firstName">Nome do Curso</label>
                 </div>
                 </div>
               
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="text" id="lastName" class="form-control" placeholder="Sigla do Curso" name="siglaCurso" required="on" value= "<?= $curso[0]['siglaCurso'];?>">
+                  <input type="text" id="lastName" class="form-control" placeholder="Sigla do Curso" name="siglaCurso" required="on" value="<?= $curso[0]['siglaCurso'];?>">
                   <label for="lastName">Sigla do Curso</label>
                 </div>
               </div>
             </div>
           </div>
-        <input type="hidden" name="id" value= "<?= $curso[0]['idCurso'];?>">
-        <input type="hidden" name="metodo" value="update">
-        <input type="hidden"  name="classe" value="curso">
+        <input type="hidden" name="id" value="<?=url($curso[0]['idCurso']);?>">
 
         <button type="submit" class="btn btn-primary">Alterar</button>
 
