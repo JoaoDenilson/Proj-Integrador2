@@ -10,6 +10,7 @@ class Curso{
 		public function getIdCurso(){
 			return $this->idCurso;
 		}
+
 		public function setIdCurso($idCurso){
 			$this->idCurso = $idCurso;
 		}
