@@ -38,8 +38,10 @@ class DisciplinaController{
         public function create(){
             session_start();
             if (isset($_SESSION['adm'])){
+                $curs = $this->cursoDAO->listarTudo();
                 echo $this->view->render("cadasDisc",[
-                    "title"=>"Adicionar Disci | ".SITE
+                    "title"=>"Adicionar Disci | ".SITE,
+                    "cursos" => $curs
                 ]);
             }else{
                 $this->router->redirect("Web.login");
@@ -65,7 +67,7 @@ class DisciplinaController{
                 //atraves do ID seleciona os dados do registro e envia pela SESSION para o editarLab.php da View
                 $n = $id['id'];
                 $disc = $this->disciplinaDAO->listaRegistro($n);
-                $curs = $this->cursoDAO->listaRegistro($n);
+                $curs = $this->cursoDAO->listarTudo();
                 echo $this->view->render("editarDisc",[
                     "title"=>"Disciplina | ".SITE,
                     "disciplina" => $disc,
