@@ -12,7 +12,7 @@ use Source\Models\Curso;
 			$linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
 			
 			for($i = 0; $i<count($linhas); $i++){
-				$curso[$i] = new Curso;
+				$curso[$i] = new Curso();
 
 				$curso[$i]->setIdCurso($linhas[$i]['idCurso']);
 				$curso[$i]->setNomeCurso($linhas[$i]['nomeCurso']);
@@ -49,7 +49,6 @@ use Source\Models\Curso;
 
 		public function atualizar($curso){
 			$pdo = Database::conexao();
-
 			$idCurso = $curso->getIdCurso();
 			$nomeCurso = $curso->getNomeCurso();
 			$siglaCurso = $curso->getSiglaCurso();

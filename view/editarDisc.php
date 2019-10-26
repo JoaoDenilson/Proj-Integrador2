@@ -14,7 +14,7 @@ use Source\Models\Curso; ?>
         <div class="card-header">Editar Disciplina</div>
       <div class="card-body">
 
-        <form action="<?=url("disciplina/atualizar");?>" method="post">
+        <form action="<?=url("disciplina/atualizar");?>" method="POST">
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">

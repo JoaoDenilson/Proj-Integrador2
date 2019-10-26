@@ -77,7 +77,7 @@ class CursoController{
             }
 		}
 
-		public function update(){
+		public function update($data){
 			/*
 			*	Recebe os dados da tela editarCurso.php e atualiza os dados no banco
 			*/

@@ -13,7 +13,7 @@
         <div class="card-header">Editar Curso</div>
       <div class="card-body">
 
-        <form action="<?=url("curso/atualizar");?>" method="post">
+        <form action="<?=url("curso/atualizar");?>" method="POST">
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
