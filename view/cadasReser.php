@@ -148,11 +148,11 @@ $v->layout("_themeProf");?>
     </div>
   </div>
 
-
+<input type="hidden" name="metodo" value="store">
+<input type="hidden"  name="classe" value="reserva">
 <button type="submit" class="btn btn-primary">Pedir</button>
 
-
-    </form>
+</form>
 
 <?= $v->start("scripts");?>
 <?= $v->end();?>
