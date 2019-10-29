@@ -1,6 +1,7 @@
 <?php
-	require_once "conf/database.class.php";
-	require_once "Model/reservaModel.class.php";
+namespace Source\DAO;
+use Source\Database;
+use Source\Models\Reserva;
 	
 	class ReservaDAO{
 

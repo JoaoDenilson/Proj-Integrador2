@@ -5,23 +5,31 @@ use Source\DAO\ReservaDAO;
 use Source\Models\Reserva;
 
 	class ReservaController{
-		
+        private $view;
+        private $router;
 		private $reserva;
 		private $reservaDAO;
 
-		public function __construct(){
-
-			$this->reservaDAO= new ProfessorDAO;
-			$this->reserva = new Professor;
+		public function __construct($router){
+            $this->router = $router;
+			$this->reservaDAO= new ReservaDAO();
+			$this->reserva = new Reserva();
+            $this->view =Engine::create(__DIR__."/../../view","php");
 		}
 		
 		public function index(){
+            session_start();
+            if (isset($_SESSION['adm'])){
+                $professor = $this->profDAO->listarTudo();
+                //echo var_dump($lab);
+                echo $this->view->render("",[
+                    "title"=>"Professor | ".SITE,
+                    "professores" => $professor
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
 
-			$res = $this->resreservaervaDAO->listarTudo();
-			session_start();
-			$_SESSION['reservas'] = $res;
-
-			header('Location: View/listarProf.php');
 
         }
 		
@@ -31,7 +39,15 @@ use Source\Models\Reserva;
         
 
         public function create(){
-			header("Location: View/cadasProf.php");
+            session_start();
+            if (isset($_SESSION['prof'])){
+                echo $this->view->render("cadasReser",[
+                    "title"=>"Solicitar Reserva | ".SITE
+
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
 		}
 
 		public function store(){
