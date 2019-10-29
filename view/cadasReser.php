@@ -130,6 +130,51 @@ $v->layout("_themeProf");?>
       <label for="exampleFormControlTextarea1">Caso Necessite de Instalação de Programas, expecificar abaixo:</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
+
+  <div class="table-responsive">
+  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <tr>                   
+        <td class="dropdown-item">Segunda</td>
+        <td>Terça</td>
+        <td>Quarta</td>
+        <td>Quinta</td>
+        <td>Sexta</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+      </tr>
+      <tr>                   
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+      </tr>
+      </tbody>
+</table>
+
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Caso Necessite de Instalação de Programas, especificar abaixo:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+>>>>>>> 48962c7ceaba0b1462b90714a8ff1e48508ab25a
   </div>
 
 
