@@ -24,7 +24,7 @@ class DisciplinaController{
 		
 		public function index(){
             session_start();
-            if (isset($_SESSION['adm']) or isset($_SESSION['prof'])){
+            if (isset($_SESSION['adm']) || isset($_SESSION['prof'])){
                 $disc = $this->disciplinaDAO->listarTudo();
                 echo $this->view->render("listarDisc",[
                     "title"=>"Disciplina | ".SITE,
