@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Out-2019 às 20:55
--- Versão do servidor: 10.4.6-MariaDB
--- versão do PHP: 7.2.22
+-- Tempo de geração: 29-Out-2019 às 01:36
+-- Versão do servidor: 10.4.8-MariaDB
+-- versão do PHP: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -105,7 +105,8 @@ CREATE TABLE `tb_reserva` (
   `dataReserva` varchar(10) NOT NULL,
   `horaReserva` varchar(5) NOT NULL,
   `statusReserva` varchar(10) NOT NULL,
-  `justificativaReserva` varchar(255) DEFAULT NULL
+  `justificativaReserva` varchar(255) DEFAULT NULL,
+  `observacaoReserva` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
