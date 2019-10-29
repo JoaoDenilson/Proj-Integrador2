@@ -37,28 +37,31 @@ use Source\Models\Reserva;
 		public function insere($reserva){
 			$pdo = Database::conexao();
 
-			$idReserva = $reserva->getIdRes();
 			$dataReserva = $reserva->getDataRes();
 			$horaReserva = $reserva->getHoraRes();
-			$idProfessor = $reserva->getIdProf();
-			$idLaboratorio = $reserva->getIdLab();
-			$idAdministrador = $reserva->getIdAdmin();
+			//$statusReserva =$reserva-> getStatusReserva();
+			$observacaoReserva = $reserva->getObservacaoReserva();
+			//$justificativaReserva= $reserva->getJustificativaReserva();
+			$idProfessor = $reserva->getIdUsuarioFk();
+			$idLaboratorio = $reserva->getIdLabFk();
+			$idDisciplina = $reserva->getIdDisciplinaFk();
+			//$idAdministrador = $reserva->getIdAdmin();
 
-			$query = "INSERT INTO reserva ( idReserva, dataRes, horaRes, fk_Professor_idProf, fk_Laboratorio_idLab, fk_Administrador_idAdmin VALUES (?,?,?,?,?,?)";
+			$query = "INSERT INTO reserva ( dataRes, horaRes, observacaoReserva, idUsuarioFk, idLabFk, idDisciplinaFk) VALUES (?,?,?,?,?,?)";
 
     		$stmt = $pdo->prepare($query);
-    		$stmt->bindParam(1,$idReserva);
-    		$stmt->bindParam(2, $dataReserva);
-    		$stmt->bindParam(3, $horaReserva);
-    		$stmt->bindParam(4, $idProfessor);
-    		$stmt->bindParam(5, $idLaboratorio);
-    		$stmt->bindParam(6, $idAdministrador);
+    		$stmt->bindParam(1, $dataReserva);
+    		$stmt->bindParam(2, $horaReserva);
+            $stmt->bindParam(2, $observacaoReserva);
+            $stmt->bindParam(3, $idProfessor);
+    		$stmt->bindParam(4, $idLaboratorio);
+    		$stmt->bindParam(5, $idDisciplina);
 
-    		$ok = $stmt->execute();
+    		$stmt->execute();
 
 		}
 
-		/*public function atualizar($reserva){
+		public function atualizar($reserva){
 			$pdo = Database::conexao();	
 
 			$idReserva = $reserva->getIdRes();
@@ -78,19 +81,19 @@ use Source\Models\Reserva;
     		$stmt->bindParam(5, $emailProfessor);
     		$stmt->bindParam(6, $idProfessor);
 
-    		
-    		$ok = $stmt->execute();
+
+            $stmt->execute();
 		}
+        /*
+        public function deleta($id){
 
-			public function deleta($id){
+        $pdo = Database::conexao();
+        $query = ("DELETE FROM professor WHERE idProf=?");
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(1, $id);
+        $ok = $stmt->execute();
 
-			$pdo = Database::conexao();
-			$query = ("DELETE FROM professor WHERE idProf=?");
-			$stmt = $pdo->prepare($query);
-    		$stmt->bindParam(1, $id);
-    		$ok = $stmt->execute();
-
-		}*/
+    }*/
 
 		
 	}
