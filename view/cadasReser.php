@@ -139,7 +139,7 @@ $v->layout("_themeProf");?>
   <div class="caixa3">
     <div class="form-group">
       <textarea class="form-control" id="exampleFormControlTextarea1" style="resize: none;" rows="3"></textarea>
-      <label>Caso Necessite de Instalação de Programas, expecificar acima:</label>
+      <label>Caso Necessite de Instalação de Programas, especificar acima:</label>
     </div>
   </div>
 
