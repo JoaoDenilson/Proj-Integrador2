@@ -9,7 +9,7 @@ $v->layout("_themeProf");?>
 </ol>
 
 
-<form action="<?=url("disciplina/atualizar");?>" method="POST">
+<form action="<?=url("reserva/cadastrar");?>" method="POST">
   <div class="caixa1">
     
     <div class="col-8"> <label> Selecione o Curso: </label></div>
