@@ -1,3 +1,4 @@
+<!--https://www.devmedia.com.br/forum/combo-box-com-estados-e-cidades/598701-->
 <?php
 $v->layout("_themeProf");?>
 
@@ -9,25 +10,27 @@ $v->layout("_themeProf");?>
 </ol>
 
 
-<form action="<?=url("disciplina/atualizar");?>" method="POST">
+<form action="<?=url("reserva/cadastrar");?>" method="POST">
   <div class="caixa1">
     
     <div class="col-8"> <label> Selecione o Curso: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
+
          <select class="btn btn-primary" data-toggle="dropdown" 
          aria-haspopup="true" aria-expanded="false" name="cursoDisc">
 
-         <select class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" 
-         aria-haspopup="true" aria-expanded="false" name="cursoDisc" id="cmdCurso">
+         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="cursoDisc" id="cursoDisc" onchange="buscar_cursos()">
+
+
           <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
-          Lista de Cursos
-        </option>
-        <div class="dropdown-menu">
-              <option class="dropdown-item" value="1">1</option>
-              <option class="dropdown-item" value="2">2</option>
-              <option class="dropdown-item" value="3">3</option>
-            </div>
+            Lista de Cursos
+          </option>
+          <div class="dropdown-menu">
+            <option class="dropdown-item" value="1">1</option>
+            <option class="dropdown-item" value="2">2</option>
+            <option class="dropdown-item" value="3">3</option>
+          </div>
         </select>
         <input type="button" value="Carregar Curso" id="btnCurso" class="botao"/>
       </div> 
