@@ -44,7 +44,7 @@ $v->layout("_themeProf");?>
     <div class="w-100"style="margin-bottom: 30px;"><!-- Quebra de Linha --></div>
 
       <!-- DISCIPLINA -->
-      <div class="col-8"> <label> Selecione a Diciplina: </label></div>
+      <div class="col-8"> <label> Selecione a Disciplina: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
          <select class="btn btn-primary" data-toggle="dropdown" 
@@ -142,7 +142,7 @@ $v->layout("_themeProf");?>
       <label>Caso Necessite de Instalação de Programas, expecificar acima:</label>
     </div>
   </div>
-    
+
 
 <button type="submit" class="btn btn-primary">Pedir</button>
 
