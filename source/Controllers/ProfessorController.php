@@ -80,7 +80,8 @@ class ProfessorController{
     public function store($data){
         $nomeProf = $_POST['nomeProf'];
         //md5 é para criptografar a senha
-        $senhaProf = md5($_POST['senhaProf']);
+        //$senhaProf = md5($_POST['senhaProf']);
+        $senhaProf = $_POST['senhaProf'];
         $celProf = $_POST['celProf'];
         $emailProf = $_POST['emailProf'];
 
