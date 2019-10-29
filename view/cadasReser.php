@@ -14,7 +14,7 @@ $v->layout("_themeProf");?>
     
     <div class="col-8"> <label> Selecione o Curso: </label></div>
       <div class="col-2">
-        <div class="btn-group dropright"
+        <div class="btn-group dropright">
          <select class="btn btn-primary" data-toggle="dropdown" 
          aria-haspopup="true" aria-expanded="false" name="cursoDisc">
 
