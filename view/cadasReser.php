@@ -53,10 +53,20 @@ $v->layout("_themeProf");?>
           Lista de Disciplinas
         </option>
         <div class="dropdown-menu">
-              <option class="dropdown-item" value="1">1</option>
-              <option class="dropdown-item" value="2">2</option>
-              <option class="dropdown-item" value="3">3</option>
-            </div>
+              <?php
+                  if($disciplinas):
+                    foreach($disciplinas as $disciplina):
+                  ?>
+                  <?php
+                    echo "<option value='{$disciplina->getIdDisc()}'> {$disciplina->getNomeDisc()}</option>";
+                    ?>
+                  <?php
+                    endforeach;
+                  else:
+                      ?>
+                      <h4> Não existem Cursos cadastrados </h4>
+                    <?php
+                  endif;?>
         </select>
         </div> 
       </div>  
