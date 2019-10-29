@@ -1,7 +1,7 @@
 <?php
 
 namespace Source\Models;
-use Source\Models\Curso;
+use Source\DAO\CursoDAO;
 
 class Reserva{
         private $idReserva;
