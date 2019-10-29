@@ -97,14 +97,14 @@ $v->layout("_themeProf");?>
       <label>Selecione o(s) Horario(s) da(s) aulas:: </label>
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <tr>                   
-          <td class="dropdown-item">Segunda</td>
+          <td>Segunda</td>
           <td>Terça</td>
           <td>Quarta</td>
           <td>Quinta</td>
           <td>Sexta</td>
         </tr>
         <tr>
-          <td><input type="checkbox" id="horns" name="horns"></td>
+          <td><input type="checkbox" id="horns" name="segundaA"></td>
           <td><input type="checkbox" id="horns" name="horns"></td>
           <td><input type="checkbox" id="horns" name="horns"></td>
           <td><input type="checkbox" id="horns" name="horns"></td>
