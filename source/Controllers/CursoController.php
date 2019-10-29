@@ -21,7 +21,7 @@ class CursoController{
 
 		public function index(){
             session_start();
-            if (isset($_SESSION['adm'])){
+            if (isset($_SESSION['adm']) or isset($_SESSION['prof'])){
                 $cursos = $this->cursoDAO->listarTudo();
                 echo $this->view->render("listarCursos",[
                     "title"=>"Listar Cursos | ".SITE,
