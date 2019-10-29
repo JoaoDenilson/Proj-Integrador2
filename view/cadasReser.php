@@ -9,7 +9,6 @@ $v->layout("_themeProf");?>
     <li class="breadcrumb-item active">Solicitar Reserva </li>
 </ol>
 
-
 <form action="<?=url("reserva/cadastrar");?>" method="POST">
   <div class="caixa1">
     
@@ -32,7 +31,6 @@ $v->layout("_themeProf");?>
             <option class="dropdown-item" value="3">3</option>
           </div>
         </select>
-        <input type="button" value="Carregar Curso" id="btnCurso" class="botao"/>
       </div> 
     </div> 
     <div class="w-100"style="margin-bottom: 30px;"><!-- Quebra de Linha --></div>
