@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Out-2019 às 01:36
--- Versão do servidor: 10.4.8-MariaDB
--- versão do PHP: 7.1.32
+-- Tempo de geração: 29-Out-2019 às 18:51
+-- Versão do servidor: 10.4.6-MariaDB
+-- versão do PHP: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,10 +42,8 @@ INSERT INTO `tb_curso` (`idCurso`, `nomeCurso`, `siglaCurso`) VALUES
 (1, 'Bacharelado em Sistemas de Informação', 'BSI'),
 (2, 'Tecnólogo em Mecatrônica Industrial', 'MI'),
 (4, 'teste', 'TES'),
-(5, 'hsh', 'aaa'),
 (6, 'test', 'teste '),
-(7, 'Licenciatura em Matemática', 'LM'),
-(8, 'jaJA', 'AA');
+(7, 'Licenciatura em Matemática', 'LM');
 
 -- --------------------------------------------------------
 
@@ -67,9 +65,7 @@ CREATE TABLE `tb_disciplina` (
 INSERT INTO `tb_disciplina` (`idCursoFk`, `idDisciplina`, `nomeDisciplina`, `siglaDisciplina`) VALUES
 (1, 2, 'Programação', 'LLP'),
 (1, 4, 'hhs', 'jjdd'),
-(1, 6, 'Construção e Analise de Algoritmos', 'CAA'),
 (1, 7, 'Construção e Analise de Algoritmos', 'CAA'),
-(1, 8, 'Construção e Analise de Algoritmos', 'CAA'),
 (1, 9, 'Teste 1', 't1'),
 (2, 11, 'Corrente Continua', 'CC'),
 (2, 12, 'panorama', 'pa'),
@@ -91,6 +87,13 @@ CREATE TABLE `tb_laboratorio` (
   `qtdcompLab` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `tb_laboratorio`
+--
+
+INSERT INTO `tb_laboratorio` (`idLab`, `codLab`, `nomeLab`, `qtdcompLab`) VALUES
+(1, 1, 'Lab Redes', '25');
+
 -- --------------------------------------------------------
 
 --
@@ -104,7 +107,7 @@ CREATE TABLE `tb_reserva` (
   `idReserva` int(10) UNSIGNED NOT NULL,
   `dataReserva` varchar(10) NOT NULL,
   `horaReserva` varchar(5) NOT NULL,
-  `statusReserva` varchar(10) NOT NULL,
+  `statusReserva` varchar(10) NOT NULL DEFAULT 'Aguardando',
   `justificativaReserva` varchar(255) DEFAULT NULL,
   `observacaoReserva` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -194,7 +197,7 @@ ALTER TABLE `tb_disciplina`
 -- AUTO_INCREMENT de tabela `tb_laboratorio`
 --
 ALTER TABLE `tb_laboratorio`
-  MODIFY `idLab` int(3) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `idLab` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tb_reserva`
