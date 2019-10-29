@@ -134,7 +134,7 @@ $v->layout("_themeProf");?>
 </table>
 
 <div class="form-group">
-    <label for="exampleFormControlTextarea1">Caso Necessite de Instalação de Programas, expecificar abaixo:</label>
+    <label for="exampleFormControlTextarea1">Caso Necessite de Instalação de Programas, especificar abaixo:</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
 
