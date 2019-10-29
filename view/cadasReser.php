@@ -128,7 +128,7 @@ $v->layout("_themeProf");?>
   <div class="caixa1">
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Caso Necessite de Instalação de Programas, expecificar abaixo:</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" id="exampleFormControlTextarea1" style="resize: none;" rows="3"></textarea>
     </div>
 
   <div class="table-responsive">
