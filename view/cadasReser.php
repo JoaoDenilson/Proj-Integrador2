@@ -1,7 +1,5 @@
 <?php
-$v->layout("_themeProf"); 
-
-use Source\Models\Curso; ?>
+$v->layout("_themeProf");?>
 
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
