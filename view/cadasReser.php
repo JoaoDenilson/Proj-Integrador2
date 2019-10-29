@@ -22,9 +22,20 @@ $v->layout("_themeProf");?>
             Lista de Cursos
           </option>
           <div class="dropdown-menu">
-            <option class="dropdown-item" value="1">1</option>
-            <option class="dropdown-item" value="2">2</option>
-            <option class="dropdown-item" value="3">3</option>
+            <?php
+                  if($cursos):
+                    foreach($cursos as $curso):
+                  ?>
+                  <?php
+                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
+                    ?>
+                  <?php
+                    endforeach;
+                  else:
+                      ?>
+                      <h4> Não existem Cursos cadastrados </h4>
+                    <?php
+                  endif;?>
           </div>
         </select>
        
