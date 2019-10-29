@@ -1,6 +1,7 @@
 <?php
 
 namespace Source\Models;
+use Source\Models\Curso;
 
 class Reserva{
         private $idReserva;
@@ -8,7 +9,7 @@ class Reserva{
         private $horaReserva;
         private $statusReserva;
         private $justificativaReserva;
-        private Curso $idCurso;
+        private $idCurso;
     
 
         public function getIdReserva()
