@@ -62,7 +62,7 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="<?=url("dashboard")?>">
+        <a class="nav-link" href="<?=url("home")?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Painel de Controle</span>
         </a>
