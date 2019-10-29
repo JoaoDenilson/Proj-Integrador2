@@ -34,7 +34,7 @@ $v->layout("_themeProf");?>
       <div class="col-8"> <label> Selecione o Curso: </label> </div>
       <div class="col-2">
         <div class="btn-group dropright">
-          <button type="button" class="btn btn-info dropdown-toggle" 
+          <button type="button" class="btn btn-info btn-sm dropdown-toggle" 
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
           name="cursoDisc">Cursos
           </button>
@@ -45,13 +45,13 @@ $v->layout("_themeProf");?>
           </div>
         </div>
       </div>
-      <div class="w-100"><!-- Quebra de Linha --></div>
+      <div class="w-100" style="margin: 2px;"><!-- Quebra de Linha --></div>
 
       
       <div class="col-8"> <label> Selecione a Diciplina: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-          <button type="button" class="btn btn-info dropdown-toggle" 
+          <button type="button" class="btn btn-info btn-sm dropdown-toggle" 
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
           name="cursoDisc">Diciplinas
           </button>
@@ -67,7 +67,7 @@ $v->layout("_themeProf");?>
     <div class="col-8"> <label>Selecione o Turno: </label> </div>
       <div class="col-2">
         <div class="btn-group dropright" >
-          <button type="button" class="btn btn-info dropdown-toggle" 
+          <button type="button" class="btn btn-info btn-sm dropdown-toggle" 
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
           name ="cursoDisc"> Turnos
           </button>
@@ -130,54 +130,6 @@ $v->layout("_themeProf");?>
       <label for="exampleFormControlTextarea1">Caso Necessite de Instalação de Programas, expecificar abaixo:</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
-
-  <div class="table-responsive">
-  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-      <tr>                   
-        <td class="dropdown-item">Segunda</td>
-        <td>Terça</td>
-        <td>Quarta</td>
-        <td>Quinta</td>
-        <td>Sexta</td>
-      </tr>
-      <tr>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-      </tr>
-      <tr>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-      </tr>
-      <tr>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-      </tr>
-      <tr>                   
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-        <td><input type="checkbox" id="horns" name="horns"></td>
-      </tr>
-      </tbody>
-</table>
-
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">Caso Necessite de Instalação de Programas, especificar abaixo:</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
->>>>>>> 48962c7ceaba0b1462b90714a8ff1e48508ab25a
-  </div>
-
-
 
 <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
