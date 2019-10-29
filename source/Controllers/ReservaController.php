@@ -19,18 +19,11 @@ use Source\Models\Reserva;
 		
 		public function index(){
             session_start();
-            if (isset($_SESSION['adm'])){
-                $professor = $this->profDAO->listarTudo();
-                //echo var_dump($lab);
-                echo $this->view->render("",[
-                    "title"=>"Professor | ".SITE,
-                    "professores" => $professor
-                ]);
+            if (isset($_SESSION['prof']) or isset($_SESSION['adm'])){
+                echo "Página de Listar";
             }else{
                 $this->router->redirect("Web.login");
             }
-
-
         }
 		
 		public function inicio(){

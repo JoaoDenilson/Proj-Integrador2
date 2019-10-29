@@ -41,7 +41,7 @@ $v->layout("_themeProf");?>
         </div>
       </div>
     </div>
-    <div class="w-100"></div>
+    <div class="w-100"><br></div>
 
     <div class="col-2">
       <label>Selecione a Diciplina: </label>
@@ -72,7 +72,8 @@ $v->layout("_themeProf");?>
         </div>
       </div> 
     </div>  
-    <div class="w-100"></div>
+    <div class="w-100"><br></div>
+  
   <div class="col-2">
       <label>Selecione o Turno: </label>
     </div>
@@ -131,12 +132,19 @@ $v->layout("_themeProf");?>
       </tr>
       </tbody>
 </table>
+
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Caso Necessite de Instalação de Programas, expecificar abaixo:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
 </div>
 
 
 <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
 <button type="submit" class="btn btn-primary">Pedir</button>
+
 
     </form>
 
