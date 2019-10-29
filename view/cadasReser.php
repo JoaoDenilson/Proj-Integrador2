@@ -29,6 +29,7 @@ $v->layout("_themeProf");?>
 
 
 <form action="<?=url("disciplina/atualizar");?>" method="POST">
+<<<<<<< HEAD
   <div class="caixa1">
     <div class="row">    
       <div class="col-8"> <label> Selecione o Curso: </label> </div>
@@ -135,6 +136,59 @@ $v->layout("_themeProf");?>
 
 <button type="submit" class="btn btn-primary">Pedir</button>
 
+          <div class="form-group">
+            <div class="form-row">         
+
+              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
+                  <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Selecione o Curso</option>
+                  <?php
+                  if($cursos):
+                    foreach($cursos as $curso):
+                  ?>
+                  <?php
+                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
+                    ?>
+                  <?php
+                    endforeach;
+                  else:
+                      ?>
+                      <h4> Não existem Cursos cadastrados </h4>
+                    <?php
+                  endif;?>
+              </select>
+
+
+              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
+                  <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Selecione a Dsiciplina</option>
+                  <?php
+                  if($cursos):
+                    foreach($cursos as $curso):
+                  ?>
+                  <?php
+                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
+                    ?>
+                  <?php
+                    endforeach;
+                  else:
+                      ?>
+                      <h4> Não existem Cursos cadastrados </h4>
+                    <?php
+                  endif;?>
+              </select>
+
+
+              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
+                  <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Selecione o Turno</option>
+                  <option value="1">Manhã</option>
+                  <option value="2">Tarde</option>
+                  <option value="3">Noite</option>
+              </select>
+
+              <input type="date" name="">
+
+        <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
+
+        <button type="submit" class="btn btn-primary">Alterar</button>
 
     </form>
 
