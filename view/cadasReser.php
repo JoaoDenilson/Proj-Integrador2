@@ -15,10 +15,10 @@ $v->layout("_themeProf");?>
     <div class="col-8"> <label> Selecione o Curso: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-         <select class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" 
+         <select class="btn btn-primary" data-toggle="dropdown" 
          aria-haspopup="true" aria-expanded="false" name="cursoDisc">
           <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
-          Curso
+          Lista de Cursos
         </option>
         <div class="dropdown-menu">
               <option class="dropdown-item" value="1">1</option>
@@ -28,16 +28,16 @@ $v->layout("_themeProf");?>
         </select>
       </div> 
     </div> 
-    <div class="w-100" style="margin: 2px;"><!-- Quebra de Linha --></div>
+    <div class="w-100"style="margin-bottom: 30px;"><!-- Quebra de Linha --></div>
 
       <!-- DISCIPLINA -->
       <div class="col-8"> <label> Selecione a Diciplina: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-         <select class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" 
+         <select class="btn btn-primary" data-toggle="dropdown" 
          aria-haspopup="true" aria-expanded="false" name="cursoDisc">
           <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
-          Disciplina
+          Lista de Disciplinas
         </option>
         <div class="dropdown-menu">
               <option class="dropdown-item" value="1">1</option>
@@ -45,20 +45,18 @@ $v->layout("_themeProf");?>
               <option class="dropdown-item" value="3">3</option>
             </div>
         </select>
-
-          
         </div> 
       </div>  
-      <div class="w-100" style="margin: 2px;"></div>
+      <div class="w-100"style="margin-bottom: 30px;"></div>
     
     <!-- TURNO -->
     <div class="col-8"> <label>Selecione o Turno: </label> </div>
       <div class="col-2">
         <div class="btn-group dropright" >
-          <select class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" 
+          <select class="btn btn-primary" data-toggle="dropdown" 
           aria-haspopup="true" aria-expanded="false" name ="cursoDisc">
             <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
-              Turno
+              Lista de Turnos
             </option>
             <div class="dropdown-menu">
               <option class="dropdown-item" value="1">Manhã</option>
@@ -67,12 +65,13 @@ $v->layout("_themeProf");?>
             </div>
           </select>
         </div>
-      <div class="w-100"></br></div>
+      <div class="w-100" style="margin-bottom: 30px;"></div>
     </div>
   </div>
 
   <div class="caixa2">
     <div class="table-responsive">
+      <label>Selecione os Horarios da(s) aulas:: </label>
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <tr>                   
           <td class="dropdown-item">Segunda</td>
@@ -114,11 +113,12 @@ $v->layout("_themeProf");?>
     </div>
   </div>
 
-  <div class="caixa1">
+  <div class="caixa3">
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">Caso Necessite de Instalação de Programas, expecificar abaixo:</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" style="resize: none;" rows="3"></textarea>
+      <label>Caso Necessite de Instalação de Programas, expecificar acima:</label>
     </div>
+  </div>
 
 <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
