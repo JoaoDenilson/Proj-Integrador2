@@ -1,8 +1,6 @@
 <!--https://www.devmedia.com.br/forum/combo-box-com-estados-e-cidades/598701-->
 <?php
-$v->layout("_themeProf");
-use Source\Models\Curso; ?>
-
+$v->layout("_themeProf");?>
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
@@ -18,26 +16,15 @@ use Source\Models\Curso; ?>
     <div class="col-8"> <label> Selecione o Curso: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="cursoDisc" id="cursoDisc">
+         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="cursoDisc" id="cursoDisc" onchange="buscar_cursos()">
 
           <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
             Lista de Cursos
           </option>
           <div class="dropdown-menu">
-           <?php
-                if($cursos):
-                  foreach($cursos as $curso):
-                  ?>
-                  <?php
-                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
-                    ?>
-                  <?php
-                    endforeach;
-                  else:
-                      ?>
-                      <h4> Não existem Cursos cadastrados </h4>
-                    <?php
-                  endif;?>
+            <option class="dropdown-item" value="1">1</option>
+            <option class="dropdown-item" value="2">2</option>
+            <option class="dropdown-item" value="3">3</option>
           </div>
         </select>
        
@@ -130,8 +117,8 @@ use Source\Models\Curso; ?>
 
   <div class="caixa3">
     <div class="form-group">
-      <textarea class="form-control" placeholder="Quais progranas necessita?" style="resize: none;" rows="3"></textarea>
-      <label for="lastName">Caso Necessite de Instalação de Programas, especificar acima:</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" style="resize: none;" rows="3"></textarea>
+      <label>Caso Necessite de Instalação de Programas, expecificar acima:</label>
     </div>
   </div>
 
@@ -143,5 +130,4 @@ use Source\Models\Curso; ?>
     </form>
 
 <?= $v->start("scripts");?>
-    
 <?= $v->end();?>
