@@ -3,6 +3,10 @@ namespace Source\Controllers;
 use League\Plates\Engine;
 use Source\DAO\ReservaDAO;
 use Source\Models\Reserva;
+use Source\DAO\CursoDAO;
+use Source\Models\Curso;
+use Source\Models\Disciplina;
+use Source\DAO\DisciplinaDAO;
 
 	class ReservaController{
         private $view;
@@ -19,7 +23,7 @@ use Source\Models\Reserva;
 		
 		public function index(){
             session_start();
-            if (isset($_SESSION['prof']) or isset($_SESSION['adm'])){
+            if (isset($_SESSION['prof']) || isset($_SESSION['adm'])){
                 echo "Página de Listar";
             }else{
                 $this->router->redirect("Web.login");
