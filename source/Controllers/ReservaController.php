@@ -51,15 +51,19 @@ use Source\Models\Disciplina;
 		}
 
 		public function store($data){
-            $idDisciplina = $_POST['cursoDisc'];
-			
+            $idDisc = $_POST['cursoDisc'];
+            $idUser = $_SESSION['idProf'];
+            //$idLab = $_POST['cursoDisc'];
+            $dataReserva = date("Y-m-d");
+            $horaReserva = date("H:i:s");
+            $observacaoReserva = $_POST['observacao'];
 
-	        $this->reserva->setDataReserva();
+	        $this->reserva->setDataReserva($dataReserva);
 	        $this->reserva->setHoraReserva();
-	        $this->reserva->setIdDisciplinaFk($idDisciplina);
-	        $this->reserva->setIdLabFk();
-            $this->reserva->setIdUsuarioFk();
-	        $this->reserva->setObservacaoReserva();
+	        $this->reserva->setIdDisciplinaFk($idDisc);
+	        //$this->reserva->setIdLabFk();
+            $this->reserva->setIdUsuarioFk($idUser);
+	        $this->reserva->setObservacaoReserva($observacaoReserva);
 	   
 	        $this->professorDAO->insere($this->professor);
 	        $this->index();

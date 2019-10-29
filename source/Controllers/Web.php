@@ -60,6 +60,7 @@ class Web{
         if(count($linhas)>0){
             $nome  = $linhas[0]['nomeUsuario'];
             $nivel = $linhas[0]['nivelUsuario'];
+            $idUser = $linhas[0]['idUsuario'];
 
             session_start();
 
@@ -72,6 +73,7 @@ class Web{
             }
             else {
                 //echo "Usuário Professor: ".$nome;
+                $_SESSION['idProf']= $idUser;
                 $_SESSION['prof'] = $nome;
                 $this->router->redirect("Web.home");
                 //$this->home();

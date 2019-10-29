@@ -43,9 +43,8 @@ use Source\Models\Reserva;
 			$observacaoReserva = $reserva->getObservacaoReserva();
 			//$justificativaReserva= $reserva->getJustificativaReserva();
 			$idProfessor = $reserva->getIdUsuarioFk();
-			$idLaboratorio = $reserva->getIdLabFk();
+			//$idLaboratorio = $reserva->getIdLabFk();
 			$idDisciplina = $reserva->getIdDisciplinaFk();
-			//$idAdministrador = $reserva->getIdAdmin();
 
 			$query = "INSERT INTO reserva ( dataRes, horaRes, observacaoReserva, idUsuarioFk, idLabFk, idDisciplinaFk) VALUES (?,?,?,?,?,?)";
 
