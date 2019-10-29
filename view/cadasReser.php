@@ -61,7 +61,7 @@ use Source\Models\Curso; ?>
                   <option value="3">Noite</option>
               </select>
 
-
+              <input type="date" name="">
 
         <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
