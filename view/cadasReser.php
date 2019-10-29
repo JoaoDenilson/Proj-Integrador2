@@ -82,9 +82,9 @@ $v->layout("_themeProf");?>
               Lista de Turnos
             </option>
             <div class="dropdown-menu">
-              <option class="dropdown-item" value="1">Manhã</option>
-              <option class="dropdown-item" value="2">Tarde</option>
-              <option class="dropdown-item" value="3">Noite</option>
+              <option value="1">Manhã</option>
+              <option value="2">Tarde</option>
+              <option value="3">Noite</option>
             </div>
           </select>
         </div>
@@ -105,31 +105,31 @@ $v->layout("_themeProf");?>
         </tr>
         <tr>
           <td><input type="checkbox" id="horns" name="segundaA"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
+          <td><input type="checkbox" id="horns" name="tercaA"></td>
+          <td><input type="checkbox" id="horns" name="quartaA"></td>
+          <td><input type="checkbox" id="horns" name="quintaA"></td>
+          <td><input type="checkbox" id="horns" name="sextaA"></td>
         </tr>
         <tr>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
+          <td><input type="checkbox" id="horns" name="segundaB"></td>
+          <td><input type="checkbox" id="horns" name="tercaB"></td>
+          <td><input type="checkbox" id="horns" name="quartaB"></td>
+          <td><input type="checkbox" id="horns" name="quintaB"></td>
+          <td><input type="checkbox" id="horns" name="sextaB"></td>
         </tr>
         <tr>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
+          <td><input type="checkbox" id="horns" name="segundaC"></td>
+          <td><input type="checkbox" id="horns" name="tercaC"></td>
+          <td><input type="checkbox" id="horns" name="quartaC"></td>
+          <td><input type="checkbox" id="horns" name="quintaC"></td>
+          <td><input type="checkbox" id="horns" name="sextaC"></td>
         </tr>
         <tr>                   
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
-          <td><input type="checkbox" id="horns" name="horns"></td>
+          <td><input type="checkbox" id="horns" name="segundaD"></td>
+          <td><input type="checkbox" id="horns" name="tercaD"></td>
+          <td><input type="checkbox" id="horns" name="quartaD"></td>
+          <td><input type="checkbox" id="horns" name="quintaD"></td>
+          <td><input type="checkbox" id="horns" name="sextaD"></td>
         </tr>
         </tbody>
       </table>
