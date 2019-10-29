@@ -9,9 +9,12 @@ class Reserva{
         private $horaReserva;
         private $statusReserva;
         private $justificativaReserva;
-        private $idCurso;
-    
+        private $observacaoReserva;
+        private $idDisciplinaFk;
+        private $idUsuarioFk;
+        private $idLabFk;
 
+        //Get e Set IdReerva
         public function getIdReserva()
         {
             return $this->idReserva;
@@ -22,6 +25,7 @@ class Reserva{
             return $this->idReserva = $idReserva;
         }
 
+        //Get e Set DataReerva
         public function getDataReserva()
         {
             return $this->dataReserva;
@@ -32,6 +36,7 @@ class Reserva{
             return $this->dataReserva = $dataReserva;
         }
 
+        //Get e Set HoraReerva
         public function getHoraReserva()
         {
             return $this->horaReserva;
@@ -42,6 +47,7 @@ class Reserva{
             return $this->horaReserva = $horaReserva;
         }
 
+        //Get e Set StatusReerva
         public function getStatusReserva()
         {
             return $this->statusReserva;
@@ -52,6 +58,7 @@ class Reserva{
             return $this->statusReserva = $statusReserva;
         }
 
+        //Get e Set JustificativaReerva
         public function getJustificativaReserva()
         {
             return $this->justificativaReserva;
@@ -62,14 +69,47 @@ class Reserva{
             return $this->justificativaReserva = $justificativaReserva;
         }
 
-
-        public function getIdCurso()
+        //Get e Set ObservacaoReerva
+        public function getObservacaoReserva()
         {
-            return $this->idCurso;
+            return $this->observacaoReserva;
         }
-        
-        public function setIdCurso(Curso $idCurso)
+
+        public function setObservacaoReserva($observacaoReserva)
         {
-            return $this->idCurso = $idCurso;
+            return $this->observacaoReserva = $observacaoReserva;
+        }
+
+        //Get e Set IdDisciplina
+        public function getIdDisciplinaFk()
+        {
+            return $this->idDisciplinaFk;
+        }
+
+        public function setIdDisciplinaFk(Disciplina $idDisciplinaFk)
+        {
+            return $this->idDisciplinaFk = $idDisciplinaFk;
+        }
+
+        //Get e Set IdUsuário
+        public function getIdUsuarioFk()
+        {
+            return $this->idUsuarioFk;
+        }
+
+        public function setIdUsuarioFk($idUsuarioFk)
+        {
+            return $this->idUsuarioFk = $idUsuarioFk;
+        }
+
+        //Get e Set IdLaborátorio
+        public function getIdLabFk()
+        {
+            return $this->idLabFk;
+        }
+
+        public function setIdLabFk($idLabFk)
+        {
+            return $this->idLabFk = $idLabFk;
         }
     }
