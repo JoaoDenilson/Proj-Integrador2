@@ -1,25 +1,6 @@
 <?php
 $v->layout("_themeProf");?>
 
-<!-- Breadcrumbs-->
-<!--           <?php
-            if($cursos):
-             foreach($cursos as $curso):
-           ?>
-          <?php
-             echo "<a class='dropdown-item' value='{$curso->getIdCurso()}>' {$curso->getNomeCurso()}</option>;"
-          ?>
-          <?php
-            endforeach;
-            else:
-          ?>
-          <h4> Não existem Cursos cadastrados </h4>
-          
-          <?php
-            endif;
-          ?>
-          -->
-
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
         <a href="<?=url("home");?>">Painel de Controle</a>
@@ -137,12 +118,6 @@ $v->layout("_themeProf");?>
 
 
     </form>
-
-
-
- <form action="<?=url("disciplina/atualizar");?>" method="POST">
-        <div class="form-group">
-        	<div class="form-row">
 
 
 
