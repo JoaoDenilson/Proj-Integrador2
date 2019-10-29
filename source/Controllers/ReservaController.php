@@ -25,11 +25,6 @@ use Source\Models\Reserva;
                 $this->router->redirect("Web.login");
             }
         }
-		
-		public function inicio(){
-			header("Location: View/dashboard.php");
-		}
-        
 
         public function create(){
             session_start();
