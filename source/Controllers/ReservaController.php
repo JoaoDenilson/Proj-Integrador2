@@ -52,12 +52,7 @@ use Source\Models\Disciplina;
 
 		public function store($data){
             $idDisciplina = $_POST['cursoDisc'];
-			$cursoProf = $_POST['cursoProf'];
-			$loginProf = $_POST['loginProf'];
-			//md5 é para criptografar a senha
-	        $senhaProf = md5($_POST['senhaProf']);
-	        $celProf = $_POST['celProf'];
-	        $emailProf = $_POST['emailProf'];
+			
 
 	        $this->reserva->setDataReserva();
 	        $this->reserva->setHoraReserva();
