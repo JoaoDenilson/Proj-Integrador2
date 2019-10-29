@@ -66,6 +66,7 @@ class Web{
             if ($nivel == true){
                 //echo "Usuário Adm: ".$nome;
                 $_SESSION['adm'] = $nome;
+
                 $this->router->redirect("Web.dashboard");
                 //$this->dashboard();
             }

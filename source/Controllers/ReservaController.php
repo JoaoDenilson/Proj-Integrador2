@@ -50,7 +50,8 @@ use Source\Models\Disciplina;
             }
 		}
 
-		public function store(){
+		public function store($data){
+            $idDisciplina = $_POST['cursoDisc'];
 			$cursoProf = $_POST['cursoProf'];
 			$loginProf = $_POST['loginProf'];
 			//md5 é para criptografar a senha
@@ -58,11 +59,12 @@ use Source\Models\Disciplina;
 	        $celProf = $_POST['celProf'];
 	        $emailProf = $_POST['emailProf'];
 
-	        $this->professor->setCursoProf($cursoProf);
-	        $this->professor->setLoginProf($loginProf);
-	        $this->professor->setSenhaProf($senhaProf);
-	        $this->professor->setCelProf($celProf);
-	        $this->professor->setEmailProf($emailProf);
+	        $this->reserva->setDataReserva();
+	        $this->reserva->setHoraReserva();
+	        $this->reserva->setIdDisciplinaFk($idDisciplina);
+	        $this->reserva->setIdLabFk();
+            $this->reserva->setIdUsuarioFk();
+	        $this->reserva->setObservacaoReserva();
 	   
 	        $this->professorDAO->insere($this->professor);
 	        $this->index();
