@@ -601,7 +601,7 @@ pre code {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
-
+  width: 50%;
 }
 
 .no-gutters {
@@ -10912,4 +10912,17 @@ body.sidebar-toggled footer.sticky-footer {
   body.sidebar-toggled footer.sticky-footer {
     width: calc(100% - 90px);
   }
+}
+.caixa1{
+  float: left;
+  width: 50%;
+}
+
+.caixa2{
+  float: right;
+  width: 50%;
+}
+
+.caixa3{
+width: 100%;
 }
