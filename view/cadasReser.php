@@ -29,57 +29,64 @@ $v->layout("_themeProf");?>
 
 
 <form action="<?=url("disciplina/atualizar");?>" method="POST">
-<<<<<<< HEAD
   <div class="caixa1">
-    <div class="row">    
-      <div class="col-8"> <label> Selecione o Curso: </label> </div>
+    
+    <div class="col-8"> <label> Selecione o Curso: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-          <button type="button" class="btn btn-info btn-sm dropdown-toggle" 
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-          name="cursoDisc">Cursos
-          </button>
-          <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a> 
-          </div>
-        </div>
-      </div>
-      <div class="w-100" style="margin: 2px;"><!-- Quebra de Linha --></div>
+         <select class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" 
+         aria-haspopup="true" aria-expanded="false" name="cursoDisc">
+          <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
+          Curso
+        </option>
+        <div class="dropdown-menu">
+              <option class="dropdown-item" value="1">1</option>
+              <option class="dropdown-item" value="2">2</option>
+              <option class="dropdown-item" value="3">3</option>
+            </div>
+        </select>
+      </div> 
+    </div> 
+    <div class="w-100" style="margin: 2px;"><!-- Quebra de Linha --></div>
 
-      
+      <!-- DISCIPLINA -->
       <div class="col-8"> <label> Selecione a Diciplina: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-          <button type="button" class="btn btn-info btn-sm dropdown-toggle" 
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
-          name="cursoDisc">Diciplinas
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a> 
-          </div>
+         <select class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" 
+         aria-haspopup="true" aria-expanded="false" name="cursoDisc">
+          <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
+          Disciplina
+        </option>
+        <div class="dropdown-menu">
+              <option class="dropdown-item" value="1">1</option>
+              <option class="dropdown-item" value="2">2</option>
+              <option class="dropdown-item" value="3">3</option>
+            </div>
+        </select>
+
+          
         </div> 
       </div>  
       <div class="w-100" style="margin: 2px;"></div>
     
+    <!-- TURNO -->
     <div class="col-8"> <label>Selecione o Turno: </label> </div>
       <div class="col-2">
         <div class="btn-group dropright" >
-          <button type="button" class="btn btn-info btn-sm dropdown-toggle" 
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
-          name ="cursoDisc"> Turnos
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" value="1">Manhã</a>
-            <a class="dropdown-item" value="2">Tarde</a>
-            <a class="dropdown-item" value="3">Noite</a>
-          </div>
+          <select class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" 
+          aria-haspopup="true" aria-expanded="false" name ="cursoDisc">
+            <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
+              Turno
+            </option>
+            <div class="dropdown-menu">
+              <option class="dropdown-item" value="1">Manhã</option>
+              <option class="dropdown-item" value="2">Tarde</option>
+              <option class="dropdown-item" value="3">Noite</option>
+            </div>
+          </select>
         </div>
-      </div>
-            <div class="w-100"></br></div>
+      <div class="w-100"></br></div>
     </div>
   </div>
 
@@ -135,69 +142,6 @@ $v->layout("_themeProf");?>
 <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
 <button type="submit" class="btn btn-primary">Pedir</button>
-
-          <div class="form-group">
-            <div class="form-row">         
-
-              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
-                  <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Selecione o Curso</option>
-                  <?php
-                  if($cursos):
-                    foreach($cursos as $curso):
-                  ?>
-                  <?php
-                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
-                    ?>
-                  <?php
-                    endforeach;
-                  else:
-                      ?>
-                      <h4> Não existem Cursos cadastrados </h4>
-                    <?php
-                  endif;?>
-              </select>
-
-
-              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
-                  <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Selecione a Dsiciplina</option>
-                  <?php
-                  if($cursos):
-                    foreach($cursos as $curso):
-                  ?>
-                  <?php
-                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
-                    ?>
-                  <?php
-                    endforeach;
-                  else:
-                      ?>
-                      <h4> Não existem Cursos cadastrados </h4>
-                    <?php
-                  endif;?>
-              </select>
-
-
-              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
-                  <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Selecione o Turno</option>
-                  <option value="1">Manhã</option>
-                  <option value="2">Tarde</option>
-                  <option value="3">Noite</option>
-              </select>
-
-              <input type="date" name="">
-
-        <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
-
-        <button type="submit" class="btn btn-primary">Alterar</button>
-
-    </form>
-
-
-
- <form action="<?=url("disciplina/atualizar");?>" method="POST">
-        <div class="form-group">
-        	<div class="form-row">
-
 
 
 <?= $v->start("scripts");?>
