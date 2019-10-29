@@ -36,7 +36,6 @@ use Source\Models\Curso; ?>
                   <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Curso da Disciplina</option>
                   <?php
                   if($cursos):
-//                      var_dump($cursos);
                     foreach($cursos as $curso):
                   ?>
                   <?php
