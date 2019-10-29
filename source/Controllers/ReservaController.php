@@ -4,19 +4,24 @@ use League\Plates\Engine;
 use Source\DAO\ReservaDAO;
 use Source\Models\Reserva;
 use Source\DAO\CursoDAO;
+use Source\DAO\DisciplinaDAO;
 use Source\Models\Curso;
 use Source\Models\Disciplina;
-use Source\DAO\DisciplinaDAO;
+
 
 	class ReservaController{
         private $view;
         private $router;
 		private $reserva;
 		private $reservaDAO;
+        private $CursoDAO;
+        private $DisciplinaDAO;
 
 		public function __construct($router){
             $this->router = $router;
 			$this->reservaDAO= new ReservaDAO();
+            $this->disciplinaDAO= new DisciplinaDAO;
+            $this->cursoDAO= new CursoDAO;
 			$this->reserva = new Reserva();
             $this->view =Engine::create(__DIR__."/../../view","php");
 		}
@@ -33,9 +38,12 @@ use Source\DAO\DisciplinaDAO;
         public function create(){
             session_start();
             if (isset($_SESSION['prof'])){
+                $cursos = $this->cursoDAO->listarTudo();
+                $disc = $this->disciplinaDAO->listarTudo();
                 echo $this->view->render("cadasReser",[
-                    "title"=>"Solicitar Reserva | ".SITE
-
+                    "title"=>"Solicitar Reserva | ".SITE,
+                    "disciplinas" => $disc,
+                    "cursos" => $cursos
                 ]);
             }else{
                 $this->router->redirect("Web.login");
