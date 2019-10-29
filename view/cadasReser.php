@@ -62,6 +62,7 @@ use Source\Models\Curso; ?>
               </select>
 
 
+              <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <tr>                   
                     <td>Segunda</td>
@@ -100,7 +101,8 @@ use Source\Models\Curso; ?>
                   </tr>
                   </tbody>
             </table>
-<!-- DivTable.com -->
+          </div>
+
 
         <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
