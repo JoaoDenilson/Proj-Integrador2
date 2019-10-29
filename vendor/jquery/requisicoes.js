@@ -1,15 +1,13 @@
 <script type="text/javascript">
 $(document).ready(function(){
-     
     <!-- Carrega os Paises -->
     $('#btnPais').click(function(e){
         $('#btnPais').hide();
-        $('#mensagem').html('<span class="mensagem">Aguarde, 
-        carregando ...</span>');  
-         
+        $('#mensagem').html('<span class="mensagem">Aguarde, carregando ...</span>');
+
         $.getJSON('consulta.php?opcao=pais', function (dados){
-             
-           if (dados.length > 0){    
+
+           if (dados.length > 0){
               var option = '<option>Selecione o País
               </option>';
               $.each(dados, function(i, obj){
@@ -17,7 +15,7 @@ $(document).ready(function(){
                   >'+obj.nome+'</option>';
               })
               $('#mensagem').html('<span class="mensagem"
-              >Total de paises encontrados.: '+dados.length+'</span>'); 
+              >Total de paises encontrados.: '+dados.length+'</span>');
               $('#cmbPais').html(option).show();
            }else{
                Reset();
@@ -26,17 +24,17 @@ $(document).ready(function(){
            }
         })
     })
-     
+
     <!-- Carrega os Estados -->
     $('#cmbPais').change(function(e){
         var pais = $('#cmbPais').val();
-        $('#mensagem').html('<span class="mensagem">Aguarde, 
-        carregando ...</span>');  
-         
-        $.getJSON('consulta.php?opcao=estado&valor='+pais, 
-        function (dados){ 
-         
-           if (dados.length > 0){    
+        $('#mensagem').html('<span class="mensagem">Aguarde,
+        carregando ...</span>');
+
+        $.getJSON('consulta.php?opcao=estado&valor='+pais,
+        function (dados){
+
+           if (dados.length > 0){
               var option = '<option>Selecione o Estado
               </option>';
               $.each(dados, function(i, obj){
@@ -44,44 +42,44 @@ $(document).ready(function(){
                   >'+obj.nome+'</option>';
               })
               $('#mensagem').html('<span class="mensagem">
-              Total de estados encontrados.: '+dados.length+'</span>'); 
+              Total de estados encontrados.: '+dados.length+'</span>');
            }else{
               Reset();
               $('#mensagem').html('<span class="mensagem">
-              Não foram encontrados estados para esse país!</span>');  
+              Não foram encontrados estados para esse país!</span>');
            }
-           $('#cmbEstado').html(option).show(); 
+           $('#cmbEstado').html(option).show();
         })
     })
-     
+
     <!-- Carrega as Cidades -->
     $('#cmbEstado').change(function(e){
         var estado = $('#cmbEstado').val();
-        $('#mensagem').html('<span class="mensagem">Aguarde, 
-        carregando ...</span>');  
-         
-        $.getJSON('consulta.php?opcao=cidade&valor='+estado, 
+        $('#mensagem').html('<span class="mensagem">Aguarde,
+        carregando ...</span>');
+
+        $.getJSON('consulta.php?opcao=cidade&valor='+estado,
         function (dados){
-             
-            if (dados.length > 0){   
-                var option = '<option>Selecione a 
+
+            if (dados.length > 0){
+                var option = '<option>Selecione a
                 Cidade</option>';
                 $.each(dados, function(i, obj){
                     option += '<option>'+obj.nome+'</option>';
                 })
                 $('#mensagem').html('<span
-                class="mensagem">Total de cidades encontradas.: 
+                class="mensagem">Total de cidades encontradas.:
                 '+dados.length+'</span>');
             }else{
                 Reset();
                 $('#mensagem').html('<span
-                class="mensagem">Não foram encontradas 
-                cidades para esse estado!</span>');  
+                class="mensagem">Não foram encontradas
+                cidades para esse estado!</span>');
             }
             $('#cmbCidade').html(option).show();
         })
     })
-     
+
     <!-- Resetar Selects -->
     function Reset(){
         $('#cmbPais').empty().append('<option>Carregar Países</option>>');
