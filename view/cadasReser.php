@@ -1,6 +1,8 @@
 <!--https://www.devmedia.com.br/forum/combo-box-com-estados-e-cidades/598701-->
 <?php
-$v->layout("_themeProf");?>
+$v->layout("_themeProf");
+use Source\Models\Curso; ?>
+
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
@@ -16,15 +18,26 @@ $v->layout("_themeProf");?>
     <div class="col-8"> <label> Selecione o Curso: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="cursoDisc" id="cursoDisc" onchange="buscar_cursos()">
+         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="cursoDisc" id="cursoDisc">
 
           <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
             Lista de Cursos
           </option>
           <div class="dropdown-menu">
-            <option class="dropdown-item" value="1">1</option>
-            <option class="dropdown-item" value="2">2</option>
-            <option class="dropdown-item" value="3">3</option>
+           <?php
+                if($cursos):
+                  foreach($cursos as $curso):
+                  ?>
+                  <?php
+                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
+                    ?>
+                  <?php
+                    endforeach;
+                  else:
+                      ?>
+                      <h4> Não existem Cursos cadastrados </h4>
+                    <?php
+                  endif;?>
           </div>
         </select>
        
@@ -118,7 +131,7 @@ $v->layout("_themeProf");?>
   <div class="caixa3">
     <div class="form-group">
       <textarea class="form-control" id="exampleFormControlTextarea1" style="resize: none;" rows="3"></textarea>
-      <label>Caso Necessite de Instalação de Programas, expecificar acima:</label>
+      <label>Caso Necessite de Instalação de Programas, especificar acima:</label>
     </div>
   </div>
 
