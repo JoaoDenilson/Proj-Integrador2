@@ -96,7 +96,8 @@ $v->layout("_themeProf");?>
     <div class="table-responsive">
       <label>Selecione o(s) Horario(s) da(s) aulas:: </label>
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <tr>                   
+        <tr>
+          <td>Horário</td>                
           <td>Segunda</td>
           <td>Terça</td>
           <td>Quarta</td>
@@ -104,6 +105,7 @@ $v->layout("_themeProf");?>
           <td>Sexta</td>
         </tr>
         <tr>
+          <td>A</td>
           <td><input type="checkbox" name="segundaA"></td>
           <td><input type="checkbox" name="tercaA"></td>
           <td><input type="checkbox" name="quartaA"></td>
@@ -111,6 +113,7 @@ $v->layout("_themeProf");?>
           <td><input type="checkbox" name="sextaA"></td>
         </tr>
         <tr>
+          <td>B</td>
           <td><input type="checkbox" name="segundaB"></td>
           <td><input type="checkbox" name="tercaB"></td>
           <td><input type="checkbox" name="quartaB"></td>
@@ -118,13 +121,15 @@ $v->layout("_themeProf");?>
           <td><input type="checkbox" name="sextaB"></td>
         </tr>
         <tr>
+          <td>C</td>
           <td><input type="checkbox" name="segundaC"></td>
           <td><input type="checkbox" name="tercaC"></td>
           <td><input type="checkbox" name="quartaC"></td>
           <td><input type="checkbox" name="quintaC"></td>
           <td><input type="checkbox" name="sextaC"></td>
         </tr>
-        <tr>                   
+        <tr>
+          <td>D</td>                
           <td><input type="checkbox" name="segundaD"></td>
           <td><input type="checkbox" name="tercaD"></td>
           <td><input type="checkbox" name="quartaD"></td>
