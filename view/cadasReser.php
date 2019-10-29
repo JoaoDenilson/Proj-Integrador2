@@ -12,7 +12,6 @@ $v->layout("_themeProf");?>
 
 <form action="<?=url("reserva/cadastrar");?>" method="POST">
   <div class="caixa1">
-    
     <div class="col-8"> <label> Selecione o Curso: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
@@ -38,16 +37,16 @@ $v->layout("_themeProf");?>
                   endif;?>
           </div>
         </select>
-       
-      </div> 
-    </div> 
+
+      </div>
+    </div>
     <div class="w-100"style="margin-bottom: 30px;"><!-- Quebra de Linha --></div>
 
       <!-- DISCIPLINA -->
       <div class="col-8"> <label> Selecione a Disciplina: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" 
+         <select class="btn btn-primary" data-toggle="dropdown"
          aria-haspopup="true" aria-expanded="false" name="cursoDisc">
           //<option selected="selected"  name="cursoDisc">
           Lista de Disciplinas
@@ -68,15 +67,15 @@ $v->layout("_themeProf");?>
                     <?php
                   endif;?>
         </select>
-        </div> 
-      </div>  
+        </div>
+      </div>
       <div class="w-100"style="margin-bottom: 30px;"></div>
-    
+
     <!-- TURNO -->
     <div class="col-8"> <label>Selecione o Turno: </label> </div>
       <div class="col-2">
         <div class="btn-group dropright" >
-          <select class="btn btn-primary" data-toggle="dropdown" 
+          <select class="btn btn-primary" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false" name ="cursoDisc">
             <option selected="selected"  name="cursoDisc">
               Lista de Turnos
@@ -97,7 +96,7 @@ $v->layout("_themeProf");?>
       <label>Selecione o(s) Horario(s) da(s) aulas:: </label>
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <tr>
-          <td>Horário</td>                
+          <td>Horário</td>
           <td>Segunda</td>
           <td>Terça</td>
           <td>Quarta</td>
@@ -129,7 +128,7 @@ $v->layout("_themeProf");?>
           <td><input type="checkbox" name="sextaC"></td>
         </tr>
         <tr>
-          <td>D</td>                
+          <td>D</td>
           <td><input type="checkbox" name="segundaD"></td>
           <td><input type="checkbox" name="tercaD"></td>
           <td><input type="checkbox" name="quartaD"></td>
