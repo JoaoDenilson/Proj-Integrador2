@@ -22,7 +22,7 @@ $v->layout("_themeProf");?>
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
-        <a href="<?=url("dashboard");?>">Painel de Controle</a>
+        <a href="<?=url("home");?>">Painel de Controle</a>
     </li>
     <li class="breadcrumb-item active">Solicitar Reserva </li>
 </ol>
