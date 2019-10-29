@@ -18,7 +18,7 @@ $v->layout("_themeProf");?>
         <div class="btn-group dropright">
          <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="cursoDisc" id="cursoDisc" onchange="buscar_cursos()">
 
-          <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
+          <option selected="selected"  name="cursoDisc">
             Lista de Cursos
           </option>
           <div class="dropdown-menu">
@@ -49,7 +49,7 @@ $v->layout("_themeProf");?>
         <div class="btn-group dropright">
          <select class="btn btn-primary" data-toggle="dropdown" 
          aria-haspopup="true" aria-expanded="false" name="cursoDisc">
-          <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
+          //<option selected="selected"  name="cursoDisc">
           Lista de Disciplinas
         </option>
         <div class="dropdown-menu">
@@ -78,7 +78,7 @@ $v->layout("_themeProf");?>
         <div class="btn-group dropright" >
           <select class="btn btn-primary" data-toggle="dropdown" 
           aria-haspopup="true" aria-expanded="false" name ="cursoDisc">
-            <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
+            <option selected="selected"  name="cursoDisc">
               Lista de Turnos
             </option>
             <div class="dropdown-menu">
@@ -142,8 +142,7 @@ $v->layout("_themeProf");?>
       <label>Caso Necessite de Instalação de Programas, expecificar acima:</label>
     </div>
   </div>
-
-<input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
+    
 
 <button type="submit" class="btn btn-primary">Pedir</button>
 

@@ -20,8 +20,8 @@ use Source\Models\Disciplina;
 		public function __construct($router){
             $this->router = $router;
 			$this->reservaDAO= new ReservaDAO();
-            $this->disciplinaDAO= new DisciplinaDAO;
-            $this->cursoDAO= new CursoDAO;
+            $this->disciplinaDAO = new DisciplinaDAO();
+            $this->cursoDAO = new CursoDAO();
 			$this->reserva = new Reserva();
             $this->view =Engine::create(__DIR__."/../../view","php");
 		}
