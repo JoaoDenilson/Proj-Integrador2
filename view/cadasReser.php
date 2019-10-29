@@ -71,7 +71,7 @@ $v->layout("_themeProf");?>
 
   <div class="caixa2">
     <div class="table-responsive">
-      <label>Selecione os Horarios da(s) aulas:: </label>
+      <label>Selecione o(s) Horario(s) da(s) aulas:: </label>
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <tr>                   
           <td class="dropdown-item">Segunda</td>
