@@ -61,11 +61,50 @@ use Source\Models\Curso; ?>
                   <option value="3">Noite</option>
               </select>
 
-              <input type="date" name="">
+
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <tr>                   
+                    <td>Segunda</td>
+                    <td>Terça</td>
+                    <td>Quarta</td>
+                    <td>Quinta</td>
+                    <td>Sexta</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                  </tr>
+                  <tr>                   
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                  </tr>
+                  </tbody>
+            </table>
+<!-- DivTable.com -->
 
         <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
 
-        <button type="submit" class="btn btn-primary">Alterar</button>
+        <button type="submit" class="btn btn-primary">Pedir</button>
 
     </form>
 
