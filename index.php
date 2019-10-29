@@ -42,6 +42,7 @@ $route->post("/cadastrar", "ProfessorController:store");
 $route->post("/atualizar", "ProfessorController:update");
 $route->get("/editar/{id}", "ProfessorController:edit");
 $route->get("/excluir/{id}", "ProfessorController:delete");
+$route->post("/buscarCursos/{id}", "CursoController:index");
 
 /**
  *  group Admin | disciplina
