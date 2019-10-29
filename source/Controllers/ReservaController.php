@@ -24,8 +24,6 @@ use Source\Models\Reserva;
             }else{
                 $this->router->redirect("Web.login");
             }
-
-
         }
 		
 		public function inicio(){
