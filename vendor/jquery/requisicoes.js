@@ -2,8 +2,8 @@
 $(document).ready(function(){
      
   
-    $('#btnPais').click(function(e){
-        $('#btnPais').hide();
+    $('#btnCurso').click(function(e){
+        $('#btnCurso').hide();
         $('#mensagem').html('<span class="mensagem">Aguarde, carregando ...</span>');  
          
         $.getJSON('consulta.php?opcao=pais', function (dados){
@@ -14,7 +14,7 @@ $(document).ready(function(){
                   option += '<option value="'+obj.sigla+'">'+obj.nome+'</option>';
               })
               $('#mensagem').html('<span class="mensagem">Total de paises encontrados.: '+dados.length+'</span>'); 
-              $('#cmbPais').html(option).show();
+              $('#cmdCurso').html(option).show();
            }else{
                Reset();
                $('#mensagem').html('<span class="mensagem">Não foram encontrados paises!</span>');
