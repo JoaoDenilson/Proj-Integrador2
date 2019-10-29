@@ -11,100 +11,132 @@ $v->layout("_themeProf");?>
 
 
 <form action="<?=url("disciplina/atualizar");?>" method="POST">
-          <div class="form-group">
-            <div class="form-row">         
+  <div class="row">    
+    <div class="col-2">
+      <label>Selecione o Curso:</label>
+    </div>
 
-              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
-                  <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Selecione o Curso</option>
-                  <?php
-                  if($cursos):
-                    foreach($cursos as $curso):
-                  ?>
-                  <?php
-                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
-                    ?>
-                  <?php
-                    endforeach;
-                  else:
-                      ?>
-                      <h4> Não existem Cursos cadastrados </h4>
-                    <?php
-                  endif;?>
-              </select>
+    <div class="col">
+      <div class="btn-group dropright">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="cursoDisc">
+        Cursos
+        </button>
+        <div class="dropdown-menu">
+          <?php
+            if($cursos):
+             foreach($cursos as $curso):
+           ?>
+          <?php
+             echo "<a class='dropdown-item' value='{$curso->getIdCurso()}>' {$curso->getNomeCurso()}</option>;"
+          ?>
+          <?php
+            endforeach;
+            else:
+          ?>
+          <h4> Não existem Cursos cadastrados </h4>
+          
+          <?php
+            endif;
+          ?>
+        </div>
+      </div>
+    </div>
+    <div class="w-100"></div>
 
+    <div class="col-2">
+      <label>Selecione a Diciplina: </label>
+    </div>
+  
+    <div class="col">
+      <div class="btn-group dropright">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="cursoDisc">
+        Diciplinas
+        </button>
+        <div class="dropdown-menu">
+          <?php
+            if($cursos):
+              foreach($cursos as $curso):
+            ?>
+            <?php
+              echo "<a class='dropdown-item' value='{$curso->getIdCurso()}>' {$curso->getNomeCurso()}</option>;"
+              ?>
+            <?php
+              endforeach;
+              else:
+            ?>
+            <h4> Não existem Cursos cadastrados </h4>
+            
+            <?php
+              endif;
+            ?>
+        </div>
+      </div> 
+    </div>  
+    <div class="w-100"></div>
+  <div class="col-2">
+      <label>Selecione o Turno: </label>
+    </div>
+    <div class="col">
+      <div class="btn-group dropright" >
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name ="cursoDisc">
+          Turnos
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" value="1">Manhã</a>
+          <a class="dropdown-item" value="2">Tarde</a>
+          <a class="dropdown-item" value="3">Noite</a>
+        </div>
+      </div>
+    </div>
 
-              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
-                  <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Selecione a Dsiciplina</option>
-                  <?php
-                  if($cursos):
-                    foreach($cursos as $curso):
-                  ?>
-                  <?php
-                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
-                    ?>
-                  <?php
-                    endforeach;
-                  else:
-                      ?>
-                      <h4> Não existem Cursos cadastrados </h4>
-                    <?php
-                  endif;?>
-              </select>
-
-
-              <select class="btn btn-info dropdown-toggle" name ="cursoDisc">
-                  <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> Selecione o Turno</option>
-                  <option value="1">Manhã</option>
-                  <option value="2">Tarde</option>
-                  <option value="3">Noite</option>
-              </select>
-
-
-              <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <tr>                   
-                    <td>Segunda</td>
-                    <td>Terça</td>
-                    <td>Quarta</td>
-                    <td>Quinta</td>
-                    <td>Sexta</td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                  </tr>
-                  <tr>                   
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                    <td><input type="checkbox" id="horns" name="horns"></td>
-                  </tr>
-                  </tbody>
-            </table>
-          </div>
+  </div>
 
 
-        <input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
+  <div class="table-responsive">
+  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <tr>                   
+        <td class="dropdown-item">Segunda</td>
+        <td>Terça</td>
+        <td>Quarta</td>
+        <td>Quinta</td>
+        <td>Sexta</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+      </tr>
+      <tr>                   
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+        <td><input type="checkbox" id="horns" name="horns"></td>
+      </tr>
+      </tbody>
+</table>
+</div>
 
-        <button type="submit" class="btn btn-primary">Pedir</button>
+
+<input type="hidden" name="id" value="<?=url($disciplina[0]['idDisciplina']);?>">
+
+<button type="submit" class="btn btn-primary">Pedir</button>
 
     </form>
 
