@@ -62,7 +62,8 @@ $v->layout("_themeProf");?>
 
               <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <tr>                   
+                  <tr>
+                      <td>Horário/Dia</td>
                     <td>Segunda</td>
                     <td>Terça</td>
                     <td>Quarta</td>
@@ -70,6 +71,7 @@ $v->layout("_themeProf");?>
                     <td>Sexta</td>
                   </tr>
                   <tr>
+                      <td>1° Aula</td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
@@ -77,6 +79,7 @@ $v->layout("_themeProf");?>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                   </tr>
                   <tr>
+                      <td>2° Aula</td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
@@ -84,13 +87,15 @@ $v->layout("_themeProf");?>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                   </tr>
                   <tr>
+                      <td>3° Aula</td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                   </tr>
-                  <tr>                   
+                  <tr>
+                      <td>4° Aula</td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
                     <td><input type="checkbox" id="horns" name="horns"></td>
