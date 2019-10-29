@@ -16,7 +16,7 @@ $v->layout("_themeProf");?>
       <div class="col-2">
         <div class="btn-group dropright">
          <select class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" 
-         aria-haspopup="true" aria-expanded="false" name="cursoDisc">
+         aria-haspopup="true" aria-expanded="false" name="cursoDisc" id="cmdCurso">
           <option selected="selected" value="<?=$disciplina[0]['idCursoFk'];?>" name="cursoDisc"> 
           Curso
         </option>
@@ -26,6 +26,7 @@ $v->layout("_themeProf");?>
               <option class="dropdown-item" value="3">3</option>
             </div>
         </select>
+        <input type="button" value="Carregar Curso" id="btnCurso" class="botao"/>
       </div> 
     </div> 
     <div class="w-100" style="margin: 2px;"><!-- Quebra de Linha --></div>
