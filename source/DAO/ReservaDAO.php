@@ -8,7 +8,7 @@ use Source\Models\Reserva;
 		public function listarTudo(){
 
 			$pdo = Database::conexao();
-			$result = $pdo->query("SELECT * FROM reserva");
+			$result = $pdo->query("SELECT * FROM tb_reserva");
 			$linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
 			
 			for($i = 0; $i<count($linhas); $i++){
@@ -39,6 +39,7 @@ use Source\Models\Reserva;
 
 			$dataReserva = $reserva->getDataRes();
 			$horaReserva = $reserva->getHoraRes();
+			$horarios = $reserva->getHorarios();
 			//$statusReserva =$reserva-> getStatusReserva();
 			$observacaoReserva = $reserva->getObservacaoReserva();
 			//$justificativaReserva= $reserva->getJustificativaReserva();
@@ -46,7 +47,7 @@ use Source\Models\Reserva;
 			//$idLaboratorio = $reserva->getIdLabFk();
 			$idDisciplina = $reserva->getIdDisciplinaFk();
 
-			$query = "INSERT INTO reserva ( dataRes, horaRes, observacaoReserva, idUsuarioFk, idLabFk, idDisciplinaFk) VALUES (?,?,?,?,?,?)";
+			$query = "INSERT INTO tb_reserva ( dataRes, horaRes, observacaoReserva, idUsuarioFk, idLabFk, idDisciplinaFk, horarios) VALUES (?,?,?,?,?,?,?)";
 
     		$stmt = $pdo->prepare($query);
     		$stmt->bindParam(1, $dataReserva);
@@ -55,7 +56,7 @@ use Source\Models\Reserva;
             $stmt->bindParam(3, $idProfessor);
     		$stmt->bindParam(4, $idLaboratorio);
     		$stmt->bindParam(5, $idDisciplina);
-
+            $stmt->bindParam(5, $horarios);
     		$stmt->execute();
 
 		}
