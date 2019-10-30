@@ -52,32 +52,34 @@ use Source\Models\Disciplina;
 
 		public function store($data){
             session_start();
-            $idDisc = $_POST['idDisc'];
-            //$idUser = $_SESSION['idProf'];
-            //$idLab = $_POST['cursoDisc'];
-            $dataReserva = date("Y-m-d");
+            $idDisc = (int)$_POST['idDisc'];
+            $idUser = (int)$_SESSION['prof'][0];
+            //var_dump($idUser);
+            //$idLab = $_POST['idLab'];
+            //Só testanto o cadastro com id fixo de lab
+            $idLab = 1;
+            //Evitar problema de pegar data de outro local.
+            date_default_timezone_set('America/Fortaleza');
+            $dataReserva = date("d-m-Y");
             $horaReserva = date("H:i:s");
             $observacaoReserva = $_POST['observacao'];
-            $idCurso = $_POST['idCurso'];
+            //$idCurso = (int)$_POST['idCurso'];
             $horarios= implode("&", $_POST['horarios']);
-            /*
-            foreach($_checkbox as $_valor){
-                var_dump($_valor);
-                $horarios += $_valor+"&";
-            }*/
-            var_dump($horarios);
-
+            //var_dump($horarios);
+            $turno = $_POST['idTurno'];
 
 	        $this->reserva->setDataReserva($dataReserva);
 	        $this->reserva->setHoraReserva($horaReserva);
 	        $this->reserva->setIdDisciplinaFk($idDisc);
-	        //$this->reserva->setIdLabFk();
-            //$this->reserva->setIdUsuarioFk($idUser);
+	        $this->reserva->setIdLabFk( $idLab);
+            $this->reserva->setIdUsuarioFk($idUser);
 	        $this->reserva->setObservacaoReserva($observacaoReserva);
             $this->reserva->setHorarios($horarios);
+            $this->reserva->setTurno($turno);
 
-	        //$this->reservaDAO->insere($this->reserva);
-	        //$this->index();
+	        $this->reservaDAO->insere($this->reserva);
+	        $this->index();
+            //$this->router->redirect("ReservaController:index");
 		}
 		public function edit($id){
 			$res = $this->professorDAO->listaRegistro($id);
