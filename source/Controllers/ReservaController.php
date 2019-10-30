@@ -57,6 +57,7 @@ use Source\Models\Disciplina;
             $dataReserva = date("Y-m-d");
             $horaReserva = date("H:i:s");
             $observacaoReserva = $_POST['observacao'];
+            $horarios = $_POST['horarios'];
 
 	        $this->reserva->setDataReserva($dataReserva);
 	        $this->reserva->setHoraReserva();
@@ -64,8 +65,9 @@ use Source\Models\Disciplina;
 	        //$this->reserva->setIdLabFk();
             $this->reserva->setIdUsuarioFk($idUser);
 	        $this->reserva->setObservacaoReserva($observacaoReserva);
+            $this->reserva->setHorarios($horarios);
 	   
-	        $this->professorDAO->insere($this->professor);
+	        $this->reservaDAO->insere($this->reserva);
 	        $this->index();
 		}
 		public function edit($id){
