@@ -37,26 +37,28 @@ use Source\Models\Reserva;
 		public function insere($reserva){
 			$pdo = Database::conexao();
 
-			$dataReserva = $reserva->getDataRes();
-			$horaReserva = $reserva->getHoraRes();
+			$dataReserva = $reserva->getDataReserva();
+			$horaReserva = $reserva->getHoraReserva();
 			$horarios = $reserva->getHorarios();
 			//$statusReserva =$reserva-> getStatusReserva();
 			$observacaoReserva = $reserva->getObservacaoReserva();
 			//$justificativaReserva= $reserva->getJustificativaReserva();
 			$idProfessor = $reserva->getIdUsuarioFk();
-			//$idLaboratorio = $reserva->getIdLabFk();
+			$idLaboratorio = $reserva->getIdLabFk();
 			$idDisciplina = $reserva->getIdDisciplinaFk();
+            $turno = $reserva->getTurno();
 
-			$query = "INSERT INTO tb_reserva ( dataRes, horaRes, observacaoReserva, idUsuarioFk, idLabFk, idDisciplinaFk, horarios) VALUES (?,?,?,?,?,?,?)";
+			$query = "INSERT INTO tb_reserva ( dataReserva, horaReserva, observacaoReserva, idUsuarioFk, idLabFk, idDisciplinaFk, horarios, turno) VALUES (?,?,?,?,?,?,?,?)";
 
     		$stmt = $pdo->prepare($query);
     		$stmt->bindParam(1, $dataReserva);
     		$stmt->bindParam(2, $horaReserva);
-            $stmt->bindParam(2, $observacaoReserva);
-            $stmt->bindParam(3, $idProfessor);
-    		$stmt->bindParam(4, $idLaboratorio);
-    		$stmt->bindParam(5, $idDisciplina);
-            $stmt->bindParam(5, $horarios);
+            $stmt->bindParam(3, $observacaoReserva);
+            $stmt->bindParam(4, $idProfessor);
+    		$stmt->bindParam(5, $idLaboratorio);
+    		$stmt->bindParam(6, $idDisciplina);
+            $stmt->bindParam(7, $horarios);
+            $stmt->bindParam(8, $turno);
     		$stmt->execute();
 
 		}
