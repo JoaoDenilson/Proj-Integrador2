@@ -138,13 +138,6 @@ $v->layout("_themeProf");?>
         </tr>
         </tbody>
       </table>
-      <?php
-      $_checkbox = $_POST['horarios'];
-      foreach($_checkbox as $_valor){
-      echo$_valor;
-}
-
-      ?>
 
     </div>
   </div>
@@ -166,3 +159,4 @@ $v->layout("_themeProf");?>
 
 <?= $v->start("scripts");?>
 <?= $v->end();?>
+ 
