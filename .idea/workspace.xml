@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="Imagem de boas vindas">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/cadasReser.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/cadasReser.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,7 +104,7 @@
       <workItem from="1571883181782" duration="749000" />
       <workItem from="1572101441221" duration="825000" />
       <workItem from="1572298957132" duration="8236000" />
-      <workItem from="1572352102277" duration="21796000" />
+      <workItem from="1572352102277" duration="21974000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
