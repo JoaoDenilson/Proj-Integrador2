@@ -63,7 +63,7 @@ class Reserva{
         //Get e Set Horarios
         public function getHorarios()
         {
-            return $this->$horarios;
+            return $this->horarios;
         }
 
         public function setHorarios($horarios)
@@ -110,7 +110,7 @@ class Reserva{
             return $this->idDisciplinaFk;
         }
 
-        public function setIdDisciplinaFk(Disciplina $idDisciplinaFk)
+        public function setIdDisciplinaFk($idDisciplinaFk)
         {
             return $this->idDisciplinaFk = $idDisciplinaFk;
         }
