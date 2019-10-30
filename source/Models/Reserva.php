@@ -8,6 +8,7 @@ class Reserva{
         private $dataReserva;
         private $horaReserva;
         private $horarios;
+        private $turno;
         private $statusReserva;
         private $justificativaReserva;
         private $observacaoReserva;
@@ -24,6 +25,17 @@ class Reserva{
         public function setIdReserva($idReserva)
         {
             return $this->idReserva = $idReserva;
+        }
+
+        //Get e Set Turno
+        public function getTurno()
+        {
+            return $this->turno;
+     }
+
+        public function setTurno($turno)
+        {
+            return $this->turno = $turno;
         }
 
         //Get e Set DataReerva
@@ -51,12 +63,12 @@ class Reserva{
         //Get e Set Horarios
         public function getHorarios()
         {
-            return $this->$horarios;
+            return $this->horarios;
         }
 
         public function setHorarios($horarios)
         {
-            return $this->$horarios = $horarios;
+            return $this->horarios = $horarios;
         }
 
         //Get e Set StatusReerva
@@ -98,7 +110,7 @@ class Reserva{
             return $this->idDisciplinaFk;
         }
 
-        public function setIdDisciplinaFk(Disciplina $idDisciplinaFk)
+        public function setIdDisciplinaFk($idDisciplinaFk)
         {
             return $this->idDisciplinaFk = $idDisciplinaFk;
         }
