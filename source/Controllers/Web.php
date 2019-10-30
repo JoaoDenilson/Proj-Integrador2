@@ -60,21 +60,20 @@ class Web{
         if(count($linhas)>0){
             $nome  = $linhas[0]['nomeUsuario'];
             $nivel = $linhas[0]['nivelUsuario'];
-            //$idUser = $linhas[0]['idUsuario'];
-
+            $idUser = $linhas[0]['idUsuario'];
+            $sesao = array($idUser,$nome);
             session_start();
 
             if ($nivel == true){
                 //echo "Usuário Adm: ".$nome;
-                $_SESSION['adm'] = $nome;
+                $_SESSION['adm'] = $sesao;
 
                 $this->router->redirect("Web.dashboard");
                 //$this->dashboard();
             }
             else {
                 //echo "Usuário Professor: ".$nome;
-                //$_SESSION['idProf']= $idUser;
-                $_SESSION['prof'] = $nome;
+                $_SESSION['prof'] = $sesao;
                 $this->router->redirect("Web.home");
                 //$this->home();
             }
