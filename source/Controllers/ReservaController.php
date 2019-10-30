@@ -51,6 +51,7 @@ use Source\Models\Disciplina;
 		}
 
 		public function store($data){
+            session_start();
             $idDisc = $_POST['cursoDisc'];
             $idUser = $_SESSION['idProf'];
             //$idLab = $_POST['cursoDisc'];
