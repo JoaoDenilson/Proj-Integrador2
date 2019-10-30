@@ -65,7 +65,7 @@ use Source\Models\Disciplina;
 	        $this->reserva->setIdLabFk();
             $this->reserva->setIdUsuarioFk();
 	        $this->reserva->setObservacaoReserva();
-	   
+
 	        $this->professorDAO->insere($this->professor);
 	        $this->index();
 		}
