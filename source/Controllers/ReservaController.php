@@ -60,7 +60,7 @@ use Source\Models\Disciplina;
             $horarios = $_POST['horarios'];
 
 	        $this->reserva->setDataReserva($dataReserva);
-	        $this->reserva->setHoraReserva();
+	        $this->reserva->setHoraReserva($horaReserva);
 	        $this->reserva->setIdDisciplinaFk($idDisc);
 	        //$this->reserva->setIdLabFk();
             $this->reserva->setIdUsuarioFk($idUser);
