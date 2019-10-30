@@ -16,9 +16,9 @@ $v->layout("_themeProf");?>
     <div class="col-8"> <label> Selecione o Curso: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="cursoDisc" id="cursoDisc" onchange="buscar_cursos()">
+         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idCurso" id="cursoDisc" onchange="buscar_cursos()">
 
-          <option selected="selected"  name="cursoDisc">
+          <option selected="selected"  name="idCurso">
             Lista de Cursos
           </option>
           <div class="dropdown-menu">
@@ -48,8 +48,8 @@ $v->layout("_themeProf");?>
       <div class="col-2">
         <div class="btn-group dropright">
          <select class="btn btn-primary" data-toggle="dropdown" 
-         aria-haspopup="true" aria-expanded="false" name="cursoDisc">
-          //<option selected="selected"  name="cursoDisc">
+         aria-haspopup="true" aria-expanded="false" name="idDisc">
+          //<option selected="selected"  name="idDisc">
           Lista de Disciplinas
         </option>
         <div class="dropdown-menu">
@@ -77,8 +77,8 @@ $v->layout("_themeProf");?>
       <div class="col-2">
         <div class="btn-group dropright" >
           <select class="btn btn-primary" data-toggle="dropdown" 
-          aria-haspopup="true" aria-expanded="false" name ="cursoDisc">
-            <option selected="selected"  name="cursoDisc">
+          aria-haspopup="true" aria-expanded="false" name ="idTurno">
+            <option selected="selected"  name="idTurno">
               Lista de Turnos
             </option>
             <div class="dropdown-menu">
@@ -138,13 +138,6 @@ $v->layout("_themeProf");?>
         </tr>
         </tbody>
       </table>
-      <?php
-      $_checkbox = $_POST['horarios'];
-      foreach($_checkbox as $_valor){
-      echo$_valor;
-}
-
-      ?>
 
     </div>
   </div>

@@ -52,24 +52,32 @@ use Source\Models\Disciplina;
 
 		public function store($data){
             session_start();
-            $idDisc = $_POST['cursoDisc'];
-            $idUser = $_SESSION['idProf'];
+            $idDisc = $_POST['idDisc'];
+            //$idUser = $_SESSION['idProf'];
             //$idLab = $_POST['cursoDisc'];
             $dataReserva = date("Y-m-d");
             $horaReserva = date("H:i:s");
             $observacaoReserva = $_POST['observacao'];
-            $horarios = $_POST['horarios'];
+            $idCurso = $_POST['idCurso'];
+            $horarios= implode("&", $_POST['horarios']);
+            /*
+            foreach($_checkbox as $_valor){
+                var_dump($_valor);
+                $horarios += $_valor+"&";
+            }*/
+            var_dump($horarios);
+
 
 	        $this->reserva->setDataReserva($dataReserva);
 	        $this->reserva->setHoraReserva($horaReserva);
 	        $this->reserva->setIdDisciplinaFk($idDisc);
 	        //$this->reserva->setIdLabFk();
-            $this->reserva->setIdUsuarioFk($idUser);
+            //$this->reserva->setIdUsuarioFk($idUser);
 	        $this->reserva->setObservacaoReserva($observacaoReserva);
             $this->reserva->setHorarios($horarios);
 
-	        $this->reservaDAO->insere($this->reserva);
-	        $this->index();
+	        //$this->reservaDAO->insere($this->reserva);
+	        //$this->index();
 		}
 		public function edit($id){
 			$res = $this->professorDAO->listaRegistro($id);
