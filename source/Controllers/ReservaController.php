@@ -61,6 +61,7 @@ use Source\Models\Disciplina;
 
 	        $this->reserva->setDataReserva($dataReserva);
 	        $this->reserva->setHoraReserva();
+<<<<<<< HEAD
 	        $this->reserva->setIdDisciplinaFk($idDisc);
 	        //$this->reserva->setIdLabFk();
             $this->reserva->setIdUsuarioFk($idUser);
@@ -68,6 +69,14 @@ use Source\Models\Disciplina;
             $this->reserva->setHorarios($horarios);
 	   
 	        $this->reservaDAO->insere($this->reserva);
+=======
+	        $this->reserva->setIdDisciplinaFk($idDisciplina);
+	        $this->reserva->setIdLabFk();
+            $this->reserva->setIdUsuarioFk();
+	        $this->reserva->setObservacaoReserva();
+
+	        $this->professorDAO->insere($this->professor);
+>>>>>>> 1377a02e736c4847a96602f4a4db75ea37923009
 	        $this->index();
 		}
 		public function edit($id){

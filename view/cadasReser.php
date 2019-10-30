@@ -105,38 +105,55 @@ $v->layout("_themeProf");?>
         </tr>
         <tr>
           <td>A</td>
-          <td><input type="checkbox" name="segundaA"></td>
-          <td><input type="checkbox" name="tercaA"></td>
-          <td><input type="checkbox" name="quartaA"></td>
-          <td><input type="checkbox" name="quintaA"></td>
-          <td><input type="checkbox" name="sextaA"></td>
+          <td><input type="checkbox" name=horarios[] value="segundaA"></td>
+          <td><input type="checkbox" name=horarios[] value="tercaA"></td>
+          <td><input type="checkbox" name=horarios[] value="quartaA"></td>
+          <td><input type="checkbox" name=horarios[] value="quintaA"></td>
+          <td><input type="checkbox" name=horarios[] value="sextaA"></td>
         </tr>
         <tr>
           <td>B</td>
-          <td><input type="checkbox" name="segundaB"></td>
-          <td><input type="checkbox" name="tercaB"></td>
-          <td><input type="checkbox" name="quartaB"></td>
-          <td><input type="checkbox" name="quintaB"></td>
-          <td><input type="checkbox" name="sextaB"></td>
+          <td><input type="checkbox" name=horarios[] value="segundaB"></td>
+          <td><input type="checkbox" name=horarios[] value="tercaB"></td>
+          <td><input type="checkbox" name=horarios[] value="quartaB"></td>
+          <td><input type="checkbox" name=horarios[] value="quintaB"></td>
+          <td><input type="checkbox" name=horarios[] value="sextaB"></td>
         </tr>
         <tr>
           <td>C</td>
-          <td><input type="checkbox" name="segundaC"></td>
-          <td><input type="checkbox" name="tercaC"></td>
-          <td><input type="checkbox" name="quartaC"></td>
-          <td><input type="checkbox" name="quintaC"></td>
-          <td><input type="checkbox" name="sextaC"></td>
+          <td><input type="checkbox" name=horarios[] value="segundaC"></td>
+          <td><input type="checkbox" name=horarios[] value="tercaC"></td>
+          <td><input type="checkbox" name=horarios[] value="quartaC"></td>
+          <td><input type="checkbox" name=horarios[] value="quintaC"></td>
+          <td><input type="checkbox" name=horarios[] value="sextaC"></td>
         </tr>
         <tr>
+<<<<<<< HEAD
           <td>D</td>
           <td><input type="checkbox" name="segundaD"></td>
           <td><input type="checkbox" name="tercaD"></td>
           <td><input type="checkbox" name="quartaD"></td>
           <td><input type="checkbox" name="quintaD"></td>
           <td><input type="checkbox" name="sextaD"></td>
+=======
+          <td>D</td>                
+          <td><input type="checkbox" name=horarios[] value="segundaD"></td>
+          <td><input type="checkbox" name=horarios[] value="tercaD"></td>
+          <td><input type="checkbox" name=horarios[] value="quartaD"></td>
+          <td><input type="checkbox" name=horarios[] value="quintaD"></td>
+          <td><input type="checkbox" name=horarios[] value="sextaD"></td>
+>>>>>>> 1377a02e736c4847a96602f4a4db75ea37923009
         </tr>
         </tbody>
       </table>
+      <?php
+      $_checkbox = $_POST['horarios'];
+      foreach($_checkbox as $_valor){
+      echo$_valor;
+}
+
+      ?>
+
     </div>
   </div>
 
