@@ -7,6 +7,7 @@ class Reserva{
         private $idReserva;
         private $dataReserva;
         private $horaReserva;
+        private $horarios;
         private $statusReserva;
         private $justificativaReserva;
         private $observacaoReserva;
@@ -45,6 +46,17 @@ class Reserva{
         public function setHoraReserva($horaReserva)
         {
             return $this->horaReserva = $horaReserva;
+        }
+
+        //Get e Set Horarios
+        public function getHorarios()
+        {
+            return $this->$horarios;
+        }
+
+        public function setHorarios($horarios)
+        {
+            return $this->$horarios = $horarios;
         }
 
         //Get e Set StatusReerva
