@@ -96,8 +96,8 @@ $route->get("/{errcode}", "Web:error");
 $route->dispatch();
 
 if ($route->error()) {
-    echo "<pre>";
-    var_dump($route);
-    echo "</pre>";
+    //echo "<pre>";
+    //var_dump($route);
+    //echo "</pre>";
     $route->redirect("/ops/{$route->error()}");
 }
