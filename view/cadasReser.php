@@ -128,21 +128,21 @@ $v->layout("_themeProf");?>
           <td><input type="checkbox" name=horarios[] value="sextaC"></td>
         </tr>
         <tr>
-<<<<<<< HEAD
+
           <td>D</td>
           <td><input type="checkbox" name="segundaD"></td>
           <td><input type="checkbox" name="tercaD"></td>
           <td><input type="checkbox" name="quartaD"></td>
           <td><input type="checkbox" name="quintaD"></td>
           <td><input type="checkbox" name="sextaD"></td>
-=======
+
           <td>D</td>                
           <td><input type="checkbox" name=horarios[] value="segundaD"></td>
           <td><input type="checkbox" name=horarios[] value="tercaD"></td>
           <td><input type="checkbox" name=horarios[] value="quartaD"></td>
           <td><input type="checkbox" name=horarios[] value="quintaD"></td>
           <td><input type="checkbox" name=horarios[] value="sextaD"></td>
->>>>>>> 1377a02e736c4847a96602f4a4db75ea37923009
+
         </tr>
         </tbody>
       </table>
