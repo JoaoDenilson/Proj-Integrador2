@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Out-2019 às 18:51
+-- Tempo de geração: 30-Out-2019 às 00:59
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.2.22
 
@@ -109,7 +109,8 @@ CREATE TABLE `tb_reserva` (
   `horaReserva` varchar(5) NOT NULL,
   `statusReserva` varchar(10) NOT NULL DEFAULT 'Aguardando',
   `justificativaReserva` varchar(255) DEFAULT NULL,
-  `observacaoReserva` text DEFAULT NULL
+  `observacaoReserva` text DEFAULT NULL,
+  `horarios` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
