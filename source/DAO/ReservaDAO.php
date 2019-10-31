@@ -44,21 +44,21 @@ use Source\Models\Reserva;
 			$observacaoReserva = $reserva->getObservacaoReserva();
 			//$justificativaReserva= $reserva->getJustificativaReserva();
 			$idProfessor = $reserva->getIdUsuarioFk();
-			$idLaboratorio = $reserva->getIdLabFk();
+			//$idLaboratorio = $reserva->getIdLabFk();
 			$idDisciplina = $reserva->getIdDisciplinaFk();
             $turno = $reserva->getTurno();
 
-			$query = "INSERT INTO tb_reserva ( dataReserva, horaReserva, observacaoReserva, idUsuarioFk, idLabFk, idDisciplinaFk, horarios, turno) VALUES (?,?,?,?,?,?,?,?)";
+			$query = "INSERT INTO tb_reserva ( dataReserva, horaReserva, observacaoReserva, idUsuarioFk, idDisciplinaFk, horarios, turno) VALUES (?,?,?,?,?,?,?)";
 
     		$stmt = $pdo->prepare($query);
     		$stmt->bindParam(1, $dataReserva);
     		$stmt->bindParam(2, $horaReserva);
             $stmt->bindParam(3, $observacaoReserva);
             $stmt->bindParam(4, $idProfessor);
-    		$stmt->bindParam(5, $idLaboratorio);
-    		$stmt->bindParam(6, $idDisciplina);
-            $stmt->bindParam(7, $horarios);
-            $stmt->bindParam(8, $turno);
+    		//$stmt->bindParam(5, $idLaboratorio);
+    		$stmt->bindParam(5, $idDisciplina);
+            $stmt->bindParam(6, $horarios);
+            $stmt->bindParam(7, $turno);
     		$stmt->execute();
 
 		}
