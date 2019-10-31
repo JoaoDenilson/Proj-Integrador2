@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Out-2019 às 01:45
+-- Tempo de geração: 31-Out-2019 às 16:39
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.2.22
 
@@ -103,7 +103,7 @@ INSERT INTO `tb_laboratorio` (`idLab`, `codLab`, `nomeLab`, `qtdcompLab`) VALUES
 CREATE TABLE `tb_reserva` (
   `idDisciplinaFk` int(3) UNSIGNED NOT NULL,
   `idUsuarioFk` int(11) UNSIGNED NOT NULL,
-  `idLabFk` int(3) UNSIGNED NOT NULL,
+  `idLabFk` int(3) UNSIGNED DEFAULT NULL,
   `idReserva` int(10) UNSIGNED NOT NULL,
   `dataReserva` varchar(10) NOT NULL,
   `horaReserva` varchar(5) NOT NULL,
@@ -111,8 +111,15 @@ CREATE TABLE `tb_reserva` (
   `justificativaReserva` varchar(255) DEFAULT NULL,
   `observacaoReserva` text DEFAULT NULL,
   `horarios` varchar(100) NOT NULL,
-  `turmo` varchar(10) NOT NULL
+  `turno` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `tb_reserva`
+--
+
+INSERT INTO `tb_reserva` (`idDisciplinaFk`, `idUsuarioFk`, `idLabFk`, `idReserva`, `dataReserva`, `horaReserva`, `statusReserva`, `justificativaReserva`, `observacaoReserva`, `horarios`, `turno`) VALUES
+(7, 3, 1, 4, '2019-10-30', '00:13', 'Aguardando', NULL, 'Testando o Cadastro', 'segundaA&segundaB&quartaC&quartaD', '2');
 
 -- --------------------------------------------------------
 
@@ -205,7 +212,7 @@ ALTER TABLE `tb_laboratorio`
 -- AUTO_INCREMENT de tabela `tb_reserva`
 --
 ALTER TABLE `tb_reserva`
-  MODIFY `idReserva` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `idReserva` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuario`
