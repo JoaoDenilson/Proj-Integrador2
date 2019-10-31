@@ -64,25 +64,34 @@ use Source\Models\Reserva;
 		}
 
 		public function atualizar($reserva){
-			$pdo = Database::conexao();	
+			$pdo = Database::conexao();
 
-			$idReserva = $reserva->getIdRes();
-			$dataReserva = $reserva->getDataRes();
-			$horaReserva = $reserva->getHoraRes();
-			$idProfessor = $reserva->getIdProf();
-			$idLaboratorio = $reserva->getIdLab();
-			$idAdministrador = $reserva->getIdAdmin();
+			$idReserva = $reserva->getIdReserva();
+            $dataReserva = $reserva->getDataReserva();
+            $horaReserva = $reserva->getHoraReserva();
+            $horarios = $reserva->getHorarios();
+            //$statusReserva =$reserva-> getStatusReserva();
+            //$observacaoReserva = $reserva->getObservacaoReserva();
+            $justificativaReserva= $reserva->getJustificativaReserva();
+            $idProfessor = $reserva->getIdUsuarioFk();
+            //$idLaboratorio = $reserva->getIdLabFk();
+            $idDisciplina = $reserva->getIdDisciplinaFk();
+            $turno = $reserva->getTurno();
 
-			$query = "UPDATE reserva SET cursoProf=?, loginProf=?, senhaProf=?,celProf=?, emailProf=? WHERE idProf=?";
+            //dataReserva, horaReserva, observacaoReserva, idUsuarioFk, idDisciplinaFk, horarios, turno
+			$query = "UPDATE tb_reserva SET dataReserva=?, horaReserva=?, justificativaReserva=?, idUsuarioFk=?, idDisciplinaFk=?, 	idLabFk=?, horarios=?, turno=? WHERE idReserva=?";
 
-			$stmt = $pdo->prepare($query);
-    		$stmt->bindParam(1,$cursoProfessor);
-    		$stmt->bindParam(2, $loginProfessor);
-    		$stmt->bindParam(3, $senhaProfessor);
-    		$stmt->bindParam(4, $celProfessor);
-    		$stmt->bindParam(5, $emailProfessor);
-    		$stmt->bindParam(6, $idProfessor);
-
+            $stmt = $pdo->prepare($query);
+            $stmt->bindParam(1, $dataReserva);
+            $stmt->bindParam(2, $horaReserva);
+            $stmt->bindParam(3, $justificativaReserva);
+            $stmt->bindParam(4, $idProfessor);
+            $stmt->bindParam(5, $idLaboratorio);
+            $stmt->bindParam(6, $idDisciplina);
+            $stmt->bindParam(7, $horarios);
+            $stmt->bindParam(8, $turno);
+            $stmt->bindParam(9, $idReserva);
+            $stmt->execute();
 
             $stmt->execute();
 		}
