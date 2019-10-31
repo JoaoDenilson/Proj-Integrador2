@@ -57,7 +57,7 @@ use Source\Models\Disciplina;
             //var_dump($idUser);
             //$idLab = $_POST['idLab'];
             //Só testanto o cadastro com id fixo de lab
-            $idLab = 1;
+            //$idLab = 1;
             //Evitar problema de pegar data de outro local.
             date_default_timezone_set('America/Fortaleza');
             $dataReserva = date("d-m-Y");
@@ -71,7 +71,7 @@ use Source\Models\Disciplina;
 	        $this->reserva->setDataReserva($dataReserva);
 	        $this->reserva->setHoraReserva($horaReserva);
 	        $this->reserva->setIdDisciplinaFk($idDisc);
-	        $this->reserva->setIdLabFk( $idLab);
+	        //$this->reserva->setIdLabFk( $idLab);
             $this->reserva->setIdUsuarioFk($idUser);
 	        $this->reserva->setObservacaoReserva($observacaoReserva);
             $this->reserva->setHorarios($horarios);
