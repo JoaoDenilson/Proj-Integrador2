@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="Imagem de boas vindas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Controllers/ReservaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/ReservaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Controllers/Web.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/Web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/DAO/ReservaDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/ReservaDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Reserva.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Reserva.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +105,9 @@
       <workItem from="1571883181782" duration="749000" />
       <workItem from="1572101441221" duration="825000" />
       <workItem from="1572298957132" duration="8236000" />
-      <workItem from="1572352102277" duration="28728000" />
+      <workItem from="1572352102277" duration="28893000" />
+      <workItem from="1572460296209" duration="1633000" />
+      <workItem from="1572536021070" duration="495000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
