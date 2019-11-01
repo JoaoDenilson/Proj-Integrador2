@@ -14,8 +14,8 @@ use Source\Models\Disciplina;
         private $router;
 		private $reserva;
 		private $reservaDAO;
-        private $CursoDAO;
-        private $DisciplinaDAO;
+        private $cursoDAO;
+        private $disciplinaDAO;
 
 		public function __construct($router){
             $this->router = $router;
@@ -28,8 +28,25 @@ use Source\Models\Disciplina;
 		
 		public function index(){
             session_start();
+            $linhas = $this->reservaDAO->listarTudo();
+            for($i = 0; $i<count($linhas); $i++){
+              $reserva[$i] = new Reserva();
+
+              //$reserva[$i]->setIdReserva($linhas[$i]['idReserva']);
+              $reserva[$i]->setTurno($linhas[$i]['turno']);
+              $reserva[$i]->setDataReserva($linhas[$i]['dataReserva']);
+              $reserva[$i]->setHoraReserva($linhas[$i]['horaReserva']);
+              $reserva[$i]->setHorarios($linhas[$i]['horarios']);
+
+              //$reserva[$i]->setIdProf($linhas[$i]['fk_Professor_idProf']);
+              $reserva[$i]->setIdLabFk($linhas[$i]['idLabFk']);
+              //$reserva[$i]->setIdAdmin($linhas[$i]['fk_Administrador_idAdmin']);
+          }
+
             if (isset($_SESSION['prof']) || isset($_SESSION['adm'])){
                 echo "Página de Listar";
+                //var_dump($linhas);
+                var_dump($reserva);
             }else{
                 $this->router->redirect("Web.login");
             }
@@ -81,6 +98,7 @@ use Source\Models\Disciplina;
 	        $this->index();
             //$this->router->redirect("ReservaController:index");
 		}
+
 		public function edit($id){
 			$res = $this->professorDAO->listaRegistro($id);
 			session_start();

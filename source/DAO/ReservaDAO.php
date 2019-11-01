@@ -5,35 +5,51 @@ use Source\Models\Reserva;
 	
 	class ReservaDAO{
 
+        //Traz uma Lista contendo apenas as solicitações de reserva.
 		public function listarTudo(){
-
 			$pdo = Database::conexao();
-			$result = $pdo->query("SELECT * FROM tb_reserva");
+			$result = $pdo->query("SELECT r.*, u.idUsuario, u.nomeUsuario FROM tb_reserva r, tb_usuario u WHERE statusReserva='Aguardando' AND u.idUsuario=r.idUsuarioFk");
 			$linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
-			
-			for($i = 0; $i<count($linhas); $i++){
-				$reserva[$i] = new Reserva;
-
-				$reserva[$i]->setIdRes($linhas[$i]['idReserva']);
-				$reserva[$i]->setDataRes($linhas[$i]['dataRes']);
-				$reserva[$i]->setHoraRes($linhas[$i]['horaRes']);
-				$reserva[$i]->setIdProf($linhas[$i]['fk_Professor_idProf']);
-				$reserva[$i]->setIdLab($linhas[$i]['fk_Laboratorio_idLab']);
-				$reserva[$i]->setIdAdmin($linhas[$i]['fk_Administrador_idAdmin']);							
-			}	
-	  		return $reserva;
+		   return $linhas;
 		}
-		
+
+        //Traz uma Lista contendo apenas as reservas aceitas.
+        public function listarAceitas(){
+            $pdo = Database::conexao();
+            $result = $pdo->query("SELECT r.*, u.idUsuario, u.nomeUsuario FROM tb_reserva r, tb_usuario u WHERE statusReserva='Aceita' AND u.idUsuario=r.idUsuarioFk");
+            $linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
+            return $linhas;
+        }
+
+        //Traz uma Lista contendo apenas as reservas negadas
+        public function listarNegadas(){
+            $pdo = Database::conexao();
+            $result = $pdo->query("SELECT r.*, u.idUsuario, u.nomeUsuario FROM tb_reserva r, tb_usuario u WHERE statusReserva='Negada' AND u.idUsuario=r.idUsuarioFk");
+            $linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
+            return $linhas;
+        }
+
+		//Traz uma Lista contendo apenas as solicitações de resrva de um usuário específico.
+        public function listarSolicitadas(){
+            $idUser = (int)$_SESSION['prof'][0];
+            $pdo = Database::conexao();
+            $result = $pdo->query("SELECT * FROM tb_reserva WHERE idUsuarioFk='$idUser'");
+            $reserva = $result->fetchAll(\PDO::FETCH_ASSOC);
+            return $reserva;
+        }
+
+        //Traz uma solicitação de reserva.
 		public function listaRegistro($id){
 
 			$resId = $_GET['id'];
 			$pdo = Database::conexao();
-			$result = $pdo->query("SELECT * FROM reserva WHERE idReserva='$resId'");
+			$result = $pdo->query("SELECT * FROM tb_reserva WHERE idReserva='$resId'");
 			$linha = $result->fetchAll(\PDO::FETCH_ASSOC);
 
 			return $linha;
 		}
 
+        //Cadastrar uma solicitação de reserva uma soliticalçao de reserva
 		public function insere($reserva){
 			$pdo = Database::conexao();
 
@@ -63,6 +79,7 @@ use Source\Models\Reserva;
 
 		}
 
+        //Editar a reserva
 		public function atualizar($reserva){
 			$pdo = Database::conexao();
 
@@ -95,18 +112,7 @@ use Source\Models\Reserva;
 
             $stmt->execute();
 		}
-        /*
-        public function deleta($id){
 
-        $pdo = Database::conexao();
-        $query = ("DELETE FROM professor WHERE idProf=?");
-        $stmt = $pdo->prepare($query);
-        $stmt->bindParam(1, $id);
-        $ok = $stmt->execute();
-
-    }*/
-
-		
 	}
 	
 			
