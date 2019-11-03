@@ -40,7 +40,6 @@ use Source\Models\Reserva;
 
         //Traz uma solicitação de reserva.
 		public function listaRegistro($id){
-
 			$resId = $_GET['id'];
 			$pdo = Database::conexao();
 			$result = $pdo->query("SELECT * FROM tb_reserva WHERE idReserva='$resId'");
@@ -91,7 +90,7 @@ use Source\Models\Reserva;
             //$observacaoReserva = $reserva->getObservacaoReserva();
             $justificativaReserva= $reserva->getJustificativaReserva();
             $idProfessor = $reserva->getIdUsuarioFk();
-            //$idLaboratorio = $reserva->getIdLabFk();
+            $idLaboratorio = $reserva->getIdLabFk();
             $idDisciplina = $reserva->getIdDisciplinaFk();
             $turno = $reserva->getTurno();
 
@@ -99,12 +98,13 @@ use Source\Models\Reserva;
 			$query = "UPDATE tb_reserva SET dataReserva=?, horaReserva=?, justificativaReserva=?, idUsuarioFk=?, idDisciplinaFk=?, 	idLabFk=?, horarios=?, turno=? WHERE idReserva=?";
 
             $stmt = $pdo->prepare($query);
+
             $stmt->bindParam(1, $dataReserva);
             $stmt->bindParam(2, $horaReserva);
             $stmt->bindParam(3, $justificativaReserva);
             $stmt->bindParam(4, $idProfessor);
-            $stmt->bindParam(5, $idLaboratorio);
-            $stmt->bindParam(6, $idDisciplina);
+            $stmt->bindParam(5, $idDisciplina);
+            $stmt->bindParam(6, $idLaboratorio);
             $stmt->bindParam(7, $horarios);
             $stmt->bindParam(8, $turno);
             $stmt->bindParam(9, $idReserva);
@@ -113,6 +113,15 @@ use Source\Models\Reserva;
             $stmt->execute();
 		}
 
+        public function deleta($id){
+
+            $pdo = Database::conexao();
+            $query = ("DELETE FROM tb_reserva WHERE idReserva=?");
+            $stmt = $pdo->prepare($query);
+            $stmt->bindParam(1, $id);
+            $stmt->execute();
+
+        }
 	}
 	
 			
