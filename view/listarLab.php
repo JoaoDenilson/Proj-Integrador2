@@ -51,7 +51,7 @@
                     ?>
                     <td><a href="<?= url("laboratorio/editar/{$lab->getIdLab()}");?>">Editar</a></td>
                     <td><a href="<?= url("laboratorio/excluir/{$lab->getIdLab()}");?>">Excluir</a></td>
-                    </tr>
+                    <?="<tr>";?>
                     
                     <?php
                 endforeach;
