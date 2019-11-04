@@ -137,7 +137,7 @@ use Source\Models\Laboratorio;
 
 		public function edit($id){
             $m = implode($id);
-            var_dump($m);
+            //var_dump($m);
             $k=(int)$m;
 		   //Usar o explode na View
             //$horarios_explode = explode("&", $horarios);
@@ -149,7 +149,7 @@ use Source\Models\Laboratorio;
                 echo $this->view->render("editarRes",[
                     "title"=>"Editar Reserva | ".SITE,
                     "reserva" => $res,
-                    "Laboratorios"=> $lab
+                    "laboratorios"=> $lab
                 ]);
 
             }else{

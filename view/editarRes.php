@@ -1,6 +1,6 @@
 <!--https://www.devmedia.com.br/forum/combo-box-com-estados-e-cidades/598701-->
 <?php
-$v->layout("_themeProf");?>
+$v->layout("_themeAdm");?>
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">

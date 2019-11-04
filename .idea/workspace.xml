@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="Imagem de boas vindas" />
+    <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="Projeto Integrador">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Controllers/ReservaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/ReservaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/editarRes.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/editarRes.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +109,11 @@
       <workItem from="1572460296209" duration="1633000" />
       <workItem from="1572536021070" duration="2082000" />
       <workItem from="1572576870335" duration="5253000" />
+      <workItem from="1572782201035" duration="5444000" />
+      <workItem from="1572821018639" duration="5584000" />
+      <workItem from="1572865981510" duration="12675000" />
+      <workItem from="1572885866251" duration="735000" />
+      <workItem from="1572890166309" duration="2093000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
@@ -151,6 +160,7 @@
     <MESSAGE value="Adcionando atributos, get e set Professor" />
     <MESSAGE value="Modificando Professor" />
     <MESSAGE value="Adcionando uma imagem de boas vindas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adcionando uma imagem de boas vindas" />
+    <MESSAGE value="Projeto Integrador" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projeto Integrador" />
   </component>
 </project>
