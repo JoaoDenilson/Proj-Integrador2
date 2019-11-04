@@ -61,7 +61,9 @@
                }
                echo "<td>{$aux['statusReserva']}</td>";
                ?>
-               <td><a href="<?= url("reserva/editar/{$aux['idReserva']}");?>">Editar</a></td>
+               <td>
+                   <a href="<?= url("reserva/editar/{$aux['idReserva']}");?>">Editar</a>
+               </td>
 
                </tr>
            <?php
@@ -75,7 +77,7 @@
 
 
       </table>
-                <a class="btn btn-success" href="<?=url("professor/adicionar");?>" role="button">Adicionar</a>
+                <a class="btn btn-success" href="<?=url("reseva/adicionar");?>" role="button">Adicionar</a>
             </div>
           </div>
         <?= $v->start("scripts");?>

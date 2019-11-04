@@ -26,11 +26,9 @@ use Source\Models\Laboratorio;
             $this->disciplinaDAO = new DisciplinaDAO();
             $this->cursoDAO = new CursoDAO();
 			$this->reserva = new Reserva();
-            $this->reserva = new Laboratorio();
+            $this->Laboratorio = new Laboratorio();
 			$this->LaboratorioDAO = new LaboratorioDAO();
             $this->view =Engine::create(__DIR__."/../../view","php");
-            //Evitar problema de pegar data de outro local.
-            date_default_timezone_set('America/Fortaleza');
 		}
 
 		public function reservations(){
@@ -113,6 +111,8 @@ use Source\Models\Laboratorio;
             //$idLab = $_POST['idLab'];
             //Só testanto o cadastro com id fixo de lab
             //$idLab = 1;
+            //Evitar problema de pegar data de outro local.
+            date_default_timezone_set('America/Fortaleza');
             $dataReserva = date("d-m-Y");
             $horaReserva = date("H:i:s");
             $observacaoReserva = $_POST['observacao'];
@@ -136,14 +136,14 @@ use Source\Models\Laboratorio;
 		}
 
 		public function edit($id){
-            $n = $id;
+            $m = implode($id);
+            var_dump($m);
+            $k=(int)$m;
 		   //Usar o explode na View
             //$horarios_explode = explode("&", $horarios);
             session_start();
             if (isset($_SESSION['adm'])){
-                $res = $this->reservaDAO->listaRegistro($n);
-                $lab = $this->reservaDAO->listarTudo();
-                echo "Tela de editar ";
+                $res = $this->reservaDAO->listaRegistro($k);
                 var_dump($res);
                 /*
                 echo $this->view->render("editarReser",[
@@ -165,6 +165,8 @@ use Source\Models\Laboratorio;
             //$idLab = $_POST['idLab'];
             //Só testanto o cadastro com id fixo de lab
             //$idLab = 1;
+            //Evitar problema de pegar data de outro local.
+            date_default_timezone_set('America/Fortaleza');
             $dataReserva = date("d-m-Y");
             $horaReserva = date("H:i:s");
             $observacaoReserva = $_POST['observacao'];

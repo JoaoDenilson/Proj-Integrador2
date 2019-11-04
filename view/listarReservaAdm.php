@@ -65,7 +65,8 @@
                }
 
                ?>
-               <td><a name="idReserva" href="<?= url("reserva/editar/{$aux['idReserva']}");?>">Editar</a></td>
+                <?php $id=$aux['idReserva'];?>
+               <td><a id="id" name="id" href="<?= url("reserva/editar/{$id}");?>">Editar</a></td>
 
                </tr>
            <?php

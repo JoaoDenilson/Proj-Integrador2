@@ -40,11 +40,10 @@ use Source\Models\Reserva;
 
         //Traz uma solicitação de reserva.
 		public function listaRegistro($id){
-			$pdo = Database::conexao();
-			$result = $pdo->query("SELECT * FROM tb_reserva WHERE idReserva='$id'");
-			$linha = $result->fetchAll(\PDO::FETCH_ASSOC);
-
-			return $linha;
+            $pdo = Database::conexao();
+            $result = $pdo->query("SELECT * FROM tb_reserva WHERE idReserva='$id'");
+            $linha = $result->fetchAll(\PDO::FETCH_ASSOC);
+            return $linha;
 		}
 
         //Cadastrar uma solicitação de reserva uma soliticalçao de reserva
