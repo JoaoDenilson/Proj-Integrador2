@@ -82,9 +82,9 @@ $v->layout("_themeProf");?>
               Lista de Turnos
             </option>
             <div class="dropdown-menu">
-              <option value="1">Manhã</option>
-              <option value="2">Tarde</option>
-              <option value="3">Noite</option>
+              <option value="Manhã">Manhã</option>
+              <option value="Tarde">Tarde</option>
+              <option value="Noite">Noite</option>
             </div>
           </select>
         </div>
