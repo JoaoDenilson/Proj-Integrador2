@@ -21,6 +21,8 @@
                       <th>Curso</th>
                       <th>Disciplina</th>
                       <th>Turno</th>
+                      <th>Data</th>
+                      <th>Hora</th>
                       <th>Visualizar+</th>
                   </tr>
                 </thead>
@@ -33,17 +35,14 @@
                       <th>Curso</th>
                       <th>Disciplina</th>
                       <th>Turno</th>
+                      <th>Data</th>
+                      <th>Hora</th>
                       <th>Visualizar+</th>
                   </tr>
                 </tfoot>
 
 
-        <!-- Aqui tem que mostar:
-            o curso que o professor escolheu, 
-            a disciplina, 
-            o turno,
-            o horario e as observações
-        -->
+      
 
        <?php
        if ($reservas):
@@ -55,6 +54,8 @@
                echo "<td>{$aux['nomeCurso']}</td>";
                echo "<td>{$aux['nomeDisciplina']}</td>";
                echo "<td>{$aux['turno']}</td>";
+               echo "<td>{$aux['dataReserva']}</td>";
+               echo "<td>{$aux['horaReserva']}</td>";
 
                ?>
                 <?php $id=$aux['idReserva'];?>
@@ -70,7 +71,6 @@
        endif;?>
 
       </table>
-                <a class="btn btn-success" href="<?=url("professor/adicionar");?>" role="button">Adicionar</a>
             </div>
           </div>
         <?= $v->start("scripts");?>
