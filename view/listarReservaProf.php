@@ -52,12 +52,8 @@
                echo "<td>{$aux['nomeDisciplina']}</td>";
                echo "<td>{$aux['turno']}</td>";
                echo "<td>{$aux['statusReserva']}</td>";
+               echo "</tr>";
                ?>
-               <td>
-                   <a href="<?= url("reserva/editar/{$aux['idReserva']}");?>">Editar</a>
-               </td>
-
-               </tr>
            <?php
            endforeach;
        else:
@@ -69,7 +65,7 @@
 
 
       </table>
-                <a class="btn btn-success" href="<?=url("reseva/adicionar");?>" role="button">Adicionar</a>
+                <a class="btn btn-success" href="<?=url("reserva/adicionar");?>" role="button">Adicionar</a>
             </div>
           </div>
         <?= $v->start("scripts");?>
