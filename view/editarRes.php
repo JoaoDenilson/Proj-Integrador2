@@ -11,53 +11,23 @@ $v->layout("_themeProf");?>
 
 
 <form action="<?=url("reserva/cadastrar");?>" method="POST">
-  <div class="caixa0">
-    <!-- Lab -->
-      <div class="col-8"> <label> Selecione o Laboratório: </label></div>
-      <div class="col-2">
-        <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" 
-         aria-haspopup="true" aria-expanded="false" name="cursoDisc">
-          //<option selected="selected"  name="cursoDisc">
-          Lista de Laboratórios
-        </option>
-        <div class="dropdown-menu">
-              <?php
-                  if($laboratorios):
-                    foreach($laboratorios as $laboratorio):
-                  ?>
-                  <?php
-                    echo "<option value='{$laboratorio->getIdLab()}'> {$laboratorio->getNomeLab()}</option>";
-                    ?>
-                  <?php
-                    endforeach;
-                  else:
-                      ?>
-                      <h4> Não existem laboratorios cadastrados </h4>
-                    <?php
-                  endif;?>
-        </select>
-        </div> 
-      </div>  
-      <div class="w-100"style="margin-bottom: 30px;"></div>
-
-      <!-- Cursos -->
+  <div class="caixa1">
     
-    <div class="col-8"> <label> Selecione o Curso: </label></div>
+       <div class="col-8"> <label> Selecione o Laboratório: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="cursoDisc" id="cursoDisc" onchange="buscar_cursos()">
+         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idCurso" id="cursoDisc" onchange="buscar_cursos()">
 
-          <option selected="selected"  name="cursoDisc">
-            Lista de Cursos
+          <option selected="selected" name="">
+            Lista de Laboratórios
           </option>
           <div class="dropdown-menu">
             <?php
-                  if($cursos):
-                    foreach($cursos as $curso):
+                if($laboratorios):
+                foreach($laboratorios as $lab):
                   ?>
                   <?php
-                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
+                    echo "<option value='{$lab->getIdLab()}'> {$lab->getNomeLab()}</option>";
                     ?>
                   <?php
                     endforeach;
@@ -65,61 +35,37 @@ $v->layout("_themeProf");?>
                       ?>
                       <h4> Não existem Cursos cadastrados </h4>
                     <?php
-                  endif;?>
+                  endif;
+            ?>
           </div>
         </select>
        
       </div> 
     </div> 
-    <div class="w-100"style="margin-bottom: 30px;"><!-- Quebra de Linha --></div>
+
+
+    <div class="col-8">
+      <label> Curso selecionado: 
+        <input type="text" name="curso" class="form-control" value="Aqui será o nome do curso" disabled="on"> 
+      </label>
+    </div>
+    
+    
 
       <!-- DISCIPLINA -->
-      <div class="col-8"> <label> Selecione a Disciplina: </label></div>
-      <div class="col-2">
-        <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" 
-         aria-haspopup="true" aria-expanded="false" name="cursoDisc">
-          //<option selected="selected"  name="cursoDisc">
-          Lista de Disciplinas
-        </option>
-        <div class="dropdown-menu">
-              <?php
-                  if($disciplinas):
-                    foreach($disciplinas as $disciplina):
-                  ?>
-                  <?php
-                    echo "<option value='{$disciplina->getIdDisc()}'> {$disciplina->getNomeDisc()}</option>";
-                    ?>
-                  <?php
-                    endforeach;
-                  else:
-                      ?>
-                      <h4> Não existem Cursos cadastrados </h4>
-                    <?php
-                  endif;?>
-        </select>
-        </div> 
-      </div>  
-      <div class="w-100"style="margin-bottom: 30px;"></div>
+      <div class="col-8"> 
+        <label> Disciplina selecionado: 
+          <input type="text" name="disciplina" class="form-control" value="Aqui será o nome da disciplina" disabled="on"> 
+        </label>
+      </div>
     
     <!-- TURNO -->
-    <div class="col-8"> <label>Selecione o Turno: </label> </div>
-      <div class="col-2">
-        <div class="btn-group dropright" >
-          <select class="btn btn-primary" data-toggle="dropdown" 
-          aria-haspopup="true" aria-expanded="false" name ="cursoDisc">
-            <option selected="selected"  name="cursoDisc">
-              Lista de Turnos
-            </option>
-            <div class="dropdown-menu">
-              <option value="1">Manhã</option>
-              <option value="2">Tarde</option>
-              <option value="3">Noite</option>
-            </div>
-          </select>
-        </div>
-      <div class="w-100" style="margin-bottom: 30px;"></div>
+    <div class="col-8">
+      <label> Turno selecionado: 
+        <input type="text" name="turno" class="form-control" value="Aqui será o turno" disabled="on"> 
+      </label>
     </div>
+
   </div>
 
   <div class="caixa2">
@@ -175,32 +121,28 @@ $v->layout("_themeProf");?>
 
     <div class="caixa3">
         <div class="form-group">
-            <textarea name="observacao" class="form-control" id="exampleFormControlTextarea1" style="resize: none;" rows="3"></textarea>
-            <label>Caso Necessite de Instalação de Programas, especificar acima:</label>
+            <textarea name="observacao" class="form-control" style="resize: none;" rows="3" disabled="on" ></textarea>
+            <label>Programas que foram exigidos no laboratório</label>
         </div>
     </div>
-  </div>
 
-      <div class="caixa4">
+    <div class="caixa3">
         <div class="form-group">
-            <textarea name="justificativa" class="form-control" id="exampleFormControlTextarea2" style="resize: none;" rows="3"></textarea>
-            <label>Caso Necessite justificar, especificar acima:</label>
+            <textarea name="observacao" class="form-control"  style="resize: none;" rows="3"></textarea>
+            <label style="cursor:help;" title="Este campo deve ser usado para informar o por quê de ter negado ou não a reserva">Justificativa*</label>
         </div>
     </div>
+
+
   </div>
 
 <input type="hidden" name="metodo" value="store">
 <input type="hidden"  name="classe" value="reserva">
-<button type="submit" class="btn btn-primary">Pedir</button>
+<button type="submit" class="btn btn-danger">Voltar</button>
+<button type="submit" class="btn btn-primary">Confirmar</button>
 
 </form>
 
 <?= $v->start("scripts");?>
 <?= $v->end();?>
-      <?php
-      $_checkbox = $_POST['horarios'];
-      foreach($_checkbox as $_valor){
-      echo$_valor;
-      }
-
-      ?>
+ 
