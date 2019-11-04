@@ -46,7 +46,7 @@ $v->layout("_themeAdm");?>
 
     <div class="col-8">
       <label> Curso selecionado: 
-        <input type="text" name="curso" class="form-control" value="Aqui será o nome do curso" disabled="on"> 
+        <input type="text" name="curso" class="form-control" value="<?=$reserva[0]['nomeCurso'];?>" disabled="on">
       </label>
     </div>
     
@@ -55,14 +55,14 @@ $v->layout("_themeAdm");?>
       <!-- DISCIPLINA -->
       <div class="col-8"> 
         <label> Disciplina selecionado: 
-          <input type="text" name="disciplina" class="form-control" value="Aqui será o nome da disciplina" disabled="on"> 
+          <input type="text" name="disciplina" class="form-control" value="<?=$reserva[0]['nomeDisciplina'];?>" disabled="on">
         </label>
       </div>
     
     <!-- TURNO -->
     <div class="col-8">
       <label> Turno selecionado: 
-        <input type="text" name="turno" class="form-control" value="Aqui será o turno" disabled="on"> 
+        <input type="text" name="turno" class="form-control" value="<?=$reserva[0]['turno'];?>" disabled="on">
       </label>
     </div>
 
