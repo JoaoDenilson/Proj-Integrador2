@@ -158,37 +158,37 @@ use Source\Models\Laboratorio;
 		}
 
 		public function update($data){
-
-            session_start();
-            $idDisc = (int)$_POST['idDisc'];
+            //$idDisc = (int)$_POST['idDisc'];
             //var_dump($idUser);
-            //$idLab = $_POST['idLab'];
+            $idReserva = $_POST['idReserva'];
+            $idLab = $_POST['idLab'];
+            $justificativaReserva = $_POST['justificativa'];
             //Só testanto o cadastro com id fixo de lab
             //$idLab = 1;
             //Evitar problema de pegar data de outro local.
-            date_default_timezone_set('America/Fortaleza');
-            $dataReserva = date("d-m-Y");
-            $horaReserva = date("H:i:s");
-            $observacaoReserva = $_POST['observacao'];
+            //date_default_timezone_set('America/Fortaleza');
+            //$dataReserva = date("d-m-Y");
+            //$horaReserva = date("H:i:s");
+            //$observacaoReserva = $_POST['observacao'];
             //$idCurso = (int)$_POST['idCurso'];
-            $horarios= implode("&", $_POST['horarios']);
+            //$horarios= implode("&", $_POST['horarios']);
             //var_dump($horarios);
-            $turno = $_POST['idTurno'];
+            //$turno = $_POST['idTurno'];
 
-            $this->reserva->setDataReserva($dataReserva);
-            $this->reserva->setHoraReserva($horaReserva);
-            $this->reserva->setIdDisciplinaFk($idDisc);
-            //$this->reserva->setIdLabFk( $idLab);
-            $this->reserva->setIdUsuarioFk($idUser);
-            $this->reserva->setObservacaoReserva($observacaoReserva);
-            $this->reserva->setHorarios($horarios);
-            $this->reserva->setTurno($turno);
+            //$this->reserva->setDataReserva($dataReserva);
+            //$this->reserva->setHoraReserva($horaReserva);
+            //$this->reserva->setIdDisciplinaFk($idDisc);
+            $this->reserva->setIdReserva($idReserva);
+            $this->reserva->setIdLabFk($idLab);
+            $this->reserva->setJustificativaReserva($justificativaReserva);
+            //$this->reserva->setIdUsuarioFk($idUser);
+            //$this->reserva->setObservacaoReserva($observacaoReserva);
+            //$this->reserva->setHorarios($horarios);
+            //$this->reserva->setTurno($turno);
 
-            $this->reservaDAO->insere($this->reserva);
-            $this->index();
 	        $this->reservaDAO->atualizar($this->reserva);
 
-	        $this->index();
+	        $this->reservations();
 		}
 
 		public function delete($id){

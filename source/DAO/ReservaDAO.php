@@ -79,34 +79,34 @@ use Source\Models\Reserva;
         //Editar a reserva
 		public function atualizar($reserva){
 			$pdo = Database::conexao();
-
+            //var_dump($reserva);
 			$idReserva = $reserva->getIdReserva();
-            $dataReserva = $reserva->getDataReserva();
-            $horaReserva = $reserva->getHoraReserva();
-            $horarios = $reserva->getHorarios();
+            //$dataReserva = $reserva->getDataReserva();
+            //$horaReserva = $reserva->getHoraReserva();
+            //$horarios = $reserva->getHorarios();
             //$statusReserva =$reserva-> getStatusReserva();
             //$observacaoReserva = $reserva->getObservacaoReserva();
             $justificativaReserva= $reserva->getJustificativaReserva();
-            $idProfessor = $reserva->getIdUsuarioFk();
+            //$idProfessor = $reserva->getIdUsuarioFk();
             $idLaboratorio = $reserva->getIdLabFk();
-            $idDisciplina = $reserva->getIdDisciplinaFk();
-            $turno = $reserva->getTurno();
+            //$idDisciplina = $reserva->getIdDisciplinaFk();
+            //$turno = $reserva->getTurno();
 
             //dataReserva, horaReserva, observacaoReserva, idUsuarioFk, idDisciplinaFk, horarios, turno
-			$query = "UPDATE tb_reserva SET dataReserva=?, horaReserva=?, justificativaReserva=?, idUsuarioFk=?, idDisciplinaFk=?, 	idLabFk=?, horarios=?, turno=? WHERE idReserva=?";
+			//$query = "UPDATE tb_reserva SET dataReserva=?, horaReserva=?, justificativaReserva=?, idUsuarioFk=?, idDisciplinaFk=?, 	idLabFk=?, horarios=?, turno=? WHERE idReserva=?";
+            $query = "UPDATE tb_reserva SET justificativaReserva=?, idLabFk=?WHERE idReserva=?";
 
             $stmt = $pdo->prepare($query);
 
-            $stmt->bindParam(1, $dataReserva);
-            $stmt->bindParam(2, $horaReserva);
-            $stmt->bindParam(3, $justificativaReserva);
-            $stmt->bindParam(4, $idProfessor);
-            $stmt->bindParam(5, $idDisciplina);
-            $stmt->bindParam(6, $idLaboratorio);
-            $stmt->bindParam(7, $horarios);
-            $stmt->bindParam(8, $turno);
-            $stmt->bindParam(9, $idReserva);
-            $stmt->execute();
+            //$stmt->bindParam(1, $dataReserva);
+            //$stmt->bindParam(2, $horaReserva);
+            $stmt->bindParam(1, $justificativaReserva);
+            //$stmt->bindParam(4, $idProfessor);
+            //$stmt->bindParam(5, $idDisciplina);
+            $stmt->bindParam(2, $idLaboratorio);
+            //$stmt->bindParam(7, $horarios);
+            //$stmt->bindParam(8, $turno);
+            $stmt->bindParam(3, $idReserva);
 
             $stmt->execute();
 		}

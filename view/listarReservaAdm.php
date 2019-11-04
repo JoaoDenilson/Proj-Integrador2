@@ -70,7 +70,6 @@
        endif;?>
 
       </table>
-                <a class="btn btn-success" href="<?=url("professor/adicionar");?>" role="button">Adicionar</a>
             </div>
           </div>
         <?= $v->start("scripts");?>
