@@ -32,8 +32,8 @@ use Source\Models\Laboratorio;
             //Evitar problema de pegar data de outro local.
             date_default_timezone_set('America/Fortaleza');
 		}
-		
-		public function index(){
+
+		public function reservations(){
             session_start();
             $linhas = $this->reservaDAO->listarTudo();
             for($i = 0; $i<count($linhas); $i++){
@@ -56,6 +56,18 @@ use Source\Models\Laboratorio;
                 var_dump($reserva);
             }else{
                 $this->router->redirect("Web.login");
+            }
+        }
+
+        public function index(){
+            session_start();
+            $id = (int)$_SESSION['prof'][0];
+            if (isset($_SESSION['prof'])){
+                $reser = $this->reservaDAO->listarSolicitadas($id);
+                echo $this->view->render("listarReservaProf",[
+                    "title"=> "Reservas Solicitadas |".SITE,
+                    "reservas"=>$reser
+                ]);
             }
         }
 
@@ -105,6 +117,8 @@ use Source\Models\Laboratorio;
 		}
 
 		public function edit($id){
+		   //Usar o explode na View
+            //$horarios_explode = explode("&", $horarios);
             session_start();
             if (isset($_SESSION['adm'])){
                 $res = $this->reservaDAO->listaRegistro($id);

@@ -30,12 +30,12 @@ use Source\Models\Reserva;
         }
 
 		//Traz uma Lista contendo apenas as solicitações de resrva de um usuário específico.
-        public function listarSolicitadas(){
-            $idUser = (int)$_SESSION['prof'][0];
+        public function listarSolicitadas($id){
+            $idUser = $id;
             $pdo = Database::conexao();
-            $result = $pdo->query("SELECT * FROM tb_reserva WHERE idUsuarioFk='$idUser'");
-            $reserva = $result->fetchAll(\PDO::FETCH_ASSOC);
-            return $reserva;
+            $result = $pdo->query(" SELECT r.*, d.nomeDisciplina, d.idDisciplina FROM tb_reserva r, tb_disciplina d WHERE idUsuarioFk='$idUser' AND d.idDisciplina=r.idDisciplinaFk");
+            $linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
+            return $linhas;
         }
 
         //Traz uma solicitação de reserva.

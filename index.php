@@ -80,8 +80,11 @@ $route->get("/", "ReservaController:index");
 $route->get("/adicionar", "ReservaController:create");
 $route->post("/cadastrar", "ReservaController:store");
 $route->post("/atualizar", "ReservaController:update");
+$route->get("/listReservas", "ReservaController:reservations");
 $route->get("/editar/{id}", "ReservaController:edit");
 $route->get("/excluir/{id}", "ReservaController:delete");
+
+//Falta emprementar as demais rotas
 
 
 /**
