@@ -144,14 +144,14 @@ use Source\Models\Laboratorio;
             session_start();
             if (isset($_SESSION['adm'])){
                 $res = $this->reservaDAO->listaRegistro($k);
-                var_dump($res);
-                /*
+                $lab = $this->LaboratorioDAO->listarTudo();
+                //var_dump($res);
                 echo $this->view->render("editarReser",[
                     "title"=>"Editar Reserva | ".SITE,
                     "reserva" => $res,
                     "Laboratorios"=> $lab
                 ]);
-                */
+
             }else{
                 $this->router->redirect("Web.login");
             }

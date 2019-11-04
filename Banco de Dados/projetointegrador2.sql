@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Out-2019 às 16:39
+-- Tempo de geração: 04-Nov-2019 às 19:10
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.2.22
 
@@ -119,7 +119,9 @@ CREATE TABLE `tb_reserva` (
 --
 
 INSERT INTO `tb_reserva` (`idDisciplinaFk`, `idUsuarioFk`, `idLabFk`, `idReserva`, `dataReserva`, `horaReserva`, `statusReserva`, `justificativaReserva`, `observacaoReserva`, `horarios`, `turno`) VALUES
-(7, 3, 1, 4, '2019-10-30', '00:13', 'Aguardando', NULL, 'Testando o Cadastro', 'segundaA&segundaB&quartaC&quartaD', '2');
+(7, 3, 1, 4, '2019-10-30', '00:13', 'Aguardando', NULL, 'Testando o Cadastro', 'segundaA&segundaB&quartaC&quartaD', '2'),
+(2, 3, NULL, 5, '31-10-2019', '12:42', 'Aguardando', NULL, '', 'quartaA&quartaB&quintaC&quintaD', '1'),
+(2, 5, NULL, 6, '04-11-2019', '13:25', 'Aguardando', NULL, 'udafyapiovgi', 'segundaA&segundaB&tercaC&tercaD', '3');
 
 -- --------------------------------------------------------
 
@@ -144,7 +146,8 @@ INSERT INTO `tb_usuario` (`idUsuario`, `nomeUsuario`, `emailUsuario`, `senhaUsua
 (1, 'aqsad', 'asd@df', 'oHQHE', 1, 'SPOSP2'),
 (2, 'adm', 'teste@teste.com', '123', 1, '998007766'),
 (3, 'User', 'outro@outro.com', '123', 0, '998445566'),
-(4, 'adm2', 'teste@test.com', '123', 2, '99858466');
+(4, 'adm2', 'teste@test.com', '123', 2, '99858466'),
+(5, 'Denilson', 'd@d.com', '123', 0, '989655656565');
 
 --
 -- Índices para tabelas despejadas
@@ -212,13 +215,13 @@ ALTER TABLE `tb_laboratorio`
 -- AUTO_INCREMENT de tabela `tb_reserva`
 --
 ALTER TABLE `tb_reserva`
-  MODIFY `idReserva` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idReserva` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `idUsuario` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas
