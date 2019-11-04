@@ -146,7 +146,7 @@ use Source\Models\Laboratorio;
                 $res = $this->reservaDAO->listaRegistro($k);
                 $lab = $this->LaboratorioDAO->listarTudo();
                 //var_dump($res);
-                echo $this->view->render("editarReser",[
+                echo $this->view->render("editarRes",[
                     "title"=>"Editar Reserva | ".SITE,
                     "reserva" => $res,
                     "Laboratorios"=> $lab
