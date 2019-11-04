@@ -4,97 +4,116 @@ $v->layout("_themeProf");?>
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
-        <a href="<?=url("home");?>">Painel de Controle</a>
+      <a href="<?=url("home");?>">Painel de Controle</a>
     </li>
-    <li class="breadcrumb-item active">Solicitar Reserva </li>
+    <li class="breadcrumb-item active">
+      Solicitar Reserva 
+    </li>
 </ol>
 
 
 <form action="<?=url("reserva/cadastrar");?>" method="POST">
   <div class="caixa1">
     
-    <div class="col-8"> <label> Selecione o Curso: </label></div>
-      <div class="col-2">
-        <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idCurso" id="cursoDisc" onchange="buscar_cursos()">
+    <div class="col-8"> 
+      <label> 
+        Selecione o Curso: 
+      </label>
+    </div>
 
-          <option selected="selected"  name="idCurso">
-            Lista de Cursos
-          </option>
-          <div class="dropdown-menu">
-            <?php
-                  if($cursos):
-                    foreach($cursos as $curso):
-                  ?>
-                  <?php
-                    echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
+        <div class="col-2">
+          <div class="btn-group dropright">
+           <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idCurso" id="cursoDisc" onchange="buscar_cursos()">
+
+            <option selected="selected"  name="idCurso">
+              Lista de Cursos
+            </option>
+            <div class="dropdown-menu">
+              <?php
+                    if($cursos):
+                      foreach($cursos as $curso):
                     ?>
-                  <?php
-                    endforeach;
-                  else:
-                      ?>
-                      <h4> Não existem Cursos cadastrados </h4>
                     <?php
-                  endif;?>
-          </div>
-        </select>
-       
-      </div> 
-    </div> 
+                      echo "<option value='{$curso->getIdCurso()}'> {$curso->getNomeCurso()}</option>";
+                      ?>
+                    <?php
+                      endforeach;
+                    else:
+                        ?>
+                        <h4> Não existem Cursos cadastrados </h4>
+                      <?php
+                    endif;?>
+              </div>
+            </select>
+          </div> 
+        </div> 
+
     <div class="w-100"style="margin-bottom: 30px;"><!-- Quebra de Linha --></div>
 
       <!-- DISCIPLINA -->
-      <div class="col-8"> <label> Selecione a Disciplina: </label></div>
-      <div class="col-2">
-        <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" 
-         aria-haspopup="true" aria-expanded="false" name="idDisc">
-          //<option selected="selected"  name="idDisc">
-          Lista de Disciplinas
-        </option>
-        <div class="dropdown-menu">
-              <?php
-                  if($disciplinas):
-                    foreach($disciplinas as $disciplina):
-                  ?>
-                  <?php
-                    echo "<option value='{$disciplina->getIdDisc()}'> {$disciplina->getNomeDisc()}</option>";
+      <div class="col-8"> 
+        <label> 
+          Selecione a Disciplina: 
+        </label>
+      </div>
+
+        <div class="col-2">
+          <div class="btn-group dropright">
+           <select class="btn btn-primary" data-toggle="dropdown" 
+           aria-haspopup="true" aria-expanded="false" name="idDisc">
+            <option selected="selected"  name="idDisc">
+              Lista de Disciplinas
+            </option>
+                <?php
+                    if($disciplinas):
+                      foreach($disciplinas as $disciplina):
                     ?>
-                  <?php
-                    endforeach;
-                  else:
-                      ?>
-                      <h4> Não existem Cursos cadastrados </h4>
                     <?php
-                  endif;?>
-        </select>
-        </div> 
-      </div>  
+                      echo "<option value='{$disciplina->getIdDisc()}'> {$disciplina->getNomeDisc()}</option>";
+                      ?>
+                    <?php
+                      endforeach;
+                    else:
+                        ?>
+                        <h4> Não existem Cursos cadastrados </h4>
+                      <?php
+                    endif;?>
+            </select>
+          </div> 
+        </div>
+
+
       <div class="w-100"style="margin-bottom: 30px;"></div>
     
     <!-- TURNO -->
-    <div class="col-8"> <label>Selecione o Turno: </label> </div>
-      <div class="col-2">
-        <div class="btn-group dropright" >
-          <select class="btn btn-primary" data-toggle="dropdown" 
-          aria-haspopup="true" aria-expanded="false" name ="idTurno">
-            <option selected="selected"  name="idTurno">
-              Lista de Turnos
-            </option>
-            <div class="dropdown-menu">
-              <option value="Manhã">Manhã</option>
-              <option value="Tarde">Tarde</option>
-              <option value="Noite">Noite</option>
-            </div>
-          </select>
-        </div>
-      <div class="w-100" style="margin-bottom: 30px;"></div>
+    <div class="col-8">
+      <label>
+        Selecione o Turno: 
+      </label> 
     </div>
+
+        <div class="col-2">
+          <div class="btn-group dropright" >
+            <select class="btn btn-primary" data-toggle="dropdown" 
+            aria-haspopup="true" aria-expanded="false" name ="idTurno">
+              <option selected="selected"  name="idTurno">
+                Lista de Turnos
+              </option>
+                <option value="Manhã">Manhã</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Noite">Noite</option>
+            </select>
+          </div>
+        </div>
+
+    <div class="w-100" style="margin-bottom: 30px;"></div>
   </div>
 
   <div class="caixa2">
     <div class="table-responsive">
-      <label>Selecione o(s) Horario(s) da(s) aulas:: </label>
+      <label>
+        Selecione o(s) Horario(s) da(s) aulas:: 
+      </label>
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <tr>
           <td>Horário</td>                
@@ -153,9 +172,12 @@ $v->layout("_themeProf");?>
 
 <input type="hidden" name="metodo" value="store">
 <input type="hidden"  name="classe" value="reserva">
-<button type="submit" class="btn btn-primary">Pedir</button>
+<input type="submit" value="Pedir" class="btn btn-primary">
+
 
 </form>
+
+
 
 <?= $v->start("scripts");?>
 <?= $v->end();?>

@@ -29,26 +29,31 @@
                   <label for="senhaProf">Senha do Professor</label>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input  type="text" id="celProf" class="form-control" placeholder="N° para contato do Professor" required="on" autofocus="autofocus" name="celProf">
-                  <label for="celProf">N° para contato do Professor</label>
-                </div>
-              </div>
+          <div class="form-group">
+              <div class="form-row">
 
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="email" class="form-control" id="emailProf" placeholder="Seu email" required="on" autofocus="autofocus" name="emailProf">
-                  <label for="emailProf">Email do Professor</label>
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input  type="text" id="celProf" class="form-control" placeholder="N° para contato do Professor" required="on" autofocus="autofocus" name="celProf">
+                    <label for="celProf">N° para contato do Professor</label>
+                  </div>
                 </div>
-              </div>
+
+                <div class="col-md-6">
+                  <div class="form-label-group">
+                    <input type="email" class="form-control" id="emailProf" placeholder="Seu email" required="on" autofocus="autofocus" name="emailProf">
+                    <label for="emailProf">Email do Professor</label>
+                  </div>
+                </div>
               
               </div>
-              </div>
-              </div>
+          </div>
+          </div>
 
-                <input type="submit" value="Salvar" class="btn btn-primary">
+              <input type="submit" value="Salvar" class="btn btn-primary">
               </form>
 
       </div>
