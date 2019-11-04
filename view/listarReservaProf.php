@@ -1,4 +1,4 @@
-<?php $v->layout("_themeAdm");?>
+<?php $v->layout("_themeProf");?>
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
@@ -16,10 +16,10 @@
                 <thead>
                   <tr>
                    <!-- <th>Curso</th> -->
-                      <th>Status</th>
                       <th>Curso</th>
                       <th>Disciplina</th>
                       <th>Turno</th>
+                      <th>Status</th>
                       <th>Visualizar+</th>
                   </tr>
                 </thead>
@@ -27,10 +27,10 @@
                 <tfoot>
                   <tr>
                    <!-- <th>Curso</th> -->
-                      <th>Status</th>
                       <th>Curso</th>
                       <th>Disciplina</th>
                       <th>Turno</th>
+                      <th>Status</th>
                       <th>Visualizar+</th>
                   </tr>
                 </tfoot>
@@ -44,24 +44,35 @@
         -->
 
        <?php
-       if ($professores):
-          foreach($professores as $aux):
-            ?><?php
-            echo "<tr>";
-            echo "<td>{$aux->getNomeProf()}</td>";
-            echo "<td>{$aux->getEmailProf()}</td>";
-            echo "<td>{$aux->getCelProf()}</td>";
-            ?>
-              <td><a href="<?= url("professor/editar/{$aux->getIdProf()}");?>">Editar</a></td>
-              <td><a href="<?= url("professor/excluir/{$aux->getIdProf()}");?>">Excluir</a></td>
-            </tr>
-          <?php
-          endforeach;
+       if ($reservas):
+           foreach($reservas as $aux):
+               ?><?php
+               echo "<tr>";
+               echo "<td>{$aux['nomeCurso']}</td>";
+               echo "<td>{$aux['nomeDisciplina']}</td>";
+               if ($aux["turno"]==1){
+                   echo "<td>Manhã</td>";
+               }
+               elseif ($aux["turno"]==2){
+                   echo "<td>Tarde</td>";
+               }
+               elseif($aux["turno"]==3){
+                   echo "<td>Noite</td>";
+               }
+               echo "<td>{$aux['statusReserva']}</td>";
+               ?>
+               <td><a href="<?= url("reserva/editar/{$aux['idReserva']}");?>">Editar</a></td>
+
+               </tr>
+           <?php
+           endforeach;
        else:
            ?>
            <h4> Não existem Reservas cadastradas </h4>
        <?php
-       endif;?>
+       endif;
+       ?>
+
 
       </table>
                 <a class="btn btn-success" href="<?=url("professor/adicionar");?>" role="button">Adicionar</a>

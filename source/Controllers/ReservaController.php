@@ -36,6 +36,7 @@ use Source\Models\Laboratorio;
 		public function reservations(){
             session_start();
             $linhas = $this->reservaDAO->listarTudo();
+            /*
             for($i = 0; $i<count($linhas); $i++){
               $reserva[$i] = new Reserva();
 
@@ -48,12 +49,12 @@ use Source\Models\Laboratorio;
               //$reserva[$i]->setIdProf($linhas[$i]['fk_Professor_idProf']);
               $reserva[$i]->setIdLabFk($linhas[$i]['idLabFk']);
               //$reserva[$i]->setIdAdmin($linhas[$i]['fk_Administrador_idAdmin']);
-          }
-
+          }*/
             if (isset($_SESSION['prof']) || isset($_SESSION['adm'])){
-                echo "Página de Listar";
-                //var_dump($linhas);
-                var_dump($reserva);
+                echo $this->view->render("listarReservaAdm",[
+                    "title"=> "Reservas Solicitadas |".SITE,
+                    "reservas"=>$linhas
+                ]);
             }else{
                 $this->router->redirect("Web.login");
             }
@@ -63,10 +64,28 @@ use Source\Models\Laboratorio;
             session_start();
             $id = (int)$_SESSION['prof'][0];
             if (isset($_SESSION['prof'])){
-                $reser = $this->reservaDAO->listarSolicitadas($id);
+                $linhas = $this->reservaDAO->listarSolicitadas($id);
+                /*
+                 *
+                 for($i = 0; $i<count($linhas); $i++){
+                    $reser[$i] = new Reserva();
+                    $dis[$i] = new Disciplina();
+                    $curs[$i] = new  Curso();
+                    $reser[$i]->setIdReserva($linhas[$i]['idReserva']);
+                    $reser[$i]->setStatusReserva($linhas[$i]['statusReserva']);
+                    $reser[$i]->setTurno($linhas[$i]['turno']);
+                    $dis[$i]->setNomeDisc($linhas[$i]['nomeCurso']);
+                    $curs[$i]->setNomeCurso($linhas[$i]['nomeCurso']);
+                }
+               */
                 echo $this->view->render("listarReservaProf",[
                     "title"=> "Reservas Solicitadas |".SITE,
-                    "reservas"=>$reser
+                    "reservas"=>$linhas
+                    /*
+                    "reservas"=>$reser,
+                    "cursos"=>$curs,
+                    "disciplinas"=>$dis
+                    */
                 ]);
             }
         }
@@ -117,18 +136,22 @@ use Source\Models\Laboratorio;
 		}
 
 		public function edit($id){
+            $n = $id;
 		   //Usar o explode na View
             //$horarios_explode = explode("&", $horarios);
             session_start();
             if (isset($_SESSION['adm'])){
-                $res = $this->reservaDAO->listaRegistro($id);
+                $res = $this->reservaDAO->listaRegistro($n);
                 $lab = $this->reservaDAO->listarTudo();
+                echo "Tela de editar ";
                 var_dump($res);
+                /*
                 echo $this->view->render("editarReser",[
                     "title"=>"Editar Reserva | ".SITE,
                     "reserva" => $res,
-                    "Laboratorios"=> lab
+                    "Laboratorios"=> $lab
                 ]);
+                */
             }else{
                 $this->router->redirect("Web.login");
             }

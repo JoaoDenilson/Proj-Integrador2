@@ -109,7 +109,7 @@
 
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Gerenciar Reservas: </h6>
-          <a class="dropdown-item" href="<?=url("reserva");?>">Listar</a>
+          <a class="dropdown-item" href="<?=url("reserva/listReservas");?>">Listar</a>
         </div>
 
       </li>

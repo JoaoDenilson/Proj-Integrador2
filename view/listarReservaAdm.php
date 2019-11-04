@@ -16,6 +16,7 @@
                 <thead>
                   <tr>
                    <!-- <th>Curso</th> -->
+                      <th>Professor</th>
                       <th>Status</th>
                       <th>Curso</th>
                       <th>Disciplina</th>
@@ -27,6 +28,7 @@
                 <tfoot>
                   <tr>
                    <!-- <th>Curso</th> -->
+                      <th>Professor</th>
                       <th>Status</th>
                       <th>Curso</th>
                       <th>Disciplina</th>
@@ -44,19 +46,30 @@
         -->
 
        <?php
-       if ($professores):
-          foreach($professores as $aux):
-            ?><?php
-            echo "<tr>";
-            echo "<td>{$aux->getNomeProf()}</td>";
-            echo "<td>{$aux->getEmailProf()}</td>";
-            echo "<td>{$aux->getCelProf()}</td>";
-            ?>
-              <td><a href="<?= url("professor/editar/{$aux->getIdProf()}");?>">Editar</a></td>
-              <td><a href="<?= url("professor/excluir/{$aux->getIdProf()}");?>">Excluir</a></td>
-            </tr>
-          <?php
-          endforeach;
+       if ($reservas):
+           foreach($reservas as $aux):
+               ?><?php
+               echo "<tr>";
+               echo "<td>{$aux['nomeUsuario']}</td>";
+               echo "<td>{$aux['statusReserva']}</td>";
+               echo "<td>{$aux['nomeCurso']}</td>";
+               echo "<td>{$aux['nomeDisciplina']}</td>";
+               if ($aux["turno"]==1){
+                   echo "<td>Manhã</td>";
+               }
+               elseif ($aux["turno"]==2){
+                   echo "<td>Tarde</td>";
+               }
+               elseif($aux["turno"]==3){
+                   echo "<td>Noite</td>";
+               }
+
+               ?>
+               <td><a name="idReserva" href="<?= url("reserva/editar/{$aux['idReserva']}");?>">Editar</a></td>
+
+               </tr>
+           <?php
+           endforeach;
        else:
            ?>
            <h4> Não existem Reservas cadastradas </h4>

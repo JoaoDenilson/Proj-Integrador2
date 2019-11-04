@@ -8,7 +8,8 @@ use Source\Models\Reserva;
         //Traz uma Lista contendo apenas as solicitações de reserva.
 		public function listarTudo(){
 			$pdo = Database::conexao();
-			$result = $pdo->query("SELECT r.*, u.idUsuario, u.nomeUsuario FROM tb_reserva r, tb_usuario u WHERE statusReserva='Aguardando' AND u.idUsuario=r.idUsuarioFk");
+			$result = $pdo->query("SELECT r.*, u.idUsuario, u.nomeUsuario,d.nomeDisciplina, d.idDisciplina, c.idCurso, c.nomeCurso FROM tb_reserva r, tb_usuario u, tb_disciplina d, tb_curso c
+            WHERE statusReserva='Aguardando' AND u.idUsuario=r.idUsuarioFk and d.idDisciplina=r.idDisciplinaFk AND c.idCurso= d.idCursoFk");
 			$linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
 		   return $linhas;
 		}
@@ -31,18 +32,16 @@ use Source\Models\Reserva;
 
 		//Traz uma Lista contendo apenas as solicitações de resrva de um usuário específico.
         public function listarSolicitadas($id){
-            $idUser = $id;
             $pdo = Database::conexao();
-            $result = $pdo->query(" SELECT r.*, d.nomeDisciplina, d.idDisciplina FROM tb_reserva r, tb_disciplina d WHERE idUsuarioFk='$idUser' AND d.idDisciplina=r.idDisciplinaFk");
+            $result = $pdo->query(" SELECT r.*, d.nomeDisciplina, d.idDisciplina, c.idCurso, c.nomeCurso FROM tb_reserva r, tb_disciplina d, tb_curso c WHERE idUsuarioFk='$id' AND d.idDisciplina=r.idDisciplinaFk AND c.idCurso= d.idCursoFk");
             $linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
             return $linhas;
         }
 
         //Traz uma solicitação de reserva.
 		public function listaRegistro($id){
-			$resId = $_GET['id'];
 			$pdo = Database::conexao();
-			$result = $pdo->query("SELECT * FROM tb_reserva WHERE idReserva='$resId'");
+			$result = $pdo->query("SELECT * FROM tb_reserva WHERE idReserva='$id'");
 			$linha = $result->fetchAll(\PDO::FETCH_ASSOC);
 
 			return $linha;
@@ -116,7 +115,7 @@ use Source\Models\Reserva;
         public function deleta($id){
 
             $pdo = Database::conexao();
-            $query = ("DELETE FROM tb_reserva WHERE idReserva=?");
+            $query = ("DELETE FROM tb_reserva WHERE idReserva='$id'");
             $stmt = $pdo->prepare($query);
             $stmt->bindParam(1, $id);
             $stmt->execute();
