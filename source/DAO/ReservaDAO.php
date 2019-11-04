@@ -41,7 +41,7 @@ use Source\Models\Reserva;
         //Traz uma solicitação de reserva.
 		public function listaRegistro($id){
             $pdo = Database::conexao();
-            $result = $pdo->query("SELECT * FROM tb_reserva WHERE idReserva='$id'");
+            $result = $pdo->query("SELECT r.*, d.nomeDisciplina, d.idDisciplina, c.idCurso, c.nomeCurso FROM tb_reserva r, tb_disciplina d, tb_curso c WHERE idReserva='$id' AND d.idDisciplina=r.idDisciplinaFk AND c.idCurso= d.idCursoFk ");
             $linha = $result->fetchAll(\PDO::FETCH_ASSOC);
             return $linha;
 		}
