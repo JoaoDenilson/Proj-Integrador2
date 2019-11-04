@@ -50,15 +50,7 @@
                echo "<tr>";
                echo "<td>{$aux['nomeCurso']}</td>";
                echo "<td>{$aux['nomeDisciplina']}</td>";
-               if ($aux["turno"]==1){
-                   echo "<td>Manhã</td>";
-               }
-               elseif ($aux["turno"]==2){
-                   echo "<td>Tarde</td>";
-               }
-               elseif($aux["turno"]==3){
-                   echo "<td>Noite</td>";
-               }
+               echo "<td>{$aux['turno']}</td>";
                echo "<td>{$aux['statusReserva']}</td>";
                ?>
                <td>
