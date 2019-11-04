@@ -46,7 +46,7 @@
             ?>
               <td><a href="<?= url("professor/editar/{$aux->getIdProf()}");?>">Editar</a></td>
               <td><a href="<?= url("professor/excluir/{$aux->getIdProf()}");?>">Excluir</a></td>
-            </tr>
+            <?="<tr>";?>
           <?php
           endforeach;
        else:
