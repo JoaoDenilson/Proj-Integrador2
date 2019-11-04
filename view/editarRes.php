@@ -10,15 +10,15 @@ $v->layout("_themeAdm");?>
 </ol>
 
 
-<form action="<?=url("reserva/cadastrar");?>" method="POST">
+<form action="<?=url("reserva/atualizar");?>" method="POST">
   <div class="caixa1">
     
        <div class="col-8"> <label> Selecione o Laboratório: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idCurso" id="cursoDisc" onchange="buscar_cursos()">
+         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idLab" id="idLaboratorio" onchange="buscar_cursos()">
 
-          <option selected="selected" name="">
+          <option selected="selected" name="idLab">
             Lista de Laboratórios
           </option>
           <div class="dropdown-menu">
@@ -128,7 +128,7 @@ $v->layout("_themeAdm");?>
 
     <div class="caixa3">
         <div class="form-group">
-            <textarea name="observacao" class="form-control"  style="resize: none;" rows="3"></textarea>
+            <textarea name="justificativa" class="form-control"  style="resize: none;" rows="3"></textarea>
             <label style="cursor:help;" title="Este campo deve ser usado para informar o por quê de ter negado ou não a reserva">Justificativa*</label>
         </div>
     </div>
@@ -136,8 +136,7 @@ $v->layout("_themeAdm");?>
 
   </div>
 
-<input type="hidden" name="metodo" value="store">
-<input type="hidden"  name="classe" value="reserva">
+<input type="hidden" value= "<?= $reserva[0]['idReserva'];?>" name="idReserva">
 <button type="submit" class="btn btn-danger">Voltar</button>
 <button type="submit" class="btn btn-primary">Confirmar</button>
 
