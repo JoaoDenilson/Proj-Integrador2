@@ -60,7 +60,7 @@
                 <?php $id=$aux['idReserva'];?>
                <td><a id="id" name="id" href="<?= url("reserva/editar/{$id}");?>">Editar</a></td>
 
-               </tr>
+               <?="<tr>";?>
            <?php
            endforeach;
        else:
