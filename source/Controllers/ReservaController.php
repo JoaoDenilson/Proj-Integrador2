@@ -232,6 +232,8 @@ use Dompdf\Dompdf;
 			$this->index();
 		}
 
-	
+	   public function horario(){
+            
+       }
 
 	}
