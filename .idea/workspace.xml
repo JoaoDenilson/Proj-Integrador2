@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="Projeto Integrador">
+      <change afterPath="$PROJECT_DIR$/view/comprovante.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Integrador2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Integrador2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Controllers/ReservaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/ReservaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Controllers/Web.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/Web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/coffeecode/datalayer/example/db_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/coffeecode/datalayer/example/db_config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/coffeecode/datalayer/example/find_example.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/coffeecode/datalayer/example/find_example.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/coffeecode/datalayer/src/DataLayer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/coffeecode/datalayer/src/DataLayer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/coffeecode/router/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/coffeecode/router/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/coffeecode/router/exemple/controller/Test/Name.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/coffeecode/router/exemple/controller/Test/Name.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/coffeecode/router/exemple/controller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/coffeecode/router/exemple/controller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/coffeecode/router/exemple/spoofing/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/coffeecode/router/exemple/spoofing/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/coffeecode/router/src/Dispatch.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/coffeecode/router/src/Dispatch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/listarReservaProf.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/listarReservaProf.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +57,10 @@
       <path value="$PROJECT_DIR$/vendor/coffeecode/datalayer" />
       <path value="$PROJECT_DIR$/vendor/coffeecode/router" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
     </include_path>
   </component>
   <component name="ProjectId" id="1RX0QJgaU60KheMCp8tC65KkjrN" />
@@ -112,7 +138,9 @@
       <workItem from="1572865981510" duration="12675000" />
       <workItem from="1572885866251" duration="735000" />
       <workItem from="1572890166309" duration="4649000" />
-      <workItem from="1572906260410" duration="4717000" />
+      <workItem from="1572906260410" duration="5311000" />
+      <workItem from="1572990012499" duration="3817000" />
+      <workItem from="1572999116545" duration="8109000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
