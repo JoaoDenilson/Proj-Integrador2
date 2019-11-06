@@ -33,6 +33,8 @@ class HorarioController{
             session_start();
             if (isset($_SESSION['adm'])){
                 $linhasManha = $this->horarioDAO->horarioManha();
+                $linhasTarde = $this->horarioDAO->horarioTarde();
+                $linhasNoite = $this->horarioDAO->horarioNoite();
                 //var_dump($linhas);
                 //die();
                 $K = $linhasManha[0]['horarios'];
@@ -43,6 +45,26 @@ class HorarioController{
                 echo $this->view->render("listarHor",[
                     "title"=>"Listar Cursos | ".SITE,
                     "horarios" => $horarios_separado
+
+                //Terar 
+                $M = $linhasManha[0]['horarios'];
+                $T = $linhasTarde[0]['horarios'];
+                $N = $linhasNoite[0]['horarios'];
+				//var_dump($K);
+                $horariosManha = explode("&", $M);
+                $horariosTarde = explode("&", $T);
+                $horarioNoite = explode("&", $N);
+
+               //var_dump($horarios_separado);
+                //die();
+                echo $this->view->render("listarHor",[
+                    "title"=>"Listar Cursos | ".SITE,
+                    "dadosManha" => $linhasManha,
+                    "dadosTarde" => $linhasTarde,
+                    "dadosNoite" => $linhasNoite,
+                    "horariosManha" => $horariosManha,
+                    "horariosTarde" => $horariosTarde,
+                    "horariosNoite" => $horarioNoite,
                 ]);
             }else{
                 $this->router->redirect("Web.login");
