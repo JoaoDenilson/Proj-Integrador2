@@ -36,13 +36,13 @@ class HorarioController{
                 //var_dump($linhas);
                 //die();
                 $K = $linhasManha[0]['horarios'];
-				var_dump($K);
+				//var_dump($K);
                 $horarios_separado = explode("&", $K);
-                var_dump($horarios_separado);
-                die();
+                //var_dump($horarios_separado);
+                //die();
                 echo $this->view->render("listarHor",[
                     "title"=>"Listar Cursos | ".SITE,
-                    "horarios" => $horarios
+                    "horarios" => $horarios_separado
                 ]);
             }else{
                 $this->router->redirect("Web.login");
