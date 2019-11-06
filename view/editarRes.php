@@ -13,7 +13,7 @@ $v->layout("_themeAdm");?>
 <form action="<?=url("reserva/atualizar");?>" method="POST">
   <div class="caixa1">
     
-       <div class="col-8"> <label> Selecione o Laboratório: </label></div>
+    <div class="col-8"> <label> Selecione o Laboratório: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
          <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idLab" id="idLaboratorio" onchange="buscar_cursos()">
