@@ -61,7 +61,9 @@ class Web{
             $nome  = $linhas[0]['nomeUsuario'];
             $nivel = $linhas[0]['nivelUsuario'];
             $idUser = $linhas[0]['idUsuario'];
-            $sesao = array($idUser,$nome);
+            $emailUser = $linhas[0]['emailUsuario'];
+
+            $sesao = array($idUser,$nome,$emailUser);
             session_start();
 
             if ($nivel == true){

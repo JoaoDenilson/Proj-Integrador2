@@ -152,6 +152,58 @@ if ($router->error()) {
 }
 ```
 
+###### Named Controller Exemple
+
+```php
+class Name
+{
+    public function __construct($router)
+    {
+        $this->router = $router;
+    }
+
+    public function home(): void
+    {
+        echo "<h1>Home</h1>";
+        echo "<p>", $this->router->route("name.home"), "</p>";
+        echo "<p>", $this->router->route("name.hello"), "</p>";
+        echo "<p>", $this->router->route("name.redirect"), "</p>";
+    }
+
+    public function redirect(): void
+    {
+        $this->router->redirect("name.hello");
+    }
+}
+```
+
+###### Named Params
+````php
+//route
+$router->get("/params/{category}/page/{page}", "Name:params", "name.params");
+
+//$this->route = return URL
+//$this->redirect = redirect URL
+
+$this->router->route("name.params", [
+    "category" => 22,
+    "page" => 2
+]);
+
+//result
+https://www.{}/name/params/22/page/2
+
+$this->router->route("name.params", [
+    "category" => 22,
+    "page" => 2,
+    "argument1" => "most filter",
+    "argument2" => "most search"
+]);
+
+//result
+https://www.{}/name/params/22/page/2?argument1=most+filter&argument2=most+search
+````
+
 ##### Callable
 
 ```php
@@ -196,31 +248,6 @@ $router->delete("/", function ($data) {
 });
 
 $router->dispatch();
-```
-
-##### Controller
-
-```php
-class Name
-{
-    public function __construct($router)
-    {
-        $this->router = $router;
-    }
-
-    public function home(): void
-    {
-        echo "<h1>Home</h1>";
-        echo "<p>", $this->router->route("name.home"), "</p>";
-        echo "<p>", $this->router->route("name.hello"), "</p>";
-        echo "<p>", $this->router->route("name.redirect"), "</p>";
-    }
-
-    public function redirect(): void
-    {
-        $this->router->redirect("name.hello");
-    }
-}
 ```
 
 ##### Form Spoofing

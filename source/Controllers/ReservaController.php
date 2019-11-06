@@ -9,6 +9,7 @@ use Source\Models\Curso;
 use Source\Models\Disciplina;
 use Source\DAO\LaboratorioDAO;
 use Source\Models\Laboratorio;
+use Dompdf\Dompdf;
 
 	class ReservaController{
         private $view;
@@ -19,8 +20,10 @@ use Source\Models\Laboratorio;
         private $disciplinaDAO;
         private $LaboratorioDAO;
         private $Laboratorio;
+        private $dompdf;
 
 		public function __construct($router){
+
             $this->router = $router;
 			$this->reservaDAO= new ReservaDAO();
             $this->disciplinaDAO = new DisciplinaDAO();
@@ -30,6 +33,7 @@ use Source\Models\Laboratorio;
 			$this->LaboratorioDAO = new LaboratorioDAO();
             $this->view =Engine::create(__DIR__."/../../view","php");
 		}
+
 
 		public function reservations(){
             session_start();
@@ -134,6 +138,38 @@ use Source\Models\Laboratorio;
             $this->index();
             //$this->router->redirect("ReservaController:index");
 		}
+
+        public function receipt($id){
+            $m = implode($id);
+            $k=(int)$m;
+            session_start();
+            $user = $_SESSION['prof'][1];
+            $email = $_SESSION['prof'][2];
+            date_default_timezone_set('America/Fortaleza');
+            $dataHora = date("d-m-Y | H:i:s");
+            if (isset($_SESSION['prof'])){
+                $res = $this->reservaDAO->listaRegistro($k);
+                //var_dump($res);
+                $dompdf = new Dompdf();
+                //ob_start();
+
+                $comprovante = $this->view->render("comprovante",[
+                    "title"=>"Comprovante de Solicitação ",
+                    "reserva" => $res,
+                    "user" =>$user,
+                    "dataimpresao"=> $dataHora,
+                    "email"=> $email
+                ]);
+                //$dompdf->loadHtml(ob_get_clean());
+                $dompdf->loadHtml("$comprovante");
+                $dompdf->setPaper("A4");
+                $dompdf->render();
+                $dompdf->stream("comprovante". $user.".pdf",["Attachment"=>false]);
+
+            }else{
+                $this->router->redirect("Web.login");
+            }
+        }
 
 		public function edit($id){
             $m = implode($id);

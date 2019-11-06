@@ -20,7 +20,7 @@
                       <th>Disciplina</th>
                       <th>Turno</th>
                       <th>Status</th>
-                      <th>Visualizar+</th>
+                      <th>Opcoes</th>
                   </tr>
                 </thead>
 
@@ -31,7 +31,7 @@
                       <th>Disciplina</th>
                       <th>Turno</th>
                       <th>Status</th>
-                      <th>Visualizar+</th>
+                      <th>Opcoes</th>
                   </tr>
                 </tfoot>
 
@@ -52,8 +52,11 @@
                echo "<td>{$aux['nomeDisciplina']}</td>";
                echo "<td>{$aux['turno']}</td>";
                echo "<td>{$aux['statusReserva']}</td>";
-               echo "</tr>";
                ?>
+               <?php $id=$aux['idReserva'];?>
+               <td> <a id="id" name="id" href="<?= url("reserva/comprovante/{$id}");?>"><button class="btn btn-success"> Imprimir</button></a></td>
+
+               <?="<tr>";?>
            <?php
            endforeach;
        else:

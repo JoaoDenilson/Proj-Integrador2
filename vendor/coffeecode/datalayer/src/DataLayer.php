@@ -33,13 +33,16 @@ abstract class DataLayer
     /** @var string */
     protected $params;
 
-    /** @var int */
+    /** @var string */
+    protected $group;
+
+    /** @var string */
     protected $order;
 
     /** @var int */
     protected $limit;
 
-    /** @var string */
+    /** @var int */
     protected $offset;
 
     /** @var \PDOException|null */
@@ -103,9 +106,9 @@ abstract class DataLayer
     }
 
     /**
-     * @return PDOException|null
+     * @return PDOException|Exception|null
      */
-    public function fail(): ?PDOException
+    public function fail()
     {
         return $this->fail;
     }
@@ -137,6 +140,16 @@ abstract class DataLayer
     {
         $find = $this->find($this->primary . " = :id", "id={$id}", $columns);
         return $find->fetch();
+    }
+
+    /**
+     * @param string $column
+     * @return DataLayer|null
+     */
+    public function group(string $column): ?DataLayer
+    {
+        $this->group = " GROUP BY {$column}";
+        return $this;
     }
 
     /**
@@ -176,7 +189,7 @@ abstract class DataLayer
     public function fetch(bool $all = false)
     {
         try {
-            $stmt = Connect::getInstance()->prepare($this->statement . $this->order . $this->limit . $this->offset);
+            $stmt = Connect::getInstance()->prepare($this->statement . $this->group . $this->order . $this->limit . $this->offset);
             $stmt->execute($this->params);
 
             if (!$stmt->rowCount()) {

@@ -10,29 +10,22 @@ namespace CoffeeCode\Router;
  */
 abstract class Dispatch
 {
-    /** @var bool|string */
-    protected $projectUrl;
-
-    /** @var string */
-    protected $patch;
-
-    /** @var string */
-    protected $separator;
-
-    /** @var string */
-    protected $httpMethod;
-
-    /** @var array */
-    protected $routes;
-
-    /** @var null|string */
-    protected $group;
+    use RouterTrait;
 
     /** @var null|array */
     protected $route;
 
+    /** @var bool|string */
+    protected $projectUrl;
+
+    /** @var string */
+    protected $separator;
+
     /** @var null|string */
     protected $namespace;
+
+    /** @var null|string */
+    protected $group;
 
     /** @var null|array */
     protected $data;
@@ -75,22 +68,22 @@ abstract class Dispatch
     }
 
     /**
-     * @param null|string $group
-     * @return Dispatch
-     */
-    public function group(?string $group): Dispatch
-    {
-        $this->group = ($group ? str_replace("/", "", $group) : null);
-        return $this;
-    }
-
-    /**
      * @param null|string $namespace
      * @return Dispatch
      */
     public function namespace(?string $namespace): Dispatch
     {
         $this->namespace = ($namespace ? ucwords($namespace) : null);
+        return $this;
+    }
+
+    /**
+     * @param null|string $group
+     * @return Dispatch
+     */
+    public function group(?string $group): Dispatch
+    {
+        $this->group = ($group ? str_replace("/", "", $group) : null);
         return $this;
     }
 
@@ -108,44 +101,6 @@ abstract class Dispatch
     public function error(): ?int
     {
         return $this->error;
-    }
-
-    /**
-     * @param string $name
-     * @return string|null
-     */
-    public function route(string $name): ?string
-    {
-        foreach ($this->routes as $http_verb) {
-            foreach ($http_verb as $route_item) {
-                if (!empty($route_item["name"]) && $route_item["name"] == $name) {
-                    $route = $route_item["route"];
-                    return "{$this->projectUrl}{$route}";
-                }
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * @param string $route
-     */
-    public function redirect(string $route): void
-    {
-        foreach ($this->routes as $http_verb) {
-            foreach ($http_verb as $route_item) {
-                if ($route_item["name"] == $route) {
-                    $route = $route_item["route"];
-                    header("Location: {$this->projectUrl}{$route}");
-                    exit;
-                }
-            }
-        }
-
-        $route = (substr($route, 0, 1) == "/" ? $route : "/{$route}");
-        header("Location: {$this->projectUrl}{$route}");
-        exit;
     }
 
     /**
@@ -202,47 +157,6 @@ abstract class Dispatch
     }
 
     /**
-     * @param string $method
-     * @param string $route
-     * @param string|callable $handler
-     * @param null|string
-     * @return Dispatch
-     */
-    protected function addRoute(string $method, string $route, $handler, string $name = null): Dispatch
-    {
-        if ($route == "/") {
-            $this->addRoute($method, "", $handler, $name);
-        }
-
-        preg_match_all("~\{\s* ([a-zA-Z_][a-zA-Z0-9_-]*) \}~x", $route, $keys, PREG_SET_ORDER);
-        $routeDiff = array_values(array_diff(explode("/", $this->patch), explode("/", $route)));
-
-        $this->formSpoofing();
-        $offset = ($this->group ? 1 : 0);
-        foreach ($keys as $key) {
-            $this->data[$key[1]] = ($routeDiff[$offset++] ?? null);
-        }
-
-        $route = (!$this->group ? $route : "/{$this->group}{$route}");
-        $data = $this->data;
-        $namespace = $this->namespace;
-        $router = function () use ($method, $handler, $data, $route, $name, $namespace) {
-            return [
-                "route" => $route,
-                "name" => $name,
-                "method" => $method,
-                "handler" => $this->handler($handler, $namespace),
-                "action" => $this->action($handler),
-                "data" => $data
-            ];
-        };
-
-        $route = preg_replace('~{([^}]*)}~', "([^/]+)", $route);
-        $this->routes[$method][$route] = $router();
-        return $this;
-    }
-
-    /**
      * httpMethod form spoofing
      */
     protected function formSpoofing(): void
@@ -274,24 +188,5 @@ abstract class Dispatch
 
         $this->data = [];
         return;
-    }
-
-    /**
-     * @param $handler
-     * @param $namespace
-     * @return string|callable
-     */
-    private function handler($handler, $namespace)
-    {
-        return (!is_string($handler) ? $handler : "{$namespace}\\" . explode($this->separator, $handler)[0]);
-    }
-
-    /**
-     * @param $handler
-     * @return null|string
-     */
-    private function action($handler): ?string
-    {
-        return (!is_string($handler) ?: (explode($this->separator, $handler)[1] ?? null));
     }
 }
