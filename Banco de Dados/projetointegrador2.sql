@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Nov-2019 às 19:10
+-- Tempo de geração: 06-Nov-2019 às 21:01
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.2.22
 
@@ -119,9 +119,10 @@ CREATE TABLE `tb_reserva` (
 --
 
 INSERT INTO `tb_reserva` (`idDisciplinaFk`, `idUsuarioFk`, `idLabFk`, `idReserva`, `dataReserva`, `horaReserva`, `statusReserva`, `justificativaReserva`, `observacaoReserva`, `horarios`, `turno`) VALUES
-(7, 3, 1, 4, '2019-10-30', '00:13', 'Aguardando', NULL, 'Testando o Cadastro', 'segundaA&segundaB&quartaC&quartaD', '2'),
-(2, 3, NULL, 5, '31-10-2019', '12:42', 'Aguardando', NULL, '', 'quartaA&quartaB&quintaC&quintaD', '1'),
-(2, 5, NULL, 6, '04-11-2019', '13:25', 'Aguardando', NULL, 'udafyapiovgi', 'segundaA&segundaB&tercaC&tercaD', '3');
+(7, 5, 1, 10, '04-11-2019', '18:34', 'Aguardando', 'Editado', 'teste', 'segundaA&segundaB&quartaC&quartaD', 'Tarde'),
+(2, 3, 1, 11, '04-11-2019', '20:34', 'Aguardando', 'Editado*', 'Necessito do MatLab', 'tercaA&tercaB&quintaC&quintaD', 'Manhã'),
+(2, 3, NULL, 12, '04-11-2019', '20:37', 'Aguardando', NULL, 'Teste.', 'segundaA&segundaB&quartaC&quartaD', 'Manhã'),
+(2, 3, NULL, 13, '06-11-2019', '16:11', 'Aguardando', NULL, 'tenneiehf9peh9ga9gpvgeivg9áuhcivgáivhia´vhíahvi´hbaivhei´haivbhaiphwivhaivhwihaiphvipawjvpa', 'segundaA&segundaB&tercaC&tercaD', 'Noite');
 
 -- --------------------------------------------------------
 
@@ -215,7 +216,7 @@ ALTER TABLE `tb_laboratorio`
 -- AUTO_INCREMENT de tabela `tb_reserva`
 --
 ALTER TABLE `tb_reserva`
-  MODIFY `idReserva` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idReserva` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuario`

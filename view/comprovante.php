@@ -29,7 +29,8 @@
     </header>
     <body>
     <div>
-        <img src="./imagens/logoIFCE.jpeg">
+        <img src="./imagens/logoIFCE_2.jpg">
+        <!--<img style="float: right;display: block" src="./imagens/IFCE_CEDRO.jpg">-->
 
         <table cellpadding='5' cellspacing='0' border="1">
             <tr>
@@ -58,8 +59,9 @@
                 <th class="titulo"> Observação</th>
             </tr>
             <tr>
-                <th colspan='3' class='dadosp'> <?=$reserva[0]['observacaoReserva'];?></th>
+                <th cellspacing='2' rowspan='3' > <?=$reserva[0]['observacaoReserva'];?></th>
             </tr>
+
         </table>
 
         <table cellpadding='5' cellspacing='0' border="1">
