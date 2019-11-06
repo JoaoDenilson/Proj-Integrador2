@@ -78,6 +78,7 @@ $route->get("/excluir/{id}", "CursoController:delete");
 $route->group("reserva");
 $route->get("/", "ReservaController:index");
 $route->get("/adicionar", "ReservaController:create");
+$route->get("/horarios", "ReservaController:horario");
 $route->post("/cadastrar", "ReservaController:store");
 $route->post("/atualizar", "ReservaController:update");
 $route->get("/listReservas", "ReservaController:reservations");
@@ -86,6 +87,16 @@ $route->get("/excluir/{id}", "ReservaController:delete");
 $route->get("/comprovante/{id}", "ReservaController:receipt");
 
 //Falta emprementar as demais rotas
+
+ /*  group Admin | curso
+ */
+$route->group("horario");
+$route->get("/", "HorarioController:index");
+$route->get("/adicionar", "HorarioController:create");
+$route->post("/cadastrar", "HorarioController:store");
+$route->post("/atualizar", "HorarioController:update");
+$route->get("/editar/{id}", "HorarioController:edit");
+$route->get("/excluir/{id}", "HorarioController:delete");
 
 
 /**
