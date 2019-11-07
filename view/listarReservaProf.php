@@ -54,7 +54,7 @@
                echo "<td>{$aux['statusReserva']}</td>";
                ?>
                <?php $id=$aux['idReserva'];?>
-               <td> <a id="id" name="id" href="<?= url("reserva/comprovante/{$id}");?>"><button class="btn btn-success"> Imprimir</button></a></td>
+               <td> <a id="id" name="id" target="_blank" href="<?= url("reserva/comprovante/{$id}");?>"><button class="btn btn-success" > Imprimir</button></a></td>
 
                <?="<tr>";?>
            <?php
