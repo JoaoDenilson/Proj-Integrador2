@@ -14,23 +14,23 @@
          <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idLab" id="idLaboratorio" onchange="buscar_cursos()">
 
           <option selected="selected" name="idLab">
-            Lista de Laboratórios
+           
           </option>
           <div class="dropdown-menu">
             <?php
-                if($laboratorios) {
+                if($laboratorios):
                 foreach($laboratorios as $lab):
                   ?>
                   <?php
                     echo "<option value='{$lab->getIdLab()}'> {$lab->getNomeLab()}</option>";
                     ?>
-                  <?php
-                    endforeach;
-                  } else {
-                      ?>
-                      <h4> Não existem Cursos cadastrados </h4>
+                <?php
+                endforeach;
+                else:
+                    ?>
+                    <h4> Não existem Professores cadastrados </h4>
                     <?php
-                  };
+                endif;?>
             ?>
           </div>
         </select>
@@ -57,37 +57,69 @@
                   </tr>
                 </thead>
                 <tr>
-                  <th scope="row">1</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <th scope="row">1 <br> 07:20 Até 08:20</th>
+                    <?php
+                    if($horaA):
+                        foreach($horaA as $h):
+                    ?><?php
+                            echo "<td style='text-align: center'>$h[0] <br>$h[1] </td>";
+                            ?>
+                        <?php
+                        endforeach;
+                    else:
+                        ?>
+                        <h4> Não existem Professores cadastrados </h4>
+                    <?php
+                    endif;?>
                 </tr>
                 <tr>
-                  <th scope="row">2</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                    <th scope="row">2 <br> 08:20 Até 09:20</th>
+                    <?php
+                    if($horaB):
+                        foreach($horaB as $h):
+                            ?><?php
+                            echo "<td style='text-align: center'>$h[0] <br>$h[1] </td>";
+                            ?>
+                        <?php
+                        endforeach;
+                    else:
+                        ?>
+                        <h4> Não existem Professores cadastrados </h4>
+                    <?php
+                    endif;?>
                 </tr>
                 <tr>
-                  <th scope="row">3</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                    <th scope="row">3 <br> 09:40 Até 10:40</th>
+                    <?php
+                    if($horaC):
+                        foreach($horaC as $h):
+                            ?><?php
+                            echo "<td style='text-align: center'>$h[0] <br>$h[1] </td>";
+                            ?>
+                        <?php
+                        endforeach;
+                    else:
+                        ?>
+                        <h4> Não existem Professores cadastrados </h4>
+                    <?php
+                    endif;?>
                 </tr>
 
                  <tr>
-                  <th scope="row">4</th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                     <th scope="row">4 <br> 01:40 Até 11:40</th>
+                     <?php
+                     if($horaD):
+                         foreach($horaD as $h):
+                             ?><?php
+                             echo "<td style='text-align: center'>$h[0] <br>$h[1] </td>";
+                             ?>
+                         <?php
+                         endforeach;
+                     else:
+                         ?>
+                         <h4> Não existem Professores cadastrados </h4>
+                     <?php
+                     endif;?>
                 </tr>
 
 

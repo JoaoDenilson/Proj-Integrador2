@@ -33,7 +33,7 @@ use Source\Models\Reserva;
                 r.*, u.idUsuario, u.nomeUsuario,d.nomeDisciplina, d.idDisciplina, l.idLab, l.nomeLab
                 FROM tb_reserva r
                 LEFT JOIN tb_disciplina d ON idDisciplina = idDisciplinaFk
-                LEFT JOIN tb_usuario u ON idUsuario = idDisciplinaFk
+                LEFT JOIN tb_usuario u ON idUsuario = idUsuarioFk
                 LEFT JOIN tb_laboratorio l ON idLab = idLabFk
                 WHERE statusReserva='Aguardando' AND r.idLabFk='{$labID}' AND r.turno='{$turno}'");
             $linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
