@@ -32,21 +32,31 @@ class HorarioController{
 		public function index(){
             session_start();
             if (isset($_SESSION['adm'])){
+                // $linhasManha = $this->horarioDAO->horario("manha", 1);
                 $linhasManha = $this->horarioDAO->horarioManha();
                 $linhasTarde = $this->horarioDAO->horarioTarde();
                 $linhasNoite = $this->horarioDAO->horarioNoite();
-                //var_dump($linhas);
+                // echo "<pre>";
+                // var_dump($linhasManha[0]["horarios"]);
+                // $arr = explode("&", $linhasManha[0]["horarios"]);
+                // $s = array_search('tercaA', $arr);
+                // var_dump($s);
+                // echo "</pre>";
+                // die();
+                $K = $linhasManha[0]['horarios'];
+                //var_dump($K);
+                $horarios_separado = explode("&", $K);
+                //var_dump($horarios_separado);
                 //die();
-                //Terar 
+                //Terar
                 $M = $linhasManha[0]['horarios'];
                 $T = $linhasTarde[0]['horarios'];
                 $N = $linhasNoite[0]['horarios'];
-				//var_dump($K);
+                //var_dump($K);
                 $horariosManha = explode("&", $M);
                 $horariosTarde = explode("&", $T);
                 $horarioNoite = explode("&", $N);
-
-               //var_dump($horarios_separado);
+                //var_dump($horarios_separado);
                 //die();
                 echo $this->view->render("listarHor",[
                     "title"=>"Listar Cursos | ".SITE,
