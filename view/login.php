@@ -24,19 +24,19 @@
 
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
+        <div class="card-header">Login - SISRES</div>
         <div class="card-body">
             <form action="<?=url("autenticacao");?>" method="POST">
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
-                        <label for="inputEmail">Email address</label>
+                        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="E-mail" required="required" autofocus="autofocus">
+                        <label for="inputEmail">E-mail</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                        <label for="inputPassword">Password</label>
+                        <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required="required">
+                        <label for="inputPassword">Senha</label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -47,7 +47,7 @@
                         </label>
                     </div>
                 </div>
-                <button  class="btn btn-primary" type="submit">Login</button>
+                <button  style="margin-left: 40%" class="btn btn-primary" type="submit">Login</button>
 
             </form>
             <!--<div class="text-center">
