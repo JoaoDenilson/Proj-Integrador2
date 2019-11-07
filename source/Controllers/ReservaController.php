@@ -164,7 +164,8 @@ use Dompdf\Dompdf;
                 $dompdf->loadHtml("$comprovante");
                 $dompdf->setPaper("A4");
                 $dompdf->render();
-                $dompdf->stream("comprovante". $user.".pdf",["Attachment"=>false]);
+                $dompdf->stream("comprovante".$user.".pdf",["Attachment"=>false]);
+
 
             }else{
                 $this->router->redirect("Web.login");
