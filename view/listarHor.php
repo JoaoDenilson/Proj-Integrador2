@@ -18,7 +18,7 @@
           </option>
           <div class="dropdown-menu">
             <?php
-                if($laboratorios):
+                if($laboratorios) {
                 foreach($laboratorios as $lab):
                   ?>
                   <?php
@@ -26,11 +26,11 @@
                     ?>
                   <?php
                     endforeach;
-                  else:
+                  } else {
                       ?>
                       <h4> Não existem Cursos cadastrados </h4>
                     <?php
-                  endif;
+                  };
             ?>
           </div>
         </select>
