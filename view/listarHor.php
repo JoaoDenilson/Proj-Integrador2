@@ -14,7 +14,7 @@
          <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idLab" id="idLaboratorio" onchange="buscar_cursos()">
 
           <option selected="selected" name="idLab">
-           
+
           </option>
           <div class="dropdown-menu">
             <?php
