@@ -17,7 +17,7 @@
                 width: 100%;
             }
             .dadosp{
-                border: solid 1px;
+                border: 1px solid black;
                 text-align: left;
             }
             .titulo{
@@ -44,34 +44,36 @@
                 <th class="titulo">Dados da Solicitação</th>
             </tr>
             <tr >
-                <th >PROFESSOR: <?=$user;?></th>
+                <td >PROFESSOR: <?=$user;?></td>
             </tr>
             <tr>
-                <th >E-mail: <?=$email;?></th>
+                <td >E-mail: <?=$email;?></td>
             </tr>
             <tr>
-                <th >Curso: <?=$reserva[0]['nomeCurso'];?></th>
+                <td >Curso: <?=$reserva[0]['nomeCurso'];?></td>
             </tr>
             <tr>
-                <th >Disciplina: <?=$reserva[0]['nomeDisciplina'];?></th>
+                <td >Disciplina: <?=$reserva[0]['nomeDisciplina'];?></td>
             </tr>
             <tr>
                 <th class="titulo"> Observação</th>
             </tr>
-            <tr>
-                <th cellspacing='2' rowspan='3' > <?=$reserva[0]['observacaoReserva'];?></th>
-            </tr>
-
         </table>
+        <div class="dadosp">
+            <p>
+                <?=$reserva[0]['observacaoReserva'];?>
+            </p>
+
+        </div>
 
         <table cellpadding='5' cellspacing='0' border="1">
             <tr>
                 <th> RESERVA SOLICITADA EM: </th>
-                <th>Data de Geracao desse documento *</th>
+                <td>Data de Geracao desse documento *</td>
             </tr>
             <tr>
                 <th> <?=$reserva[0]['dataReserva']." | ".$reserva[0]['horaReserva'];?> </th>
-                <th> <?=$dataimpresao;?> </th>
+                <td> <?=$dataimpresao;?> </td>
             </tr>
         </table>
     </div>
