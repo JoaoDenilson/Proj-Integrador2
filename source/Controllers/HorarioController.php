@@ -43,12 +43,23 @@ class HorarioController{
                 // var_dump($s);
                 // echo "</pre>";
                 // die();
+<<<<<<< HEAD
                 $K = $linhasManha[0]['horarios'];
                 //var_dump($K);
                 $horarios_separado = explode("&", $K);
                 //var_dump($horarios_separado);
                 //die();
                 //Terar
+=======
+
+                $K = $linhasManha[0]['horarios'];
+				//var_dump($K);
+                $horarios_separado = explode("&", $K);
+                //var_dump($horarios_separado);
+                //die();
+
+                //Terar 
+>>>>>>> 87aefc774172298f05a89cebbe415529e282f929
                 $M = $linhasManha[0]['horarios'];
                 $T = $linhasTarde[0]['horarios'];
                 $N = $linhasNoite[0]['horarios'];
