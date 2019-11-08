@@ -21,6 +21,8 @@ $a= $_SESSION['adm'][1];
     <!-- Custom styles for this template-->
     <link type="text/css" href="<?=url("css/sb-admin.css");?>" rel="stylesheet">
     <link type="text/css" href="<?=url("css/sb-img.css");?>" rel="stylesheet">
+
+
   </head>
 
 <body id="page-top">
@@ -41,7 +43,7 @@ $a= $_SESSION['adm'][1];
     </form>
 
     <ul class="navbar-nav ml-auto ml-md-0">
-
+      <div style="color: #fff;"id="notificacoes"></div> 
 
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -248,6 +250,16 @@ $a= $_SESSION['adm'][1];
   });
   </script>
   <?= $v->section("scripts");?>
+
+    <script type="text/javascript">
+            
+      function atualizarNotificacoes() {
+            var url="<?=url("reserva/notificar");?>";
+            jQuery("#notificacoes").load(url);
+        }
+        setInterval("atualizarNotificacoes()", 500);
+    </script> 
+
 </body>
 
 </html>
