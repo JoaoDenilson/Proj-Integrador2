@@ -120,6 +120,18 @@ use Source\Models\Reserva;
             $stmt->execute();
 
         }
+        //Função para mostrar notificações para o administrador
+        public function mostrarNotificacoes(){
+           $pdo = Database::conexao();
+           $query = ("SELECT COUNT(statusReserva) FROM tb_reserva WHERE statusReserva = 'Aguardando'");
+           $result = $pdo->prepare($query);
+           $linha = $result->fetchAll(\PDO::FETCH_ASSOC);
+
+           //$valor = implode(",", $linha);
+           
+           var_dump($linha);
+
+        }
 
 	}
 	
