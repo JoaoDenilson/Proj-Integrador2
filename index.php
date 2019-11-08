@@ -82,9 +82,11 @@ $route->get("/horarios", "ReservaController:horario");
 $route->post("/cadastrar", "ReservaController:store");
 $route->post("/atualizar", "ReservaController:update");
 $route->get("/listReservas", "ReservaController:reservations");
+$route->get("/notificar", "ReservaController:notificar");
 $route->get("/editar/{id}", "ReservaController:edit");
 $route->get("/excluir/{id}", "ReservaController:delete");
 $route->get("/comprovante/{id}", "ReservaController:receipt");
+
 
 //Falta emprementar as demais rotas
 
