@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="Projeto Integrador">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/listarNegadas" beforeDir="false" afterPath="$PROJECT_DIR$/view/listarNegadas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Controllers/ReservaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/ReservaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/DAO/ReservaDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/ReservaDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/_themeAdm.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/_themeAdm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/listNegadas.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/listNegadas.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,6 +132,7 @@
       <workItem from="1573229730129" duration="2228000" />
       <workItem from="1573471528008" duration="7658000" />
       <workItem from="1573494720149" duration="674000" />
+      <workItem from="1573496524732" duration="3435000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
@@ -175,5 +181,20 @@
     <MESSAGE value="Adcionando uma imagem de boas vindas" />
     <MESSAGE value="Projeto Integrador" />
     <option name="LAST_COMMIT_MESSAGE" value="Projeto Integrador" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/source/Controllers/ReservaController.php</url>
+          <line>77</line>
+          <properties>
+            <option name="className" value="\Source\Controllers\ReservaController" />
+            <option name="methodName" value="denied" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
