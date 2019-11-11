@@ -62,7 +62,7 @@
                     if($horaA):
                         foreach($horaA as $h):
                     ?><?php
-                            echo "<td style='text-align: center'>$h[0] <br>$h[1] </td>";
+                            echo "<td style='text-align: center'> $h[1] <br> $h[0]</td>";
                             ?>
                         <?php
                         endforeach;
@@ -78,7 +78,7 @@
                     if($horaB):
                         foreach($horaB as $h):
                             ?><?php
-                            echo "<td style='text-align: center'>$h[0] <br>$h[1] </td>";
+                            echo "<td style='text-align: center'>$h[1] <br> $h[0]</td>";
                             ?>
                         <?php
                         endforeach;
@@ -94,7 +94,7 @@
                     if($horaC):
                         foreach($horaC as $h):
                             ?><?php
-                            echo "<td style='text-align: center'>$h[0] <br>$h[1] </td>";
+                            echo "<td style='text-align: center'>$h[1] <br> $h[0] </td>";
                             ?>
                         <?php
                         endforeach;
@@ -111,7 +111,7 @@
                      if($horaD):
                          foreach($horaD as $h):
                              ?><?php
-                             echo "<td style='text-align: center'>$h[0] <br>$h[1] </td>";
+                             echo "<td style='text-align: center'>$h[1] <br> $h[0] </td>";
                              ?>
                          <?php
                          endforeach;
