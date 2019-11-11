@@ -62,6 +62,32 @@ use Dompdf\Dompdf;
             }
         }
 
+        public function accepted(){
+            session_start();
+            $linhas = $this->reservaDAO->listarAceitas();
+            if ( isset($_SESSION['adm'])){
+                echo $this->view->render("listarAceitas",[
+                    "title"=> "Reservas Aceitas |".SITE,
+                    "reservas"=>$linhas
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
+        }
+
+        public function denied(){
+            session_start();
+            $linhas = $this->reservaDAO->listarNegadas();
+            if ( isset($_SESSION['adm'])){
+                echo $this->view->render("listarNegadas",[
+                    "title"=> "Reservas Negadas |".SITE,
+                    "reservas"=>$linhas
+                ]);
+            }else{
+                $this->router->redirect("Web.login");
+            }
+        }
+
         public function index(){
             session_start();
             $id = (int)$_SESSION['prof'][0];
@@ -200,6 +226,8 @@ use Dompdf\Dompdf;
             $idReserva = $_POST['idReserva'];
             $idLab = $_POST['idLab'];
             $justificativaReserva = $_POST['justificativa'];
+            $statusReserva = $_POST['status'];
+
             //Só testanto o cadastro com id fixo de lab
             //$idLab = 1;
             //Evitar problema de pegar data de outro local.
@@ -218,6 +246,7 @@ use Dompdf\Dompdf;
             $this->reserva->setIdReserva($idReserva);
             $this->reserva->setIdLabFk($idLab);
             $this->reserva->setJustificativaReserva($justificativaReserva);
+            $this->reserva->setStatusReserva($statusReserva);
             //$this->reserva->setIdUsuarioFk($idUser);
             //$this->reserva->setObservacaoReserva($observacaoReserva);
             //$this->reserva->setHorarios($horarios);
