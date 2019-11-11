@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="Projeto Integrador">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Banco de Dados/projetointegrador2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Banco de Dados/projetointegrador2.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +127,8 @@
       <workItem from="1573229730129" duration="2228000" />
       <workItem from="1573471528008" duration="7658000" />
       <workItem from="1573494720149" duration="674000" />
-      <workItem from="1573496524732" duration="4031000" />
+      <workItem from="1573496524732" duration="4629000" />
+      <workItem from="1573515431795" duration="930000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
