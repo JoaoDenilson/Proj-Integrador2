@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Nov-2019 às 22:35
+-- Tempo de geração: 12-Nov-2019 às 00:37
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.2.22
 
@@ -64,15 +64,13 @@ CREATE TABLE `tb_disciplina` (
 
 INSERT INTO `tb_disciplina` (`idCursoFk`, `idDisciplina`, `nomeDisciplina`, `siglaDisciplina`) VALUES
 (1, 2, 'Programação', 'LLP'),
-(1, 4, 'hhs', 'jjdd'),
 (1, 7, 'Construção e Analise de Algoritmos', 'CAA'),
 (1, 9, 'Teste 1', 't1'),
 (2, 11, 'Corrente Continua', 'CC'),
 (2, 12, 'panorama', 'pa'),
 (2, 16, 'shha', 'klksdk'),
 (6, 17, 'asjdajs', 'kjsdja'),
-(7, 18, 'Fundamentos I', 'fundI'),
-(1, 19, 'jjsjs', 'jjd');
+(7, 18, 'Fundamentos I', 'fundI');
 
 -- --------------------------------------------------------
 
@@ -119,11 +117,12 @@ CREATE TABLE `tb_reserva` (
 --
 
 INSERT INTO `tb_reserva` (`idDisciplinaFk`, `idUsuarioFk`, `idLabFk`, `idReserva`, `dataReserva`, `horaReserva`, `statusReserva`, `justificativaReserva`, `observacaoReserva`, `horarios`, `turno`) VALUES
-(7, 5, 1, 10, '04-11-2019', '18:34', 'Aguardando', 'Editado', 'teste', 'segundaA&segundaB&quartaC&quartaD', 'Tarde'),
-(2, 3, 1, 11, '04-11-2019', '20:34', 'Aguardando', 'Editado*', 'Necessito do MatLab', 'tercaA&tercaB&quintaC&quintaD', 'Manhã'),
-(2, 3, 1, 12, '04-11-2019', '20:37', 'Aguardando', NULL, 'Teste.', 'segundaA&segundaB&quartaC&quartaD', 'Manhã'),
+(7, 5, 1, 10, '04-11-2019', '18:34', 'Aceita', 'Editado', 'teste', 'segundaA&segundaB&quartaC&quartaD', 'Tarde'),
+(2, 3, 1, 11, '04-11-2019', '20:34', 'Aceita', 'Editado*', 'Necessito do MatLab', 'tercaA&tercaB&quintaC&quintaD', 'Manhã'),
+(2, 3, 1, 12, '04-11-2019', '20:37', 'Negada', NULL, 'Teste.', 'segundaA&segundaB&quartaC&quartaD', 'Manhã'),
 (2, 3, 1, 13, '06-11-2019', '16:11', 'Aguardando', NULL, 'tenneiehf9peh9ga9gpvgeivg9áuhcivgáivhia´vhíahvi´hbaivhei´haivbhaiphwivhaivhwihaiphvipawjvpa', 'segundaA&segundaB&tercaC&tercaD', 'Noite'),
-(11, 5, 1, 14, '07-11-2019', '18:00', 'Aguardando', NULL, 'Necessito do Laravel instalado. ', 'sextaA&sextaB&segundaC&segundaD', 'Manhã');
+(11, 5, 1, 14, '07-11-2019', '18:00', 'Aguardando', NULL, 'Necessito do Laravel instalado. ', 'sextaA&sextaB&segundaC&segundaD', 'Manhã'),
+(9, 5, 1, 15, '11-11-2019', '15:50', 'Aceita', NULL, 'Teste', 'segundaA&segundaB&tercaC&tercaD', 'Tarde');
 
 -- --------------------------------------------------------
 
@@ -217,7 +216,7 @@ ALTER TABLE `tb_laboratorio`
 -- AUTO_INCREMENT de tabela `tb_reserva`
 --
 ALTER TABLE `tb_reserva`
-  MODIFY `idReserva` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idReserva` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuario`
