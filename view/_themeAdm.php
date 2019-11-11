@@ -43,7 +43,7 @@ $a= $_SESSION['adm'][1];
     </form>
 
     <ul class="navbar-nav ml-auto ml-md-0">
-      <div style="color: #fff;"id="notificacoes"></div> 
+
 
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -118,8 +118,8 @@ $a= $_SESSION['adm'][1];
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Gerenciar Reservas: </h6>
             <a class="dropdown-item" href="<?=url("reserva/listReservas");?>">Reservas</a>
-            <a class="dropdown-item" href="<?=url("reserva/listAceitas");?>">Aceitas</a>
-            <a class="dropdown-item" href="<?=url("reserva/listNegadas");?>">Negadas</a>
+            <a class="dropdown-item" href="<?=url("reserva/aceitas");?>">Aceitas</a>
+            <a class="dropdown-item" href="<?=url("reserva/negadas");?>">Negadas</a>
         </div>
 
       </li>
@@ -245,22 +245,9 @@ $a= $_SESSION['adm'][1];
   <!-- Demo scripts for this page-->
   <script src="<?=url("js/demo/datatables-demo.js");?>"></script>
 
-  <!-- Notificações da página-->
-  <script src="<?=url("js/jquery.min.js");?>"></script>
-  <script>
-  $(function(){
-    $(".nolink").click(function(e){
-      return false;
-    });
-  });
 
-  function atualizarNotificacoes() {
-      var url="<?=url("reserva/notificar");?>";
-      jQuery("#notificacoes").load(url);
-    }
-  setInterval("atualizarNotificacoes()", 500);
-  
-  </script>
+
+
   <?= $v->section("scripts");?>
 
 
