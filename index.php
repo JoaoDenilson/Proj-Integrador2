@@ -81,6 +81,8 @@ $route->get("/adicionar", "ReservaController:create");
 $route->get("/horarios", "ReservaController:horario");
 $route->post("/cadastrar", "ReservaController:store");
 $route->post("/atualizar", "ReservaController:update");
+$route->get("/listAceitas", "ReservaController:accepted");
+$route->get("/listNegadas", "ReservaController:denied");
 $route->get("/listReservas", "ReservaController:reservations");
 $route->get("/notificar", "ReservaController:notificar");
 $route->get("/editar/{id}", "ReservaController:edit");
