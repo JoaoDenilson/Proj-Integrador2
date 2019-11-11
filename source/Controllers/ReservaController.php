@@ -238,8 +238,8 @@ use Dompdf\Dompdf;
        }
 
         public function notificar(){
-           $quant = $this->reservaDAO->mostrarNotificacoes();
-           return $quant;
+           $this->reservaDAO->mostrarNotificacoes();
+        
        }
 
 	}
