@@ -17,7 +17,8 @@ use Source\Models\Reserva;
         //Traz uma Lista contendo apenas as reservas aceitas.
         public function listarAceitas(){
             $pdo = Database::conexao();
-            $result = $pdo->query("SELECT r.*, u.idUsuario, u.nomeUsuario FROM tb_reserva r, tb_usuario u WHERE statusReserva='Aceita' AND u.idUsuario=r.idUsuarioFk");
+            $result = $pdo->query("SELECT r.*, u.idUsuario, u.nomeUsuario,d.nomeDisciplina, d.idDisciplina, c.idCurso, c.nomeCurso FROM tb_reserva r, tb_usuario u, tb_disciplina d, tb_curso c
+            WHERE statusReserva='Aceita' AND u.idUsuario=r.idUsuarioFk and d.idDisciplina=r.idDisciplinaFk AND c.idCurso= d.idCursoFk");
             $linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
             return $linhas;
         }
@@ -25,7 +26,8 @@ use Source\Models\Reserva;
         //Traz uma Lista contendo apenas as reservas negadas
         public function listarNegadas(){
             $pdo = Database::conexao();
-            $result = $pdo->query("SELECT r.*, u.idUsuario, u.nomeUsuario FROM tb_reserva r, tb_usuario u WHERE statusReserva='Negada' AND u.idUsuario=r.idUsuarioFk");
+            $result = $pdo->query("SELECT r.*, u.idUsuario, u.nomeUsuario,d.nomeDisciplina, d.idDisciplina, c.idCurso, c.nomeCurso FROM tb_reserva r, tb_usuario u, tb_disciplina d, tb_curso c
+            WHERE statusReserva='Negada' AND u.idUsuario=r.idUsuarioFk and d.idDisciplina=r.idDisciplinaFk AND c.idCurso= d.idCursoFk");
             $linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
             return $linhas;
         }
@@ -81,34 +83,37 @@ use Source\Models\Reserva;
 			$pdo = Database::conexao();
             //var_dump($reserva);
 			$idReserva = $reserva->getIdReserva();
-            //$dataReserva = $reserva->getDataReserva();
-            //$horaReserva = $reserva->getHoraReserva();
-            //$horarios = $reserva->getHorarios();
-            //$statusReserva =$reserva-> getStatusReserva();
-            //$observacaoReserva = $reserva->getObservacaoReserva();
             $justificativaReserva= $reserva->getJustificativaReserva();
-            //$idProfessor = $reserva->getIdUsuarioFk();
             $idLaboratorio = $reserva->getIdLabFk();
-            //$idDisciplina = $reserva->getIdDisciplinaFk();
-            //$turno = $reserva->getTurno();
-
+            $statusReserva = $reserva->getStatusReserva();
             //dataReserva, horaReserva, observacaoReserva, idUsuarioFk, idDisciplinaFk, horarios, turno
 			//$query = "UPDATE tb_reserva SET dataReserva=?, horaReserva=?, justificativaReserva=?, idUsuarioFk=?, idDisciplinaFk=?, 	idLabFk=?, horarios=?, turno=? WHERE idReserva=?";
-            $query = "UPDATE tb_reserva SET justificativaReserva=?, idLabFk=?WHERE idReserva=?";
-
-            $stmt = $pdo->prepare($query);
-
-            //$stmt->bindParam(1, $dataReserva);
-            //$stmt->bindParam(2, $horaReserva);
-            $stmt->bindParam(1, $justificativaReserva);
-            //$stmt->bindParam(4, $idProfessor);
-            //$stmt->bindParam(5, $idDisciplina);
-            $stmt->bindParam(2, $idLaboratorio);
-            //$stmt->bindParam(7, $horarios);
-            //$stmt->bindParam(8, $turno);
-            $stmt->bindParam(3, $idReserva);
-
-            $stmt->execute();
+            if ($idLaboratorio == null){
+                $query = "UPDATE tb_reserva SET justificativaReserva=?, statusReserva=? WHERE idReserva=?";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindParam(1, $justificativaReserva);
+                $stmt->bindParam(2, $statusReserva);
+                $stmt->bindParam(3, $idReserva);
+                $stmt->execute();
+            }else{
+                if($justificativaReserva == null){
+                    $query = "UPDATE tb_reserva SET statusReserva=?, idLabFk=? WHERE idReserva=?";
+                    $stmt = $pdo->prepare($query);
+                    $stmt->bindParam(1, $statusReserva);
+                    $stmt->bindParam(2, $idLaboratorio);
+                    $stmt->bindParam(3, $idReserva);
+                    $stmt->execute();
+                }
+                else{
+                    $query = "UPDATE tb_reserva SET justificativaReserva=?, idLabFk=? statusReserva=? WHERE idReserva=?";
+                    $stmt = $pdo->prepare($query);
+                    $stmt->bindParam(1, $justificativaReserva);
+                    $stmt->bindParam(2, $idLaboratorio);
+                    $stmt->bindParam(3, $statusReserva);
+                    $stmt->bindParam(4, $idReserva);
+                    $stmt->execute();
+                }
+            }
 		}
 
         public function deleta($id){
