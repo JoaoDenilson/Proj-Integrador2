@@ -133,7 +133,6 @@ use Source\Models\Reserva;
            $linha = $result->fetchAll(\PDO::FETCH_ASSOC);
 
            $valor = implode("", $linha);
-         
            return $valor;
 
         }
