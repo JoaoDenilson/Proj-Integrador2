@@ -117,7 +117,9 @@ $a= $_SESSION['adm'][1];
 
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Gerenciar Reservas: </h6>
-          <a class="dropdown-item" href="<?=url("reserva/listReservas");?>">Listar</a>
+            <a class="dropdown-item" href="<?=url("reserva/listReservas");?>">Reservas</a>
+            <a class="dropdown-item" href="<?=url("reserva/listAceitas");?>">Aceitas</a>
+            <a class="dropdown-item" href="<?=url("reserva/listNegadas");?>">Negadas</a>
         </div>
 
       </li>
