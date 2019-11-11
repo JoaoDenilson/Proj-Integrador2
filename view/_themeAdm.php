@@ -244,23 +244,25 @@ $a= $_SESSION['adm'][1];
 
   <!-- Demo scripts for this page-->
   <script src="<?=url("js/demo/datatables-demo.js");?>"></script>
+
+  <!-- Notificações da página-->
+  <script src="<?=url("js/jquery.min.js");?>"></script>
   <script>
   $(function(){
     $(".nolink").click(function(e){
       return false;
     });
   });
+
+  function atualizarNotificacoes() {
+      var url="<?=url("reserva/notificar");?>";
+      jQuery("#notificacoes").load(url);
+    }
+  setInterval("atualizarNotificacoes()", 500);
+  
   </script>
   <?= $v->section("scripts");?>
 
-    <script type="text/javascript">
-            
-      function atualizarNotificacoes() {
-            var url="<?=url("reserva/notificar");?>";
-            jQuery("#notificacoes").load(url);
-        }
-        setInterval("atualizarNotificacoes()", 500);
-    </script> 
 
 </body>
 
