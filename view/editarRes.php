@@ -4,9 +4,9 @@ $v->layout("_themeAdm");?>
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
-        <a href="<?=url("home");?>">Painel de Controle</a>
+        <a href="<?=url("dashboard");?>">Painel de Controle</a>
     </li>
-    <li class="breadcrumb-item active">Solicitar Reserva </li>
+    <li class="breadcrumb-item active">Editar Reserva </li>
 </ol>
 
 
@@ -39,10 +39,24 @@ $v->layout("_themeAdm");?>
             ?>
           </div>
         </select>
-       
-      </div> 
-    </div> 
 
+      </div>
+    </div>
+
+      <!-- STATUS -->
+      <div class="col-8"> <label> Selecione o status da Reserva: </label></div>
+      <div class="col-2">
+          <div class="btn-group dropright" >
+              <select class="btn btn-primary" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false" name ="status">
+                  <option selected="selected"  name="status">
+                      Status
+                  </option>
+                  <option value="Aceita">Aceita</option>
+                  <option value="Negada">Negada</option>
+              </select>
+          </div>
+      </div>
 
     <div class="col-8">
       <label> Curso selecionado: 
