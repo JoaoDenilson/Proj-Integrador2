@@ -18,6 +18,13 @@ class DisciplinaDAO{
 			}	
 	  		return $disciplina;
 		}
+		public function listarPorCurso($curso_id){
+			$pdo = Database::conexao(); //Variavel que armazena a conexão do banco
+			$result = $pdo->query("SELECT * FROM tb_disciplina WHERE idCursoFk = '{$curso_id["curso_id"]}'" );
+			$linhas = $result->fetchAll(\PDO::FETCH_ASSOC);
+	
+	  		return $linhas;
+		}
 		
 		public function listaRegistro($n){
 			$pdo = Database::conexao();
