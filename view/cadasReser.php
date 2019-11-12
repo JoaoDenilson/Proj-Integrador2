@@ -23,7 +23,7 @@ $v->layout("_themeProf");?>
 
         <div class="col-2">
           <div class="btn-group dropright">
-           <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idCurso" id="cursoDisc" onchange="buscar_cursos()">
+           <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idCurso" id="cursoDisc" onchange="buscarDisciplina(this.value)">
 
             <option selected="selected" name="idCurso">
               Lista de Cursos
@@ -59,26 +59,36 @@ $v->layout("_themeProf");?>
 
         <div class="col-2">
           <div class="btn-group dropright">
+
            <select class="btn btn-primary" data-toggle="dropdown" 
-           aria-haspopup="true" aria-expanded="false" name="idDisc">
+           aria-haspopup="true" aria-expanded="false" name="idDisc" id="idDisc">
             <option selected="selected"  name="idDisc">
               Lista de Disciplinas
             </option>
-                <?php
-                    if($disciplinas):
-                      foreach($disciplinas as $disciplina):
-                    ?>
-                    <?php
-                      echo "<option value='{$disciplina->getIdDisc()}'> {$disciplina->getNomeDisc()}</option>";
-                      ?>
-                    <?php
-                      endforeach;
-                    else:
-                        ?>
-                        <h4> Não existem Cursos cadastrados </h4>
-                      <?php
-                    endif;?>
+                
             </select>
+
+            <script>
+              function buscarDisciplina(curso) {
+
+              fetch('./adicionar/listarDisciplinas/' + curso, {method: 'POST'}).then(function(response) {
+                return response.json();
+                }).then(function(data) {
+                    var disciplinasDoCurso = data;
+                    console.log('Resultado:', disciplinasDoCurso.listarDisc.disciplinas);
+                    var lista = document.getElementById("idDisc");
+                    if (disciplinasDoCurso.listarDisc.disciplinas.length > 0) {
+                        lista.innerHTML = "";
+                    for( let x = 0; x < disciplinasDoCurso.listarDisc.disciplinas.length; x++ ) {
+                        lista.innerHTML += '<option value="'+ disciplinasDoCurso.listarDisc.disciplinas[x]["idDisciplina"] +'">'+ disciplinasDoCurso.listarDisc.disciplinas[x]["nomeDisciplina"] +'</option>';
+                    }
+                    } else {
+                        lista.innerHTML = '<option selected="selected"  name="idDisc">Lista de Disciplinas</option>';
+                    }
+                });
+            }
+            </script>
+
           </div> 
         </div>
 
