@@ -127,14 +127,28 @@ use Source\Models\Reserva;
         }
         //Função para mostrar notificações para o administrador
         public function mostrarNotificacoes(){
-           $pdo = Database::conexao();
-           $query = ("SELECT COUNT(statusReserva) FROM tb_reserva WHERE statusReserva = 'Aguardando'");
+           //$pdo = Database::conexao();
+
+           /*$query = ("SELECT COUNT(statusReserva) FROM tb_reserva WHERE statusReserva = 'Aguardando'");
            $result = $pdo->prepare($query);
            $linha = $result->fetchAll(\PDO::FETCH_ASSOC);
 
-           $valor = implode("", $linha);
+
+           $valor = implode(",", $linha);
          
-           return $valor;
+           var_dump($valor);*/
+
+            $con = mysqli_connect('localhost', 'root', '', 'projetointegrador2');
+
+
+    $sql = "SELECT COUNT(statusReserva) FROM tb_reserva WHERE statusReserva = 'Aguardando'";
+    $query = mysqli_query($con, $sql);
+    $resultado = mysqli_fetch_assoc($query);
+    
+    
+    $valor = implode(",", $resultado);
+    
+    echo $valor;
 
         }
 
