@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="Projeto Integrador">
-      <change beforePath="$PROJECT_DIR$/view/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/listarHor.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/listarHor.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +48,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../phptips015" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -127,7 +128,8 @@
       <workItem from="1573471528008" duration="7658000" />
       <workItem from="1573494720149" duration="674000" />
       <workItem from="1573496524732" duration="4629000" />
-      <workItem from="1573515431795" duration="945000" />
+      <workItem from="1573515431795" duration="1699000" />
+      <workItem from="1573561425633" duration="2451000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
