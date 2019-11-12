@@ -12,8 +12,6 @@
         <!-- Icon Cards-->
         <!-- Local onde deve add conteúdo de inicio-->
         <h1 style="text-align: center"> SEJAM BEM VINDO !</h1>
-        <h5> Notificações </h5>
-        <div style="color: #000000;" id="notificacoes"></div>
 
 <?= $v->start("scripts");?>
 <!-- Notificações da página-->
