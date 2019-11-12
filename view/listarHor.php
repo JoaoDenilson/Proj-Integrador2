@@ -7,7 +7,7 @@
     <li class="breadcrumb-item active">Hoário</li>
 </ol>
 
-<form action="<?=url("reserva/atualizar");?>" method="POST">  
+<form action="<?=url("");?>" method="POST" >
     <div class="col-8"> <label> Selecione o Laboratório: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
@@ -36,9 +36,22 @@
         </select>
        
       </div> 
-    </div> 
-  </form>
- 
+    </div>
+
+    <div class="col-8" > <label> Selecione o turno: </label></div>
+    <div class="col-2">
+        <div class="btn-group dropright">
+            <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="turno" id="idLaboratorio" onchange="buscar_cursos()">
+                <option selected="selected" name="turno"> </option>
+                <option value="Manhã" name="turno"> Manhã</option>
+                <option value="Tarde" name="turno"> Tarde </option>
+                <option value="Noite" name="turno"> Noite </option>
+            </select>
+
+        </div>
+    </div>
+</form>
+ <br>
     <div class="card mb-3">
           <div class="card-header">
             Tabela de Dados - Turno: Manhã</div>
@@ -138,16 +151,19 @@
             </div>
           </div>
         </div>
-
+<!--
             <div class="card mb-3">
           <div class="card-header">
             Tabela de Dados - Turno: Tarde</div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" > <!--id="dataTable"-->
+              <table class="table table-bordered" > --><!--id="dataTable"-->
+<!--
                 <thead>
                   <tr>
+                  -->
                    <!-- <th>Curso</th> -->
+<!--
                       <th>Horário</th>
                       <th>Segunda</th>
                       <th>Terça</th>
@@ -193,7 +209,9 @@
 
                 <tfoot>
                    <tr>
+                   -->
                    <!-- <th>Curso</th> -->
+                       <!--
                       <th>Horário</th>
                       <th>Segunda</th>
                       <th>Terça</th>
@@ -212,10 +230,14 @@
             Tabela de Dados - Turno: Noite</div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" > <!--id="dataTable"-->
+              <table class="table table-bordered" >
+               --> <!--id="dataTable"-->
+                       <!--
                 <thead>
                   <tr>
+                  -->
                    <!-- <th>Curso</th> -->
+                      <!--
                       <th>Horário</th>
                       <th>Segunda</th>
                       <th>Terça</th>
@@ -262,7 +284,9 @@
 
                 <tfoot>
                    <tr>
+                   -->
                    <!-- <th>Curso</th> -->
+                      <!--
                       <th>Horário</th>
                       <th>Segunda</th>
                       <th>Terça</th>
@@ -272,10 +296,11 @@
                   </tr>
                 </tfoot>
               </table>
+
             </div>
           </div>
         </div>
-
+    -->
         <?= $v->start("scripts");?>
 
         <?= $v->end();?>
