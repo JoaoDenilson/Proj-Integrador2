@@ -88,6 +88,7 @@ $route->get("/notificar", "ReservaController:notificar");
 $route->get("/editar/{id}", "ReservaController:edit");
 $route->get("/excluir/{id}", "ReservaController:delete");
 $route->get("/comprovante/{id}", "ReservaController:receipt");
+$route->post("/adicionar/listarDisciplinas/{curso_id}", "DisciplinaController:listarDisciplinas");
 
 
 //Falta emprementar as demais rotas
