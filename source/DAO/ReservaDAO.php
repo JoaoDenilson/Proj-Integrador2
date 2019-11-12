@@ -147,12 +147,11 @@ use Source\Models\Reserva;
     $resultado = mysqli_fetch_assoc($query);
     
     
-    $valor = implode(",", $resultado);
+    $valor = implode("", $resultado);
     
     echo $valor;
 
-           $valor = implode("", $linha);
-           return $valor;
+
 
 
         }
