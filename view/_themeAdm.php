@@ -43,7 +43,7 @@ $a= $_SESSION['adm'][1];
     </form>
 
     <ul class="navbar-nav ml-auto ml-md-0">
-      <div style="color: #fff;"id="notificacoes"></div> 
+      <h6 style="color: #fff;"><div style="color: #fff;"id="notificacoes"></div> Notificações.</h6>
 
       <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
