@@ -34,6 +34,20 @@ class DisciplinaController{
                 $this->router->redirect("Web.login");
             }
         }
+        public function listarDisciplinas($curso_id){
+            session_start();
+            if (isset($_SESSION['adm']) || isset($_SESSION['prof'])){
+                $disc = $this->disciplinaDAO->listarPorCurso($curso_id);
+                header('Content-Type: application/json');
+                echo json_encode(array("listarDisc" => [
+                    "disciplinas" => $disc
+                ]));
+            }else{
+                header("HTTP/1.0 404 Not Found");
+                echo "Nenhuma disciplina encontrada.\n";
+                die();
+            }
+        }
 
         public function create(){
             session_start();
