@@ -79,7 +79,7 @@ use Dompdf\Dompdf;
             session_start();
             $linhas = $this->reservaDAO->listarNegadas();
             if ( isset($_SESSION['adm'])){
-                echo $this->view->render("listarNegadas",[
+                echo $this->view->render("listNegadas",[
                     "title"=> "Reservas Negadas |".SITE,
                     "reservas"=>$linhas
                 ]);
@@ -267,8 +267,8 @@ use Dompdf\Dompdf;
        }
 
         public function notificar(){
-           $this->reservaDAO->mostrarNotificacoes();
-        
+		    $Sol = $this->reservaDAO->mostrarNotificacoes();
+            return $Sol;
        }
 
 	}
