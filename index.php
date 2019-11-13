@@ -102,6 +102,7 @@ $route->post("/cadastrar", "HorarioController:store");
 $route->post("/atualizar", "HorarioController:update");
 $route->get("/editar/{id}", "HorarioController:edit");
 $route->get("/excluir/{id}", "HorarioController:delete");
+$route->post("/listarHorarios/{lab_id}", "HorarioController:timetable");
 
 
 /**

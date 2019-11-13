@@ -11,9 +11,9 @@
     <div class="col-8"> <label> Selecione o Laboratório: </label></div>
       <div class="col-2">
         <div class="btn-group dropright">
-         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idLab" id="idLaboratorio" onchange="buscar_cursos()">
+         <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="idLab" id="idLaboratorio" onchange="buscarHorario(this.value)">
 
-          <option selected="selected" name="idLab">
+        <option selected="selected" name="idLab">
 
           </option>
           <div class="dropdown-menu">
@@ -38,18 +38,6 @@
       </div> 
     </div>
 
-    <div class="col-8" > <label> Selecione o turno: </label></div>
-    <div class="col-2">
-        <div class="btn-group dropright">
-            <select class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="turno" id="idLaboratorio" onchange="buscar_cursos()">
-                <option selected="selected" name="turno"> </option>
-                <option value="Manhã" name="turno"> Manhã</option>
-                <option value="Tarde" name="turno"> Tarde </option>
-                <option value="Noite" name="turno"> Noite </option>
-            </select>
-
-        </div>
-    </div>
 </form>
  <br>
     <div class="card mb-3">
@@ -57,10 +45,33 @@
             Tabela de Dados - Turno: Manhã</div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" > <!--id="dataTable"-->
-                <thead>
-                  <tr>
+                <script>
+                    function buscarHorario(lab) {
+                        fetch('./horario/listarHorarios/' + lab, {method: 'POST'}).then(function(response) {
+                            return response.json();
+                        }).then(function(data) {
+                            var listHours = data;
+                            console.log('Resultado:', listHours.listarDisc.disciplinas);
+
+                            var lista = document.getElementById("idDisc");
+                            if (disciplinasDoCurso.listarDisc.disciplinas.length > 0) {
+                                lista.innerHTML = "";
+                                for( let x = 0; x < disciplinasDoCurso.listarDisc.disciplinas.length; x++ ) {
+                                    lista.innerHTML += '<option value="'+ disciplinasDoCurso.listarDisc.disciplinas[x]["idDisciplina"] +'">'+ disciplinasDoCurso.listarDisc.disciplinas[x]["nomeDisciplina"] +'</option>';
+                                }
+                            } else {
+                                lista.innerHTML = '<option selected="selected"  name="idDisc">Lista de Disciplinas</option>';
+                            }
+                        });
+                    }
+                </script>
+                <!--
+              <table class="table table-bordered" > id="dataTable"-->
+                <!--
+               <thead>
+                 <tr>-->
                    <!-- <th>Curso</th> -->
+                <!--
                       <th>Horário</th>
                       <th>Segunda</th>
                       <th>Terça</th>
@@ -69,9 +80,12 @@
                       <th>Sexta</th>
                   </tr>
                 </thead>
+
+
                 <tr>
-                  <th scope="row">1 <br> 07:20 Até 08:20</th>
-                    <?php
+                  <th scope="row">1 </th>
+                   -->
+                <!-- <?php
                     if($horaA):
                         foreach($horaA as $h):
                     ?><?php
@@ -86,7 +100,7 @@
                     endif;?>
                 </tr>
                 <tr>
-                    <th scope="row">2 <br> 08:20 Até 09:20</th>
+                    <th scope="row">2 </th>
                     <?php
                     if($horaB):
                         foreach($horaB as $h):
@@ -102,7 +116,7 @@
                     endif;?>
                 </tr>
                 <tr>
-                    <th scope="row">3 <br> 09:40 Até 10:40</th>
+                    <th scope="row">3 </th>
                     <?php
                     if($horaC):
                         foreach($horaC as $h):
@@ -119,7 +133,7 @@
                 </tr>
 
                  <tr>
-                     <th scope="row">4 <br> 01:40 Até 11:40</th>
+                     <th scope="row">4 </th>
                      <?php
                      if($horaD):
                          foreach($horaD as $h):
@@ -138,19 +152,21 @@
 
                 <tfoot>
                    <tr>
+                   -->
                    <!-- <th>Curso</th> -->
-                      <th>Horário</th>
-                      <th>Segunda</th>
-                      <th>Terça</th>
-                      <th>Quarta</th>
-                      <th>Quinta</th>
-                      <th>Sexta</th>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-          </div>
-        </div>
+    <!--<th>Horário</th>
+    <th>Segunda</th>
+    <th>Terça</th>
+    <th>Quarta</th>
+    <th>Quinta</th>
+    <th>Sexta</th>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+</div>
+-->
 <!--
             <div class="card mb-3">
           <div class="card-header">

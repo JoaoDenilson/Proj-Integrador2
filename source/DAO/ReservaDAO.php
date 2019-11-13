@@ -88,14 +88,14 @@ use Source\Models\Reserva;
             $statusReserva = $reserva->getStatusReserva();
             //dataReserva, horaReserva, observacaoReserva, idUsuarioFk, idDisciplinaFk, horarios, turno
 			//$query = "UPDATE tb_reserva SET dataReserva=?, horaReserva=?, justificativaReserva=?, idUsuarioFk=?, idDisciplinaFk=?, 	idLabFk=?, horarios=?, turno=? WHERE idReserva=?";
-            if ($idLaboratorio == null){
-                $query = "UPDATE tb_reserva SET justificativaReserva=?, statusReserva=? WHERE idReserva=?";
-                $stmt = $pdo->prepare($query);
-                $stmt->bindParam(1, $justificativaReserva);
-                $stmt->bindParam(2, $statusReserva);
-                $stmt->bindParam(3, $idReserva);
-                $stmt->execute();
-            }else{
+//            if ($idLaboratorio == null){
+//                $query = "UPDATE tb_reserva SET justificativaReserva=?, statusReserva=? WHERE idReserva=?";
+//                $stmt = $pdo->prepare($query);
+//                $stmt->bindParam(1, $justificativaReserva);
+//                $stmt->bindParam(2, $statusReserva);
+//                $stmt->bindParam(3, $idReserva);
+//                $stmt->execute();
+//            }else{
                 if($justificativaReserva == null){
                     $query = "UPDATE tb_reserva SET statusReserva=?, idLabFk=? WHERE idReserva=?";
                     $stmt = $pdo->prepare($query);
@@ -114,7 +114,7 @@ use Source\Models\Reserva;
                     $stmt->execute();
                 }
             }
-		}
+//		}
 
         public function deleta($id){
 

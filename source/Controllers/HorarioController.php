@@ -33,20 +33,25 @@ class HorarioController{
             session_start();
             if (isset($_SESSION['adm'])){
                 $laboratorio = $this->LaboratorioDAO->listarTudo();
-                $linhasManha = $this->horarioDAO->horario("manha", 1);
-                //$linhasManha = $this->horarioDAO->horarioManha();
-                //$linhasTarde = $this->horarioDAO->horarioTarde();
-                //$linhasNoite = $this->horarioDAO->horarioNoite();
-                // echo "<pre>";
-                //var_dump($linhasManha[0]["horarios"]);
-                //var_dump($linhasManha);
-                //die();
-                //var_dump($linhasManha[0]);
-                // $arr = explode("&", $linhasManha[0]["horarios"]);
-                // $s = array_search('tercaA', $arr);
-                // var_dump($s);
-                // echo "</pre>";
-                // die();
+
+                echo $this->view->render("listarHor",[
+                    "title"=>"Listar Cursos | ".SITE,
+                    "laboratorios" => $laboratorio
+                ]);
+
+            }else{
+                $this->router->redirect("Web.login");
+            }
+        }
+
+        public function timetable($data){
+            $lab_id = $data['lab_id'];
+            $turno = "Manhã";
+            session_start();
+            if (isset($_SESSION['adm'])){
+
+                $linhasManha = $this->horarioDAO->horario($turno, $lab_id);
+
 
                 $horaA = array(
                     array("-","-"),
@@ -73,11 +78,7 @@ class HorarioController{
                     array("-","-"),
                     array("-","-"));
 
-                //var_dump($horaA);
                 for($i = 0; $i < count($linhasManha); $i++){
-                    //var_dump($linhasManha[$i]["horarios"]);
-                    //var_dump($linhasManha[$i]["nomeDisciplina"]);
-                    //var_dump($linhasManha[$i]["nomeUsuario"]);
                     $arr = explode("&", $linhasManha[$i]["horarios"]);
                     $p = $linhasManha[$i]["nomeUsuario"];
                     $d = $linhasManha[$i]["nomeDisciplina"];
@@ -172,53 +173,31 @@ class HorarioController{
                     }
                 }
 
-                echo $this->view->render("listarHor",[
-                    "title"=>"Listar Cursos | ".SITE,
+                $hours = array(
                     "horaA" => $horaA,
                     "horaB" => $horaB,
                     "horaC" => $horaC,
                     "horaD" => $horaD,
-                    "laboratorios" => $laboratorio
-                ]);
+                );
+
+                if (isset($_SESSION['adm']) || isset($_SESSION['prof'])){
+                    header('Content-Type: application/json');
+                    echo json_encode(array("listHours" => $hours));
+                    die();
+                }else{
+                    header("HTTP/1.0 404 Not Found");
+                    echo "Nenhuma horario encontrado.\n";
+                    die();
+                }
 
             }else{
                 $this->router->redirect("Web.login");
             }
         }
 
-
 		//Gerar PDF com os horarios
 		public function schedule(){
 			
 		}
 
-		//Função apenas para anotações
-		public function index2(){
-            $K = $linhasManha[0]['horarios'];
-            //var_dump($K);
-            $horarios_separado = explode("&", $K);
-            //var_dump($horarios_separado);
-            //die();
-            //Terar
-
-
-            $K = $linhasManha[0]['horarios'];
-            //var_dump($K);
-            $horarios_separado = explode("&", $K);
-            //var_dump($horarios_separado);
-            //die();
-
-            //Terar
-            $M = $linhasManha[0]['horarios'];
-            $T = $linhasTarde[0]['horarios'];
-            $N = $linhasNoite[0]['horarios'];
-            //var_dump($K);
-            $horariosManha = explode("&", $M);
-            $horariosTarde = explode("&", $T);
-            $horarioNoite = explode("&", $N);
-            //var_dump($horarios_separado);
-            //die();
-
-
-        }
 	}

@@ -69,6 +69,7 @@ $v->layout("_themeProf");?>
             </select>
 
             <script>
+
               function buscarDisciplina(curso) {
 
               fetch('./adicionar/listarDisciplinas/' + curso, {method: 'POST'}).then(function(response) {

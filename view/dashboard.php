@@ -12,7 +12,7 @@
         <!-- Icon Cards-->
         <!-- Local onde deve add conteúdo de inicio-->
         <h1 style="text-align: center"> SEJAM BEM VINDO !</h1>
-
+        <h6 style="color: #000000; text-align: center">Novas Reservas <div style="color: #000000;"id="notificacoes"> </div> </h6>
 <?= $v->start("scripts");?>
 <!-- Notificações da página-->
 <script src="<?=url("js/jquery.min.js");?>"></script>

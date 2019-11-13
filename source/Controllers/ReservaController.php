@@ -34,7 +34,6 @@ use Dompdf\Dompdf;
             $this->view =Engine::create(__DIR__."/../../view","php");
 		}
 
-
 		public function reservations(){
             session_start();
             $linhas = $this->reservaDAO->listarTudo();
@@ -175,7 +174,6 @@ use Dompdf\Dompdf;
             $dataHora = date("d-m-Y | H:i:s");
             if (isset($_SESSION['prof'])){
                 $res = $this->reservaDAO->listaRegistro($k);
-                //var_dump($res);
                 $dompdf = new Dompdf();
                 //ob_start();
 
@@ -208,11 +206,14 @@ use Dompdf\Dompdf;
             if (isset($_SESSION['adm'])){
                 $res = $this->reservaDAO->listaRegistro($k);
                 $lab = $this->LaboratorioDAO->listarTudo();
+                $y =$res[0]["horarios"];
+                $h = explode("&", $y);
                 //var_dump($res);
                 echo $this->view->render("editarRes",[
                     "title"=>"Editar Reserva | ".SITE,
                     "reserva" => $res,
-                    "laboratorios"=> $lab
+                    "laboratorios"=> $lab,
+                    "horarios"=> $h
                 ]);
 
             }else{
@@ -261,10 +262,6 @@ use Dompdf\Dompdf;
 			$this->reservaDAO->deleta($id);
 			$this->index();
 		}
-
-	   public function horario(){
-            
-       }
 
         public function notificar(){
 		    $Sol = $this->reservaDAO->mostrarNotificacoes();

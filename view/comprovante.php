@@ -56,8 +56,13 @@
                 <td >Disciplina: <?=$reserva[0]['nomeDisciplina'];?></td>
             </tr>
             <tr>
+                <td >Status: <?=$reserva[0]['statusReserva'];?></td>
+            </tr>
+
+            <tr>
                 <th class="titulo"> Observação</th>
             </tr>
+
         </table>
         <div class="dadosp">
             <p>
