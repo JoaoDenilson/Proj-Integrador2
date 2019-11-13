@@ -4,9 +4,16 @@
     <list default="true" id="caea5505-1797-4480-9afc-9d93703c0207" name="Default Changelist" comment="Projeto Integrador">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Controllers/DisciplinaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/DisciplinaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/DAO/DisciplinaDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/DisciplinaDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Controllers/HorarioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/HorarioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Controllers/ReservaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Controllers/ReservaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/DAO/HorarioDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/HorarioDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/DAO/ReservaDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/DAO/ReservaDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/_themeAdm.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/_themeAdm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/cadasReser.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/cadasReser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/comprovante.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/comprovante.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/editarRes.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/editarRes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/listarHor.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/listarHor.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +141,7 @@
       <workItem from="1573515431795" duration="1699000" />
       <workItem from="1573561425633" duration="2622000" />
       <workItem from="1573574673945" duration="55000" />
-      <workItem from="1573586241814" duration="163000" />
+      <workItem from="1573586241814" duration="17675000" />
     </task>
     <task id="LOCAL-00001" summary="Adcionando classe Professor">
       <created>1571342256662</created>
@@ -183,20 +190,5 @@
     <MESSAGE value="Adcionando uma imagem de boas vindas" />
     <MESSAGE value="Projeto Integrador" />
     <option name="LAST_COMMIT_MESSAGE" value="Projeto Integrador" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/source/Controllers/ReservaController.php</url>
-          <line>77</line>
-          <properties>
-            <option name="className" value="\Source\Controllers\ReservaController" />
-            <option name="methodName" value="denied" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
